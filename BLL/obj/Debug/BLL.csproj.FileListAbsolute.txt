@@ -1,0 +1,11 @@
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\bin\Debug\BLL.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\bin\Debug\BLL.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\bin\Debug\BE.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\bin\Debug\DAL.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\bin\Debug\BE.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\bin\Debug\DAL.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\obj\Debug\BLL.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BLL\obj\Debug\BLL.pdb

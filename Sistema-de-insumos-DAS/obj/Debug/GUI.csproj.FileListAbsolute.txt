@@ -1,0 +1,17 @@
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMInicioSesion.resources
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.Properties.Resources.resources
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\Sistema-de-insumos-DAS.exe.config
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\Sistema-de-insumos-DAS.exe
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\Sistema-de-insumos-DAS.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\BE.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\BLL.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\DAL.dll
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\BE.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\BLL.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\bin\Debug\DAL.pdb
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\GUI.csproj.Up2Date
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\Sistema-de-insumos-DAS.exe
+C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\Sistema-de-insumos-DAS\obj\Debug\Sistema-de-insumos-DAS.pdb
