@@ -1,6 +1,8 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -49,6 +51,49 @@ namespace BLL
                 return -1;
             }
            
+        }
+
+        public CLSProveedor BuscarProveedor(int id_usuario)
+        {
+            try
+            {
+                CLSProveedor proveedor = new CLSProveedor();
+                SqlParameter[] parametros = new SqlParameter[1];
+                parametros[0] = new SqlParameter("@ID_Usuario", id_usuario);
+                DataTable dt = acceso.leer("SP_BuscarProveedor", parametros);
+                foreach(DataRow dr in dt.Rows)
+                {
+                    proveedor.ID_prov = int.Parse(dr["Id_prov"].ToString());
+                    proveedor.Nombre = dr["Nombre_prov"].ToString();
+                    proveedor.Cuit = dr["Cuit"].ToString();
+                    proveedor.Direccion = dr["Direccion_prov"].ToString();
+                    proveedor.Telefono = dr["Telefono_prov"].ToString();
+                }
+                return proveedor;
+            }catch(Exception ex) { throw new Exception(ex.Message); }
+        }
+
+        public CLSEmpleado BuscarEmpleado(int id_usuario)
+        {
+            try
+            {
+                CLSEmpleado empleado = new CLSEmpleado();
+                SqlParameter[] parametros = new SqlParameter[1];
+                parametros[0] = new SqlParameter("@ID_Usuario", id_usuario);
+                DataTable dt = acceso.leer("SP_BuscarEmpleado", parametros);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    empleado.ID_emp = int.Parse(dr["Id_emp"].ToString());
+                    empleado.Nombre = dr["Nombre_emp"].ToString();
+                    empleado.Apellido = dr["Apellido_emp"].ToString();
+                    empleado.DNI = dr["Dni"].ToString();
+                    empleado.Direccion = dr["Dirección_emp"].ToString();
+                    empleado.Telefono = dr["Teléfono_emp"].ToString();
+                    empleado.Rol = dr["Rol"].ToString();
+                }
+                return empleado;
+            }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
     }
 }

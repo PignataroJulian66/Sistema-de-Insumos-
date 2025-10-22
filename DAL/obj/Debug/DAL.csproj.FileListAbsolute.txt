@@ -7,3 +7,12 @@ C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\DAL\obj\Debug\DAL.csproj.Core
 C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\DAL\obj\Debug\DAL.dll
 C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\DAL\obj\Debug\DAL.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\DAL.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\DAL.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\BE.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\BE.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.pdb

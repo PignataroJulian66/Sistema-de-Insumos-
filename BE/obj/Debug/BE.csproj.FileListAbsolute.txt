@@ -4,3 +4,9 @@ C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BE\obj\Debug\BE.csproj.Assemb
 C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BE\obj\Debug\BE.dll
 C:\Users\pigna\source\repos\Sistema-de-insumos-DAS\BE\obj\Debug\BE.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\BE.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\BE.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.pdb

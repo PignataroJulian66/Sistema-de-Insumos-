@@ -1,10 +1,12 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -147,21 +149,44 @@ namespace Sistema_de_insumos_DAS
                     nuevoBoton2.ForeColor = Color.White;
                     nuevoBoton2.Click += (s, ev) =>
                     {
-                        MessageBox.Show("arbir form de proveedor:");
+                        FRMProveedor f = new FRMProveedor(gu.BuscarProveedor(usuario));
+                        f.Show();
+                        this.Hide();
                     };
                     this.Controls.Add(nuevoBoton2);
                 }
                 else if (EsProveedor && !EsEmpleado)
                 {
-                    MessageBox.Show("abrir form de proveedor:");
+                    FRMProveedor f = new FRMProveedor(gu.BuscarProveedor(usuario));
+                    f.Show();
+                    this.Hide();
                 }
                 else if (EsEmpleado && !EsProveedor)
                 {
-                    MessageBox.Show("arbir form de empleado:");
+                    CLSEmpleado empleado = gu.BuscarEmpleado(usuario);
+                    switch (empleado.Rol.ToLower())
+                    {
+                        case "encargado de almacen":
+                            MessageBox.Show("abre form encargado de almacen");
+                            break;
+
+                        case "encargado de produccion":
+                            MessageBox.Show("abre form encargado de produccion");
+                            break;
+                        case "gerente":
+                            MessageBox.Show("abre form gerente");
+                            break;
+                        case "vendedor":
+                            MessageBox.Show("abre form vendedor");
+                            break;
+                        default:
+                            MessageBox.Show("Error");
+                            break;
+                    }
                 }
                 else
                 {
-                    msgerror("Usuario sin rol.");
+                    msgerror("Usuario no encontrado.");
                 }
 
 
