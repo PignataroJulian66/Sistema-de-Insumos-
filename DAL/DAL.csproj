@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.cs" />
+    <Compile Include="mp_Cliente.cs" />
+    <Compile Include="mp_Empleado.cs" />
+    <Compile Include="mp_Insumo.cs" />
+    <Compile Include="mp_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

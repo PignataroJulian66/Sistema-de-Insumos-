@@ -10,3 +10,9 @@ C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.AssemblyR
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.dll
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\BE.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\BE.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.pdb

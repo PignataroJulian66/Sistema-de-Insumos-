@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmABMCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMCliente.Designer.cs">
+      <DependentUpon>FrmABMCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMEmpleado.Designer.cs">
+      <DependentUpon>FrmABMEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMInsumo.Designer.cs">
+      <DependentUpon>FrmABMInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMProveedor.Designer.cs">
+      <DependentUpon>FrmABMProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMGerente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMGerente.Designer.cs">
+      <DependentUpon>FRMGerente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +90,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmABMCliente.resx">
+      <DependentUpon>FrmABMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMEmpleado.resx">
+      <DependentUpon>FrmABMEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMInsumo.resx">
+      <DependentUpon>FrmABMInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMProveedor.resx">
+      <DependentUpon>FrmABMProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMGerente.resx">
+      <DependentUpon>FRMGerente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMInicioSesion.resx">
       <DependentUpon>FRMInicioSesion.cs</DependentUpon>
     </EmbeddedResource>

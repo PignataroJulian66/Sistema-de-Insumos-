@@ -174,7 +174,9 @@ namespace Sistema_de_insumos_DAS
                             MessageBox.Show("abre form encargado de produccion");
                             break;
                         case "gerente":
-                            MessageBox.Show("abre form gerente");
+                            FRMGerente fm = new FRMGerente();
+                            fm.Show();
+                            this.Hide();
                             break;
                         case "vendedor":
                             MessageBox.Show("abre form vendedor");

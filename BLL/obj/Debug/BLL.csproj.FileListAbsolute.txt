@@ -20,3 +20,14 @@ C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.CoreCom
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.dll
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\BLL.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\BLL.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\BE.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\BE.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.pdb

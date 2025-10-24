@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsCliente.cs" />
+    <Compile Include="ClsEmpleado.cs" />
+    <Compile Include="ClsInsumo.cs" />
+    <Compile Include="ClsProveedor.cs" />
     <Compile Include="GestorUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
