@@ -142,6 +142,10 @@
       <Project>{0f86e63c-a202-40f8-82b7-6b670955a6a1}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SEGURIDAD\SEGURIDAD.csproj">
+      <Project>{65e10994-385c-4ff8-b879-3604054c661e}</Project>
+      <Name>SEGURIDAD</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
