@@ -32,9 +32,9 @@ namespace BE
 			set { _unidad = value; }
 		}
 
-		private int _cantidad;
+		private decimal _cantidad;
 
-		public int Cantidad
+		public decimal Cantidad
 		{
 			get { return _cantidad; }
 			set { _cantidad = value; }
@@ -47,22 +47,5 @@ namespace BE
 			get { return _calidad; }
 			set { _calidad = value; }
 		}
-
-		private string _proporcion;
-
-		public string Proporcion
-		{
-			get { return _proporcion; }
-			set { _proporcion = value; }
-		}
-
-		private decimal _precioactual;
-
-		public decimal PrecioActual
-		{
-			get { return _precioactual; }
-			set { _precioactual = value; }
-		}
-
 	}
 }

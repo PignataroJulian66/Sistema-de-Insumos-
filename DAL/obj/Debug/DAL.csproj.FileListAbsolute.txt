@@ -25,3 +25,5 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.csproj.CoreCom
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.dll
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\SEGURIDAD.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\SEGURIDAD.pdb

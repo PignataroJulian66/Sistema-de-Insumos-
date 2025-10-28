@@ -16,6 +16,9 @@ namespace Sistema_de_insumos_DAS
         {
             InitializeComponent();
             VerGrilla();
+            dgvInsumos.ReadOnly = true;
+            dgvInsumos.MultiSelect = false;
+            dgvInsumos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         BE.ClsInsumo insumo; 
         BLL.ClsInsumo gInsumo = new BLL.ClsInsumo(); 
@@ -32,14 +35,9 @@ namespace Sistema_de_insumos_DAS
             {
                 tmp = (BE.ClsInsumo)dgvInsumos.Rows[e.RowIndex].DataBoundItem;
 
-               
-                txtID.Text = tmp.ID.ToString();
                 txtNombre.Text = tmp.Nombre;
-                txtUnidad.Text = tmp.Unidad;
-                txtCantidad.Text = tmp.Cantidad.ToString(); 
-                txtCalidad.Text = tmp.Calidad;
-                txtProporcion.Text = tmp.Proporcion.ToString(); 
-                txtPrecioActual.Text = tmp.PrecioActual.ToString(); 
+                comboBox1.Text = tmp.Unidad;
+                cmbCalidad.Text = tmp.Calidad;
             }
         }
 
@@ -50,14 +48,10 @@ namespace Sistema_de_insumos_DAS
 
             try
             {
-               
-                insumo.ID = int.Parse(txtID.Text);
                 insumo.Nombre = txtNombre.Text;
-                insumo.Unidad = txtUnidad.Text;
-                insumo.Cantidad = int.Parse(txtCantidad.Text); 
-                insumo.Calidad = txtCalidad.Text;
-                insumo.Proporcion = (txtProporcion.Text);
-                insumo.PrecioActual = decimal.Parse(txtPrecioActual.Text);
+                insumo.Unidad = comboBox1.Text;
+                insumo.Cantidad = 0;
+                insumo.Calidad = cmbCalidad.Text;
 
                 fa = gInsumo.Agregar(insumo);
                 if (fa != 0)
@@ -84,9 +78,7 @@ namespace Sistema_de_insumos_DAS
 
             try
             {
-                
-                insumo.ID = int.Parse(txtID.Text);
-
+                insumo = dgvInsumos.SelectedRows[0].DataBoundItem as BE.ClsInsumo;
                 fa = gInsumo.Eliminar(insumo);
                 if (fa != 0)
                 {
@@ -105,21 +97,16 @@ namespace Sistema_de_insumos_DAS
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        /*private void btnEditar_Click(object sender, EventArgs e)
         {
             int fa = 0;
             insumo = new BE.ClsInsumo();
 
             try
             {
-               
-                insumo.ID = int.Parse(txtID.Text);
                 insumo.Nombre = txtNombre.Text;
-                insumo.Unidad = txtUnidad.Text;
-                insumo.Cantidad = int.Parse(txtCantidad.Text);
-                insumo.Calidad = txtCalidad.Text;
-                insumo.Proporcion = (txtProporcion.Text);
-                insumo.PrecioActual = decimal.Parse(txtPrecioActual.Text);
+                insumo.Unidad = comboBox1.Text;
+                insumo.Calidad = cmbCalidad.Text;
 
                 fa = gInsumo.Editar(insumo);
                 if (fa != 0)
@@ -138,15 +125,13 @@ namespace Sistema_de_insumos_DAS
                 MessageBox.Show("Error al ingresar datos: " + ex.Message);
             }
         }
+        DECDIMOS QUE NO SE PUEDAN MODIFICAR INSUMOS, LO DEJAMOS POR SI LAS DUDAS
+         */
         private void LimpiarCampos()
         {
-            txtID.Text = "";
             txtNombre.Text = "";
-            txtUnidad.Text = "";
-            txtCantidad.Text = ""; 
-            txtCalidad.Text = "";
-            txtProporcion.Text = ""; 
-            txtPrecioActual.Text = ""; 
+            comboBox1.Text = "";
+            cmbCalidad.Text = "";
         }
     }
 }

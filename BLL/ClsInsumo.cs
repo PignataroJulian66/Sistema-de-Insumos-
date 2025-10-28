@@ -25,12 +25,12 @@ namespace BLL
             return fa;
         }
 
-        public int Editar(BE.ClsInsumo insumo)
+        /*public int Editar(BE.ClsInsumo insumo)
         {
             int fa = 0;
             fa = mapper.Editar(insumo);
             return fa;
-        }
+        }*/
 
         public List<BE.ClsInsumo> Listar()
         {

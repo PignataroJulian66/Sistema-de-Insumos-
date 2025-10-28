@@ -31,3 +31,5 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.CoreCom
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.dll
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.pdb

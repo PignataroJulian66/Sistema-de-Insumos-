@@ -63,7 +63,7 @@ namespace BLL
                 DataTable dt = acceso.leer("SP_BuscarProveedor", parametros);
                 foreach(DataRow dr in dt.Rows)
                 {
-                    proveedor.ID_prov = int.Parse(dr["Id_prov"].ToString());
+                    proveedor.ID_prov = int.Parse(dr["ID_prov"].ToString());
                     proveedor.Nombre = dr["Nombre_prov"].ToString();
                     proveedor.Cuit = dr["Cuit"].ToString();
                     proveedor.Direccion = dr["Direccion_prov"].ToString();
@@ -87,8 +87,8 @@ namespace BLL
                     empleado.Nombre = dr["Nombre_emp"].ToString();
                     empleado.Apellido = dr["Apellido_emp"].ToString();
                     empleado.DNI = dr["Dni"].ToString();
-                    empleado.Direccion = dr["Dirección_emp"].ToString();
-                    empleado.Telefono = dr["Teléfono_emp"].ToString();
+                    empleado.Direccion = dr["Direccion_emp"].ToString();
+                    empleado.Telefono = dr["Telefono_emp"].ToString();
                     empleado.Rol = dr["Rol"].ToString();
                 }
                 return empleado;

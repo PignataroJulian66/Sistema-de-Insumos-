@@ -15,7 +15,7 @@ namespace DAL
 
         public void conectar()
         {
-            conexion.ConnectionString = @"Data Source=DESKTOP-1R961GN;Initial Catalog=Insumos-En-Capas;Integrated Security=True";
+            conexion.ConnectionString = @"Data Source=DESKTOP-1R961GN;Initial Catalog=BaseCompleta;Integrated Security=True";
             try
             {
                 conexion.Open();

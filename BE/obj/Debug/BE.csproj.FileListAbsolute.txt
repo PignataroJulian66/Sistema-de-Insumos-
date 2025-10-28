@@ -16,3 +16,6 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.AssemblyR
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.dll
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\SEGURIDAD.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\SEGURIDAD.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.Up2Date

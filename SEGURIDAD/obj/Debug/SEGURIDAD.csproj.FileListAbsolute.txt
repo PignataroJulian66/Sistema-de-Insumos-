@@ -1,0 +1,6 @@
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\SEGURIDAD\bin\Debug\SEGURIDAD.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\SEGURIDAD\bin\Debug\SEGURIDAD.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\SEGURIDAD\obj\Debug\SEGURIDAD.csproj.AssemblyReference.cache
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\SEGURIDAD\obj\Debug\SEGURIDAD.csproj.CoreCompileInputs.cache
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\SEGURIDAD\obj\Debug\SEGURIDAD.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\SEGURIDAD\obj\Debug\SEGURIDAD.pdb
