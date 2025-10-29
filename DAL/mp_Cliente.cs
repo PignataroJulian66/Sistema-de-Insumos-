@@ -15,12 +15,11 @@ namespace DAL
         public int Agregar(BE.ClsCliente cliente)
         {
             int fa = 0;
-            SqlParameter[] parametros = new SqlParameter[5];
-            parametros[0] = new SqlParameter("@ID", cliente.ID);
-            parametros[1] = new SqlParameter("@Nombre", cliente.Nombre);
-            parametros[2] = new SqlParameter("@Apellido", cliente.Apellido);
-            parametros[3] = new SqlParameter("@Telefono", cliente.Telefono);
-            parametros[4] = new SqlParameter("@DNI", cliente.DNI);
+            SqlParameter[] parametros = new SqlParameter[4];
+            parametros[0] = new SqlParameter("@Nombre_Cliente", cliente.Nombre);
+            parametros[1] = new SqlParameter("@Apellido_Cliente", cliente.Apellido);
+            parametros[2] = new SqlParameter("@Telefono_Cliente", cliente.Telefono);
+            parametros[3] = new SqlParameter("@DNI_Cliente", cliente.DNI);
 
             
             fa = acceso.escribir("sp_InsertarCliente", parametros);
@@ -32,7 +31,7 @@ namespace DAL
             int fa = 0;
             
             SqlParameter[] parametros = new SqlParameter[1];
-            parametros[0] = new SqlParameter("@ID", cliente.ID);
+            parametros[0] = new SqlParameter("@ID_Cliente", cliente.ID);
 
             fa = acceso.escribir("sp_EliminarCliente", parametros);
             return fa;
@@ -43,11 +42,11 @@ namespace DAL
             int fa = 0;
             
             SqlParameter[] parametros = new SqlParameter[5];
-            parametros[0] = new SqlParameter("@ID", cliente.ID);
-            parametros[1] = new SqlParameter("@Nombre", cliente.Nombre);
-            parametros[2] = new SqlParameter("@Apellido", cliente.Apellido);
-            parametros[3] = new SqlParameter("@Telefono", cliente.Telefono);
-            parametros[4] = new SqlParameter("@DNI", cliente.DNI);
+            parametros[0] = new SqlParameter("@ID_Cliente", cliente.ID);
+            parametros[1] = new SqlParameter("@Nombre_Cliente", cliente.Nombre);
+            parametros[2] = new SqlParameter("@Apellido_Cliente", cliente.Apellido);
+            parametros[3] = new SqlParameter("@Telefono_Cliente", cliente.Telefono);
+            parametros[4] = new SqlParameter("@DNI_Cliente", cliente.DNI);
 
             
             fa = acceso.escribir("sp_EditarCliente", parametros);
@@ -64,11 +63,11 @@ namespace DAL
             foreach (DataRow dr in tabla.Rows)
             {
                 BE.ClsCliente cliente = new BE.ClsCliente();
-                cliente.ID = int.Parse(dr["ID"].ToString());
-                cliente.Nombre = dr["Nombre"].ToString();
-                cliente.Apellido = dr["Apellido"].ToString();
-                cliente.Telefono = dr["Telefono"].ToString();
-                cliente.DNI = dr["DNI"].ToString();
+                cliente.ID = int.Parse(dr["ID_Cliente"].ToString());
+                cliente.Nombre = dr["Nombre_Cliente"].ToString();
+                cliente.Apellido = dr["Apellido_Cliente"].ToString();
+                cliente.Telefono = dr["Telefono_Cliente"].ToString();
+                cliente.DNI = dr["DNI_Cliente"].ToString();
                 lista.Add(cliente);
             }
             return lista;

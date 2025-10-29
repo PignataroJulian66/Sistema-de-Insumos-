@@ -17,6 +17,9 @@ namespace Sistema_de_insumos_DAS
         {
             InitializeComponent();
             VerGrilla();
+            dgvClientes.ReadOnly = true;
+            dgvClientes.MultiSelect = false;
+            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         BE.ClsCliente cliente; 
@@ -34,7 +37,6 @@ namespace Sistema_de_insumos_DAS
             cliente = new BE.ClsCliente();
 
            
-            cliente.ID = int.Parse(txtID.Text); 
             cliente.Nombre = txtNombre.Text;
             cliente.Apellido = txtApellido.Text;
             cliente.Telefono = txtTelefono.Text;
@@ -58,8 +60,7 @@ namespace Sistema_de_insumos_DAS
             int fa = 0;
             cliente = new BE.ClsCliente();
 
-           
-            cliente.ID = int.Parse(txtID.Text);
+            cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
 
             fa = gCliente.Eliminar(cliente);
             if (fa != 0)
@@ -79,8 +80,7 @@ namespace Sistema_de_insumos_DAS
             int fa = 0;
             cliente = new BE.ClsCliente();
 
-         
-            cliente.ID = int.Parse(txtID.Text);
+            cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
             cliente.Nombre = txtNombre.Text;
             cliente.Apellido = txtApellido.Text;
             cliente.Telefono = txtTelefono.Text;
@@ -101,7 +101,6 @@ namespace Sistema_de_insumos_DAS
 
         private void LimpiarCampos()
         {
-            txtID.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtTelefono.Text = "";
@@ -116,7 +115,6 @@ namespace Sistema_de_insumos_DAS
                 tmp = (BE.ClsCliente)dgvClientes.Rows[e.RowIndex].DataBoundItem;
 
                
-                txtID.Text = tmp.ID.ToString();
                 txtNombre.Text = tmp.Nombre;
                 txtApellido.Text = tmp.Apellido;
                 txtTelefono.Text = tmp.Telefono;

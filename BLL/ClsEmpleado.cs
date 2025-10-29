@@ -11,10 +11,10 @@ namespace BLL
     {
         mp_Empleado mapper = new mp_Empleado();
 
-        public int Agregar(BE.CLSEmpleado empleado)
+        public int Agregar(BE.CLSEmpleado empleado, string email)
         {
             int fa = 0;
-            fa = mapper.Agregar(empleado);
+            fa = mapper.Agregar(empleado, email);
             return fa;
         }
 

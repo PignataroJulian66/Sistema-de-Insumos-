@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,9 @@ namespace Sistema_de_insumos_DAS
         {
             InitializeComponent();
             VerGrilla();
+            dgvEmpleados.ReadOnly = true;
+            dgvEmpleados.MultiSelect = false;
+            dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         BE.CLSEmpleado empleado; 
         BLL.ClsEmpleado gEmpleado = new BLL.ClsEmpleado(); 
@@ -32,15 +36,14 @@ namespace Sistema_de_insumos_DAS
             empleado = new BE.CLSEmpleado();
 
             
-            empleado.ID_emp = int.Parse(txtID.Text);
             empleado.Nombre = txtNombre.Text;
             empleado.Apellido = txtApellido.Text;
             empleado.Telefono = txtTelefono.Text;
             empleado.Direccion = txtDireccion.Text;
-            empleado.Rol = txtRol.Text; 
+            empleado.Rol = (comboBox1.SelectedIndex+1).ToString(); 
             empleado.DNI = txtDNI.Text;
 
-            fa = gEmpleado.Agregar(empleado);
+            fa = gEmpleado.Agregar(empleado, txtEmail.Text);
             if (fa != 0)
             {
                 MessageBox.Show("Empleado agregado con éxito.");
@@ -57,9 +60,6 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             empleado = new BE.CLSEmpleado();
-
-           
-            empleado.ID_emp = int.Parse(txtID.Text);
 
             fa = gEmpleado.Eliminar(empleado);
             if (fa != 0)
@@ -79,13 +79,11 @@ namespace Sistema_de_insumos_DAS
             int fa = 0;
             empleado = new BE.CLSEmpleado();
 
-          
-            empleado.ID_emp = int.Parse(txtID.Text);
             empleado.Nombre = txtNombre.Text;
             empleado.Apellido = txtApellido.Text;
             empleado.Telefono = txtTelefono.Text;
             empleado.Direccion = txtDireccion.Text;
-            empleado.Rol = txtRol.Text; // O podrías usar un ComboBox: cmbRol.Text
+            empleado.Rol = comboBox1.Text; // O podrías usar un ComboBox: cmbRol.Text
             empleado.DNI = txtDNI.Text;
 
             fa = gEmpleado.Editar(empleado);
@@ -103,7 +101,39 @@ namespace Sistema_de_insumos_DAS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*// 1. Creamos el diálogo para "Guardar como..."
+            SaveFileDialog saveDialog = new SaveFileDialog();
 
+            // 2. Configuramos el diálogo
+            saveDialog.Filter = "Archivos XML (*.xml)|*.xml"; // Filtra para que solo se vean archivos XML
+            saveDialog.Title = "Guardar Listado de Vehículos";
+            saveDialog.FileName = "Vehiculos.xml"; // Le damos un nombre por defecto
+
+            // 3. Mostramos la ventana. Si el usuario presiona "Guardar"...
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // 4. Obtenemos la ruta segura que el usuario eligió
+                    string rutaSegura = saveDialog.FileName;
+
+                    // --- Tu lógica original va aquí ---
+                    DataSet DS = new DataSet();
+                    SqlConnection CN = new SqlConnection(@"Data Source=JULIÁN;Initial Catalog=Ejercicio2_das;Integrated Security=True");
+                    SqlDataAdapter DA = new SqlDataAdapter("Select * from Vehiculos", CN);
+                    DA.Fill(DS, "Vehiculos");
+                    CN.Close();
+
+                    // 5. Guardamos el archivo en la ruta segura
+                    DS.WriteXml(rutaSegura);
+
+                    MessageBox.Show("Archivo Vehiculos.xml generado con éxito en:\n" + rutaSegura, "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error");
+                }
+            }*/
         }
 
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -113,24 +143,26 @@ namespace Sistema_de_insumos_DAS
               
                 tmp = (BE.CLSEmpleado)dgvEmpleados.Rows[e.RowIndex].DataBoundItem;
 
-                txtID.Text = tmp.ID_emp.ToString();
                 txtNombre.Text = tmp.Nombre;
                 txtApellido.Text = tmp.Apellido;
                 txtTelefono.Text = tmp.Telefono;
                 txtDireccion.Text = tmp.Direccion;
-                txtRol.Text = tmp.Rol;
+                comboBox1.Text = tmp.Rol;
                 txtDNI.Text = tmp.DNI;
             }
         }
         private void LimpiarCampos()
         {
-            txtID.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtTelefono.Text = "";
             txtDireccion.Text = "";
-            txtRol.Text = "";
+            comboBox1.Text = "";
             txtDNI.Text = "";
+        }
+
+        private void FrmABMEmpleado_Load(object sender, EventArgs e)
+        {
         }
     }
 }

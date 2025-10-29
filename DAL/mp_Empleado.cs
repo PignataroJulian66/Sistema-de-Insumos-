@@ -12,20 +12,18 @@ namespace DAL
     {
         Acceso acceso = new Acceso();
 
-        public int Agregar(BE.CLSEmpleado empleado)
+        public int Agregar(BE.CLSEmpleado empleado, string email)
         {
             int fa = 0;
-          
-            SqlParameter[] parametros = new SqlParameter[7];
-            parametros[0] = new SqlParameter("@ID_emp", empleado.ID_emp);
-            parametros[1] = new SqlParameter("@Nombre", empleado.Nombre);
-            parametros[2] = new SqlParameter("@Apellido", empleado.Apellido);
-            parametros[3] = new SqlParameter("@Telefono", empleado.Telefono);
-            parametros[4] = new SqlParameter("@Direccion", empleado.Direccion);
-            parametros[5] = new SqlParameter("@Rol", empleado.Rol);
-            parametros[6] = new SqlParameter("@DNI", empleado.DNI);
 
-          
+            SqlParameter[] parametros = new SqlParameter[7];
+            parametros[0] = new SqlParameter("@Nombre_emp", empleado.Nombre);
+            parametros[1] = new SqlParameter("@Apellido_emp", empleado.Apellido);
+            parametros[2] = new SqlParameter("@Telefono_emp", empleado.Telefono);
+            parametros[3] = new SqlParameter("@Direccion_emp", empleado.Direccion);
+            parametros[4] = new SqlParameter("@ID_rol", int.Parse(empleado.Rol));
+            parametros[5] = new SqlParameter("@Dni", empleado.DNI);
+            parametros[6] = new SqlParameter("@Email", email);
             fa = acceso.escribir("sp_InsertarEmpleado", parametros);
             return fa;
         }
@@ -70,12 +68,12 @@ namespace DAL
             {
                 BE.CLSEmpleado empleado = new BE.CLSEmpleado();
                 empleado.ID_emp = int.Parse(dr["ID_emp"].ToString());
-                empleado.Nombre = dr["Nombre"].ToString();
-                empleado.Apellido = dr["Apellido"].ToString();
-                empleado.Telefono = dr["Telefono"].ToString();
-                empleado.Direccion = dr["Direccion"].ToString();
+                empleado.Nombre = dr["Nombre_emp"].ToString();
+                empleado.Apellido = dr["Apellido_emp"].ToString();
+                empleado.Telefono = dr["Telefono_emp"].ToString();
+                empleado.Direccion = dr["Direccion_emp"].ToString();
                 empleado.Rol = dr["Rol"].ToString();
-                empleado.DNI = dr["DNI"].ToString();
+                empleado.DNI = dr["Dni"].ToString();
                 lista.Add(empleado);
             }
             return lista;
