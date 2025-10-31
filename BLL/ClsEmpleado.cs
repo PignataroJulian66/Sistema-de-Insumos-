@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,10 @@ namespace BLL
             return fa;
         }
 
-        public int Editar(BE.CLSEmpleado empleado)
+        public int Editar(BE.CLSEmpleado empleado, string email)
         {
             int fa = 0;
-            fa = mapper.Editar(empleado);
+            fa = mapper.Editar(empleado, email);
             return fa;
         }
 
@@ -36,6 +37,11 @@ namespace BLL
         {
             List<BE.CLSEmpleado> lista = mapper.Listar();
             return lista;
+        }
+
+        public string ObtenerMail(CLSEmpleado empleado)
+        {
+            return mapper.ObtenerMail(empleado);
         }
     }
 }

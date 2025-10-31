@@ -91,6 +91,7 @@ namespace DAL
             int filasAfectadas = 0;
             try
             {
+                comando.Parameters.Clear();
                 tx = IniciarTransaccion();
                 comando.Connection = tx.Connection; // Asignar la conexión de la transacción al comando
                 comando.Transaction = tx; // Asignar la transacción al comando

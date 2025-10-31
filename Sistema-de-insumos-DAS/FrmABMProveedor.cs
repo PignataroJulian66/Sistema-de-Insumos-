@@ -16,6 +16,9 @@ namespace Sistema_de_insumos_DAS
         {
             InitializeComponent();
             VerGrilla();
+            dgvProveedores.ReadOnly = true;
+            dgvProveedores.MultiSelect = false;
+            dgvProveedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         BE.CLSProveedor proveedor; 
         BLL.ClsProveedor gProveedor = new BLL.ClsProveedor();
@@ -30,14 +33,12 @@ namespace Sistema_de_insumos_DAS
             int fa = 0;
             proveedor = new BE.CLSProveedor();
 
-            
-            proveedor.ID_prov = int.Parse(txtID.Text);
             proveedor.Nombre = txtNombre.Text;
             proveedor.Cuit = txtCuit.Text;
             proveedor.Telefono = txtTelefono.Text;
             proveedor.Direccion = txtDireccion.Text;
 
-            fa = gProveedor.Agregar(proveedor);
+            fa = gProveedor.Agregar(proveedor, txtEmail.Text);
             if (fa != 0)
             {
                 MessageBox.Show("Proveedor agregado con éxito.");
@@ -54,9 +55,7 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             proveedor = new BE.CLSProveedor();
-
-           
-            proveedor.ID_prov = int.Parse(txtID.Text);
+            proveedor = dgvProveedores.SelectedRows[0].DataBoundItem as BE.CLSProveedor;
 
             fa = gProveedor.Eliminar(proveedor);
             if (fa != 0)
@@ -75,15 +74,14 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             proveedor = new BE.CLSProveedor();
+            proveedor = dgvProveedores.SelectedRows[0].DataBoundItem as BE.CLSProveedor;
 
-           
-            proveedor.ID_prov = int.Parse(txtID.Text);
             proveedor.Nombre = txtNombre.Text;
             proveedor.Cuit = txtCuit.Text;
             proveedor.Telefono = txtTelefono.Text;
             proveedor.Direccion = txtDireccion.Text;
 
-            fa = gProveedor.Editar(proveedor);
+            fa = gProveedor.Editar(proveedor, txtEmail.Text);
             if (fa != 0)
             {
                 MessageBox.Show("Proveedor editado con éxito.");
@@ -103,21 +101,20 @@ namespace Sistema_de_insumos_DAS
               
                 tmp = (BE.CLSProveedor)dgvProveedores.Rows[e.RowIndex].DataBoundItem;
 
-              
-                txtID.Text = tmp.ID_prov.ToString();
                 txtNombre.Text = tmp.Nombre;
                 txtCuit.Text = tmp.Cuit;
                 txtTelefono.Text = tmp.Telefono;
                 txtDireccion.Text = tmp.Direccion;
+                txtEmail.Text = gProveedor.ObtenerMailProveedor(tmp);
             }
         }
         private void LimpiarCampos()
         {
-            txtID.Text = "";
             txtNombre.Text = "";
             txtCuit.Text = "";
             txtTelefono.Text = "";
             txtDireccion.Text = "";
+            txtEmail.Text = "";
         }
     }
 }

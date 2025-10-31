@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,10 @@ namespace BLL
     {
         mp_Proveedor mapper = new mp_Proveedor();
 
-        public int Agregar(BE.CLSProveedor proveedor)
+        public int Agregar(BE.CLSProveedor proveedor, string email)
         {
             int fa = 0;
-            fa = mapper.Agregar(proveedor);
+            fa = mapper.Agregar(proveedor, email);
             return fa;
         }
 
@@ -25,10 +26,10 @@ namespace BLL
             return fa;
         }
 
-        public int Editar(BE.CLSProveedor proveedor)
+        public int Editar(BE.CLSProveedor proveedor, string email)
         {
             int fa = 0;
-            fa = mapper.Editar(proveedor);
+            fa = mapper.Editar(proveedor, email);
             return fa;
         }
 
@@ -36,6 +37,11 @@ namespace BLL
         {
             List<BE.CLSProveedor> lista = mapper.Listar();
             return lista;
+        }
+
+        public string ObtenerMailProveedor(CLSProveedor prov)
+        {
+            return mapper.ObtenerMailProveedor(prov);
         }
     }
 }

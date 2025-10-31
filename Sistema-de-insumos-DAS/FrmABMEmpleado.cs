@@ -60,6 +60,7 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             empleado = new BE.CLSEmpleado();
+            empleado = dgvEmpleados.SelectedRows[0].DataBoundItem as BE.CLSEmpleado;
 
             fa = gEmpleado.Eliminar(empleado);
             if (fa != 0)
@@ -78,15 +79,16 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             empleado = new BE.CLSEmpleado();
+            empleado = dgvEmpleados.SelectedRows[0].DataBoundItem as BE.CLSEmpleado;
 
             empleado.Nombre = txtNombre.Text;
             empleado.Apellido = txtApellido.Text;
             empleado.Telefono = txtTelefono.Text;
             empleado.Direccion = txtDireccion.Text;
-            empleado.Rol = comboBox1.Text; // O podrías usar un ComboBox: cmbRol.Text
+            empleado.Rol = (comboBox1.SelectedIndex + 1).ToString();
             empleado.DNI = txtDNI.Text;
 
-            fa = gEmpleado.Editar(empleado);
+            fa = gEmpleado.Editar(empleado, txtEmail.Text);
             if (fa != 0)
             {
                 MessageBox.Show("Empleado editado con éxito.");
@@ -149,6 +151,7 @@ namespace Sistema_de_insumos_DAS
                 txtDireccion.Text = tmp.Direccion;
                 comboBox1.Text = tmp.Rol;
                 txtDNI.Text = tmp.DNI;
+                txtEmail.Text = gEmpleado.ObtenerMail(tmp);
             }
         }
         private void LimpiarCampos()

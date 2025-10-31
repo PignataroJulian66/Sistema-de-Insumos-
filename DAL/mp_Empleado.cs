@@ -1,7 +1,9 @@
-﻿using System;
+﻿using BE;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,17 +35,17 @@ namespace DAL
             int fa = 0;
           
             SqlParameter[] parametros = new SqlParameter[1];
-            parametros[0] = new SqlParameter("@ID_emp", empleado.ID_emp);
+            parametros[0] = new SqlParameter("@Id_emp", empleado.ID_emp);
 
             fa = acceso.escribir("sp_EliminarEmpleado", parametros);
             return fa;
         }
 
-        public int Editar(BE.CLSEmpleado empleado)
+        public int Editar(BE.CLSEmpleado empleado, string email)
         {
             int fa = 0;
-           
-            SqlParameter[] parametros = new SqlParameter[7];
+
+            SqlParameter[] parametros = new SqlParameter[8];
             parametros[0] = new SqlParameter("@ID_emp", empleado.ID_emp);
             parametros[1] = new SqlParameter("@Nombre", empleado.Nombre);
             parametros[2] = new SqlParameter("@Apellido", empleado.Apellido);
@@ -51,8 +53,9 @@ namespace DAL
             parametros[4] = new SqlParameter("@Direccion", empleado.Direccion);
             parametros[5] = new SqlParameter("@Rol", empleado.Rol);
             parametros[6] = new SqlParameter("@DNI", empleado.DNI);
+            parametros[7] = new SqlParameter("@Email", email);
 
-         
+
             fa = acceso.escribir("sp_EditarEmpleado", parametros);
             return fa;
         }
@@ -77,6 +80,20 @@ namespace DAL
                 lista.Add(empleado);
             }
             return lista;
+        }
+
+        public string ObtenerMail(CLSEmpleado empleado)
+        {
+            SqlParameter[] parametros = new SqlParameter[1];
+            parametros[0] = new SqlParameter("@Id_emp", empleado.ID_emp);
+            DataTable tabla = acceso.leer("sp_ObtenerMail", parametros);
+
+            string email = string.Empty;
+            foreach (DataRow dr in tabla.Rows)
+            {
+                email = dr["Email"].ToString();
+            }
+            return email;
         }
     }
 }
