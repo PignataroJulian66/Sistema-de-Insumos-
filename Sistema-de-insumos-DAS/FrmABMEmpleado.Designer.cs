@@ -211,7 +211,8 @@
             "Encargado de almacen",
             "Encargado de produccion",
             "Gerente",
-            "Vendedor"});
+            "Vendedor",
+            "Ninguno"});
             this.comboBox1.Location = new System.Drawing.Point(117, 155);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);

@@ -76,5 +76,16 @@ namespace Sistema_de_insumos_DAS
             f.Show();
             this.Close();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void operacionesProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmABMProductos fm = new FrmABMProductos();
+            AbrirFormularioHijo(fm);
+        }
     }
 }

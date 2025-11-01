@@ -64,6 +64,12 @@
     <Compile Include="FrmABMInsumo.Designer.cs">
       <DependentUpon>FrmABMInsumo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmABMProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMProductos.Designer.cs">
+      <DependentUpon>FrmABMProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmABMProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMInsumo.resx">
       <DependentUpon>FrmABMInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMProductos.resx">
+      <DependentUpon>FrmABMProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMProveedor.resx">
       <DependentUpon>FrmABMProveedor.cs</DependentUpon>

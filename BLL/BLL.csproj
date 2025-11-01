@@ -44,6 +44,7 @@
     <Compile Include="ClsCliente.cs" />
     <Compile Include="ClsEmpleado.cs" />
     <Compile Include="ClsInsumo.cs" />
+    <Compile Include="CLSProductos.cs" />
     <Compile Include="ClsProveedor.cs" />
     <Compile Include="GestorUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

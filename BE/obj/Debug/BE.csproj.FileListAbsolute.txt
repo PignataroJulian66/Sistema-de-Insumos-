@@ -19,3 +19,12 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.pdb
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\SEGURIDAD.dll
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\bin\Debug\SEGURIDAD.pdb
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.Up2Date
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\bin\Debug\BE.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\bin\Debug\BE.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\bin\Debug\SEGURIDAD.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\bin\Debug\SEGURIDAD.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\obj\Debug\BE.csproj.Up2Date
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\obj\Debug\BE.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BE\obj\Debug\BE.pdb

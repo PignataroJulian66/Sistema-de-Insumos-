@@ -33,3 +33,17 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.dll
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.pdb
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.dll
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\BLL.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\BLL.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\BE.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\BE.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.dll.config

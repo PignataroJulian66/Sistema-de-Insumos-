@@ -47,5 +47,10 @@ namespace BE
 			get { return _calidad; }
 			set { _calidad = value; }
 		}
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
 	}
 }

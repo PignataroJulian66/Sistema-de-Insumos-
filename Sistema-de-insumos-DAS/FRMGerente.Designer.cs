@@ -35,6 +35,7 @@
             this.operacionesInsumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operacionesProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,13 +46,15 @@
             this.operacionesEmpleadosToolStripMenuItem,
             this.operacionesProveedoresToolStripMenuItem,
             this.operacionesInsumosToolStripMenuItem,
+            this.operacionesProductosToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1072, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // operacionesClientesToolStripMenuItem
             // 
@@ -95,11 +98,18 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // operacionesProductosToolStripMenuItem
+            // 
+            this.operacionesProductosToolStripMenuItem.Name = "operacionesProductosToolStripMenuItem";
+            this.operacionesProductosToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
+            this.operacionesProductosToolStripMenuItem.Text = "Operaciones Productos";
+            this.operacionesProductosToolStripMenuItem.Click += new System.EventHandler(this.operacionesProductosToolStripMenuItem_Click);
+            // 
             // FRMGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1072, 450);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -121,5 +131,6 @@
         private System.Windows.Forms.ToolStripMenuItem operacionesInsumosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operacionesProductosToolStripMenuItem;
     }
 }
