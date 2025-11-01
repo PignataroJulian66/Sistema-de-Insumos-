@@ -64,17 +64,23 @@
     <Compile Include="FrmABMInsumo.Designer.cs">
       <DependentUpon>FrmABMInsumo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmABMProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmABMProductos.Designer.cs">
-      <DependentUpon>FrmABMProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmABMProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmABMProveedor.Designer.cs">
       <DependentUpon>FrmABMProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaProductos.Designer.cs">
+      <DependentUpon>FrmAltaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBajaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBajaProductos.Designer.cs">
+      <DependentUpon>FrmBajaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMGerente.cs">
       <SubType>Form</SubType>
@@ -88,11 +94,29 @@
     <Compile Include="FRMInicioSesion.Designer.cs">
       <DependentUpon>FRMInicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModificarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarProducto.Designer.cs">
+      <DependentUpon>FrmModificarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRMProveedor.Designer.cs">
       <DependentUpon>FRMProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMRegistrarse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMRegistrarse.Designer.cs">
+      <DependentUpon>FRMRegistrarse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSinRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSinRol.Designer.cs">
+      <DependentUpon>FrmSinRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,17 +129,23 @@
     <EmbeddedResource Include="FrmABMInsumo.resx">
       <DependentUpon>FrmABMInsumo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmABMProductos.resx">
-      <DependentUpon>FrmABMProductos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmABMProveedor.resx">
       <DependentUpon>FrmABMProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaProductos.resx">
+      <DependentUpon>FrmAltaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBajaProductos.resx">
+      <DependentUpon>FrmBajaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMGerente.resx">
       <DependentUpon>FRMGerente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMInicioSesion.resx">
       <DependentUpon>FRMInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarProducto.resx">
+      <DependentUpon>FrmModificarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMProveedor.resx">
       <DependentUpon>FRMProveedor.cs</DependentUpon>

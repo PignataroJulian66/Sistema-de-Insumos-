@@ -229,6 +229,7 @@ namespace Sistema_de_insumos_DAS
             txtDireccion.Text = "";
             comboBox1.Text = "";
             txtDNI.Text = "";
+            txtEmail.Text = "";
         }
 
         private void FrmABMEmpleado_Load(object sender, EventArgs e)

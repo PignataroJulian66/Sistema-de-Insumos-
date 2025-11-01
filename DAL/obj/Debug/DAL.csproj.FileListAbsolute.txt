@@ -39,3 +39,4 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.csproj
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.dll
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\DAL\obj\Debug\DAL.pdb
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\DAL\bin\Debug\DAL.dll.config
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\DAL\bin\Debug\DAL.dll.config

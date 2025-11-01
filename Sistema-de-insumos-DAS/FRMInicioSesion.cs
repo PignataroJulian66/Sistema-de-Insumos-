@@ -99,12 +99,17 @@ namespace Sistema_de_insumos_DAS
                             MessageBox.Show("abre form encargado de produccion");
                             break;
                         case "gerente":
-                            FRMGerente fm = new FRMGerente();
+                            FRMGerente fm = new FRMGerente(empleado);
                             fm.Show();
                             this.Hide();
                             break;
                         case "vendedor":
                             MessageBox.Show("abre form vendedor");
+                            break;
+                        case "ninguno":
+                            FrmSinRol f = new FrmSinRol(empleado);
+                            f.Show();
+                            this.Hide();
                             break;
                         default:
                             MessageBox.Show("Error");
@@ -187,10 +192,10 @@ namespace Sistema_de_insumos_DAS
 
         private void btnRegistrarse_Click_1(object sender, EventArgs e)
         {
-            //FRMRegistrarse aux = new FRMRegistrarse();
-            //aux.Show();
-            //aux.Enabled = true;
-            //this.Hide();
+            FRMRegistrarse aux = new FRMRegistrarse();
+            aux.Show();
+            aux.Enabled = true;
+            this.Hide();
         }
     }
 }

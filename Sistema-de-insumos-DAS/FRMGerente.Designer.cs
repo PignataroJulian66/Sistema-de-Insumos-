@@ -33,9 +33,12 @@
             this.operacionesEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operacionesProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operacionesInsumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operacionesProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operacionesProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +87,37 @@
             this.operacionesInsumosToolStripMenuItem.Text = "Operaciones Insumos";
             this.operacionesInsumosToolStripMenuItem.Click += new System.EventHandler(this.operacionesInsumosToolStripMenuItem_Click);
             // 
+            // operacionesProductosToolStripMenuItem
+            // 
+            this.operacionesProductosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem,
+            this.bajaToolStripMenuItem,
+            this.modificacionToolStripMenuItem});
+            this.operacionesProductosToolStripMenuItem.Name = "operacionesProductosToolStripMenuItem";
+            this.operacionesProductosToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
+            this.operacionesProductosToolStripMenuItem.Text = "Operaciones Productos";
+            // 
+            // altaToolStripMenuItem
+            // 
+            this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaToolStripMenuItem.Text = "Alta";
+            this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
+            // 
+            // bajaToolStripMenuItem
+            // 
+            this.bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
+            this.bajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bajaToolStripMenuItem.Text = "Baja";
+            this.bajaToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
+            // 
+            // modificacionToolStripMenuItem
+            // 
+            this.modificacionToolStripMenuItem.Name = "modificacionToolStripMenuItem";
+            this.modificacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificacionToolStripMenuItem.Text = "Modificacion";
+            this.modificacionToolStripMenuItem.Click += new System.EventHandler(this.modificacionToolStripMenuItem_Click);
+            // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
@@ -97,13 +131,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // operacionesProductosToolStripMenuItem
-            // 
-            this.operacionesProductosToolStripMenuItem.Name = "operacionesProductosToolStripMenuItem";
-            this.operacionesProductosToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
-            this.operacionesProductosToolStripMenuItem.Text = "Operaciones Productos";
-            this.operacionesProductosToolStripMenuItem.Click += new System.EventHandler(this.operacionesProductosToolStripMenuItem_Click);
             // 
             // FRMGerente
             // 
@@ -132,5 +159,8 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operacionesProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionToolStripMenuItem;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace Sistema_de_insumos_DAS
     public partial class FRMGerente : Form
     {
         public Form formularioactual = null;
-        public FRMGerente() //recibe un clsgerente gerente
+        public FRMGerente(CLSEmpleado empleado) //recibe un clsgerente gerente
         {
             InitializeComponent();
         }
@@ -81,10 +82,21 @@ namespace Sistema_de_insumos_DAS
         {
 
         }
-
-        private void operacionesProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmABMProductos fm = new FrmABMProductos();
+            FrmAltaProductos fm = new FrmAltaProductos();
+            AbrirFormularioHijo(fm);
+        }
+
+        private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBajaProductos fm = new FrmBajaProductos();
+            AbrirFormularioHijo(fm);
+        }
+
+        private void modificacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmModificarProducto fm = new FrmModificarProducto();
             AbrirFormularioHijo(fm);
         }
     }

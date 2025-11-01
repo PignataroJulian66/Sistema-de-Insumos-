@@ -19,7 +19,7 @@ namespace BLL
             {
                 int filasAfectadas = mapper.Agregar(empleado, email);
 
-                if (filasAfectadas > 0)
+                if (filasAfectadas > -2)
                     GestorMensajes.Exito("Empleado agregado correctamente.");
                 else
                     GestorMensajes.Advertencia("No se pudo agregar el empleado.");

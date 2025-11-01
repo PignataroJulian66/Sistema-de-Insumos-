@@ -89,3 +89,9 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\o
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\DAL.dll.config
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\Mensajes1.dll
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\Mensajes1.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\Mensajes1.dll
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\Mensajes1.pdb
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\DAL.dll.config
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmAltaProductos.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmBajaProductos.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmModificarProducto.resources

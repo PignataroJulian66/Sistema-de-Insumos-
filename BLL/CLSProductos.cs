@@ -17,8 +17,8 @@ namespace BLL
         {
             try
             {
-                var insumos = gestorInsumos.Listar();
-                if (insumos == null || insumos.Count == 0)
+                
+                if (producto.ListaInsumos == null)
                 {
                     GestorMensajes.Advertencia("No se puede agregar un producto sin insumos registrados.");
                     return 0;

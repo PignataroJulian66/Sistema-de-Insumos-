@@ -49,9 +49,9 @@ namespace BE
 			set { _Existencias = value; }
 		}
 
-		private List<BE.ClsInsumo> _ListaInsumos;
+		private List<BE.ClsDetalleProducto> _ListaInsumos;
 
-		public List<BE.ClsInsumo> ListaInsumos
+		public List<BE.ClsDetalleProducto> ListaInsumos
 		{
 			get { return _ListaInsumos; }
 			set { _ListaInsumos = value; }
