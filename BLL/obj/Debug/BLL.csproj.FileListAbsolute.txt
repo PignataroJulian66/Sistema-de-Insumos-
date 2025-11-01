@@ -47,3 +47,5 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.csproj
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.dll
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\obj\Debug\BLL.pdb
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.dll.config
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.pdb

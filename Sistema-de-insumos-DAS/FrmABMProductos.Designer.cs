@@ -254,6 +254,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.txtcantidadinsumo);
             this.Controls.Add(this.txtnombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmABMProductos";
             this.Text = "FrmABMProductos";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

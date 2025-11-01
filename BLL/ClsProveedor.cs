@@ -5,43 +5,107 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mensajes1;
 
 namespace BLL
 {
     public class ClsProveedor
     {
-        mp_Proveedor mapper = new mp_Proveedor();
+        private mp_Proveedor mapper = new mp_Proveedor();
 
-        public int Agregar(BE.CLSProveedor proveedor, string email)
+        public int Agregar(CLSProveedor proveedor, string email)
         {
-            int fa = 0;
-            fa = mapper.Agregar(proveedor, email);
-            return fa;
+            try
+            {
+                int filasAfectadas = mapper.Agregar(proveedor, email);
+
+                if (filasAfectadas > 0)
+                GestorMensajes.Exito("Proveedor agregado correctamente.");
+                else
+                GestorMensajes.Advertencia("No se pudo agregar el proveedor.");
+
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al agregar proveedor: " + ex.Message);
+                return 0;
+            }
         }
 
-        public int Eliminar(BE.CLSProveedor proveedor)
+        public int Eliminar(CLSProveedor proveedor)
         {
-            int fa = 0;
-            fa = mapper.Eliminar(proveedor);
-            return fa;
+            try
+            {
+                int filasAfectadas = mapper.Eliminar(proveedor);
+
+                if (filasAfectadas > 0)
+                GestorMensajes.Exito("Proveedor eliminado correctamente.");
+                else
+                GestorMensajes.Advertencia("No se encontró el proveedor a eliminar.");
+
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al eliminar proveedor: " + ex.Message);
+                return 0;
+            }
         }
 
-        public int Editar(BE.CLSProveedor proveedor, string email)
+        public int Editar(CLSProveedor proveedor, string email)
         {
-            int fa = 0;
-            fa = mapper.Editar(proveedor, email);
-            return fa;
+            try
+            {
+                int filasAfectadas = mapper.Editar(proveedor, email);
+
+                if (filasAfectadas > 0)
+                GestorMensajes.Exito("Proveedor editado correctamente.");
+                else
+                GestorMensajes.Advertencia("No se pudo editar el proveedor.");
+
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al editar proveedor: " + ex.Message);
+                return 0;
+            }
         }
 
-        public List<BE.CLSProveedor> Listar()
+        public List<CLSProveedor> Listar()
         {
-            List<BE.CLSProveedor> lista = mapper.Listar();
-            return lista;
+            try
+            {
+                List<CLSProveedor> lista = mapper.Listar();
+
+                if (lista == null || lista.Count == 0)
+                GestorMensajes.Advertencia("No se encontraron proveedores registrados.");
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al listar proveedores: " + ex.Message);
+                return new List<CLSProveedor>();
+            }
         }
 
         public string ObtenerMailProveedor(CLSProveedor prov)
         {
-            return mapper.ObtenerMailProveedor(prov);
+            try
+            {
+                string mail = mapper.ObtenerMailProveedor(prov);
+
+                if (string.IsNullOrEmpty(mail))
+                GestorMensajes.Advertencia("No se encontró el email del proveedor.");
+
+                return mail;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al obtener email del proveedor: " + ex.Message);
+                return string.Empty;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mensajes1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,32 @@ namespace Sistema_de_insumos_DAS
         public FrmABMInsumo()
         {
             InitializeComponent();
+            GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvInsumos.ReadOnly = true;
             dgvInsumos.MultiSelect = false;
             dgvInsumos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
+        private void MostrarMensaje(object sender, MensajeEventArgs e)
+        {
+            switch (e.Tipo)
+            {
+                case TipoMensaje.Informacion:
+                    MessageBox.Show(e.Texto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case TipoMensaje.Advertencia:
+                    MessageBox.Show(e.Texto, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case TipoMensaje.Error:
+                    MessageBox.Show(e.Texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case TipoMensaje.Exito:
+                    MessageBox.Show(e.Texto, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
+        }
+
         BE.ClsInsumo insumo; 
         BLL.ClsInsumo gInsumo = new BLL.ClsInsumo(); 
         BE.ClsInsumo tmp;
@@ -40,9 +62,45 @@ namespace Sistema_de_insumos_DAS
                 cmbCalidad.Text = tmp.Calidad;
             }
         }
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                GestorMensajes.Advertencia("El campo 'Nombre' es obligatorio.");
+                return false;
+            }
+
+            if (txtNombre.Text.Any(char.IsDigit))
+            {
+                GestorMensajes.Advertencia("El nombre no debe contener números.");
+                return false;
+            }
+
+            if (txtNombre.Text.Length < 4)
+            {
+                GestorMensajes.Advertencia("El nombre debe tener al menos 4 caracteres.");
+                return false;
+            }
+
+            if (comboBox1.SelectedIndex < 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar una unidad.");
+                return false;
+            }
+
+            if (cmbCalidad.SelectedIndex < 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar una calidad.");
+                return false;
+            }
+
+            return true;
+        }
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return;
             int fa = 0;
             insumo = new BE.ClsInsumo();
 
@@ -56,13 +114,8 @@ namespace Sistema_de_insumos_DAS
                 fa = gInsumo.Agregar(insumo);
                 if (fa != 0)
                 {
-                    MessageBox.Show("Insumo agregado con éxito.");
                     VerGrilla();
                     LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo agregar el insumo.");
                 }
             }
             catch (Exception ex)
@@ -73,6 +126,11 @@ namespace Sistema_de_insumos_DAS
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            if (dgvInsumos.SelectedRows.Count == 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar un cliente para eliminar.");
+                return;
+            }
             int fa = 0;
             insumo = new BE.ClsInsumo();
 
@@ -82,13 +140,8 @@ namespace Sistema_de_insumos_DAS
                 fa = gInsumo.Eliminar(insumo);
                 if (fa != 0)
                 {
-                    MessageBox.Show("Insumo eliminado con éxito.");
                     VerGrilla();
                     LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo eliminar el insumo.");
                 }
             }
             catch (Exception ex)
@@ -96,37 +149,6 @@ namespace Sistema_de_insumos_DAS
                 MessageBox.Show("Error al seleccionar ID: " + ex.Message);
             }
         }
-
-        /*private void btnEditar_Click(object sender, EventArgs e)
-        {
-            int fa = 0;
-            insumo = new BE.ClsInsumo();
-
-            try
-            {
-                insumo.Nombre = txtNombre.Text;
-                insumo.Unidad = comboBox1.Text;
-                insumo.Calidad = cmbCalidad.Text;
-
-                fa = gInsumo.Editar(insumo);
-                if (fa != 0)
-                {
-                    MessageBox.Show("Insumo editado con éxito.");
-                    VerGrilla();
-                    LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo editar el insumo.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ingresar datos: " + ex.Message);
-            }
-        }
-        DECDIMOS QUE NO SE PUEDAN MODIFICAR INSUMOS, LO DEJAMOS POR SI LAS DUDAS
-         */
         private void LimpiarCampos()
         {
             txtNombre.Text = "";

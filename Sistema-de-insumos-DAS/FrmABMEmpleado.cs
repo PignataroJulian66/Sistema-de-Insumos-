@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mensajes1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,32 @@ namespace Sistema_de_insumos_DAS
         public FrmABMEmpleado()
         {
             InitializeComponent();
+            GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvEmpleados.ReadOnly = true;
             dgvEmpleados.MultiSelect = false;
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
+        private void MostrarMensaje(object sender, MensajeEventArgs e)
+        {
+            switch (e.Tipo)
+            {
+                case TipoMensaje.Informacion:
+                    MessageBox.Show(e.Texto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case TipoMensaje.Advertencia:
+                    MessageBox.Show(e.Texto, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case TipoMensaje.Error:
+                    MessageBox.Show(e.Texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case TipoMensaje.Exito:
+                    MessageBox.Show(e.Texto, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
+        }
+
         BE.CLSEmpleado empleado; 
         BLL.ClsEmpleado gEmpleado = new BLL.ClsEmpleado(); 
         BE.CLSEmpleado tmp;
@@ -30,8 +52,56 @@ namespace Sistema_de_insumos_DAS
             dgvEmpleados.DataSource = null; 
             dgvEmpleados.DataSource = gEmpleado.Listar(); 
         }
+
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||string.IsNullOrWhiteSpace(txtApellido.Text) ||string.IsNullOrWhiteSpace(txtDireccion.Text) ||string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtDNI.Text))
+            {
+                GestorMensajes.Advertencia("Todos los campos obligatorios deben estar completos.");
+                return false;
+            }
+
+            if (txtNombre.Text.Any(char.IsDigit) || txtApellido.Text.Any(char.IsDigit))
+            {
+                GestorMensajes.Advertencia("El nombre y el apellido no deben contener números.");
+                return false;
+            }
+
+            if (!long.TryParse(txtDNI.Text, out _) || txtDNI.Text.Length < 7 || txtDNI.Text.Length > 8)
+            {
+                GestorMensajes.Advertencia("El DNI debe ser numérico y tener entre 7 y 8 dígitos.");
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtTelefono.Text) &&
+                !System.Text.RegularExpressions.Regex.IsMatch(txtTelefono.Text, @"^[0-9+\- ]+$"))
+            {
+                GestorMensajes.Advertencia("El teléfono solo debe contener números y signos válidos (+, -).");
+                return false;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                GestorMensajes.Advertencia("El email ingresado no tiene un formato válido.");
+                return false;
+            }
+
+            if (comboBox1.SelectedIndex < 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar un rol.");
+                return false;
+            }
+            return true;
+        }
         private void btnAlta_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return;
+            if (gEmpleado.Listar().Any(c => c.DNI == txtDNI.Text))
+            {
+                GestorMensajes.Advertencia("Ya existe un empleado con ese DNI.");
+                return;
+            }
             int fa = 0;
             empleado = new BE.CLSEmpleado();
 
@@ -46,18 +116,18 @@ namespace Sistema_de_insumos_DAS
             fa = gEmpleado.Agregar(empleado, txtEmail.Text);
             if (fa != 0)
             {
-                MessageBox.Show("Empleado agregado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo agregar el empleado.");
             }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            if (dgvEmpleados.SelectedRows.Count == 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar un empleado para eliminar.");
+                return;
+            }
             int fa = 0;
             empleado = new BE.CLSEmpleado();
             empleado = dgvEmpleados.SelectedRows[0].DataBoundItem as BE.CLSEmpleado;
@@ -65,13 +135,8 @@ namespace Sistema_de_insumos_DAS
             fa = gEmpleado.Eliminar(empleado);
             if (fa != 0)
             {
-                MessageBox.Show("Empleado eliminado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar el empleado.");
             }
         }
 
@@ -79,7 +144,14 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             empleado = new BE.CLSEmpleado();
+            if (!ValidarCampos())
+            return;
             empleado = dgvEmpleados.SelectedRows[0].DataBoundItem as BE.CLSEmpleado;
+            if (gEmpleado.Listar().Any(c => c.DNI == txtDNI.Text))
+            {
+                GestorMensajes.Advertencia("Ya existe un empleado con ese DNI.");
+                return;
+            }
 
             empleado.Nombre = txtNombre.Text;
             empleado.Apellido = txtApellido.Text;
@@ -91,13 +163,8 @@ namespace Sistema_de_insumos_DAS
             fa = gEmpleado.Editar(empleado, txtEmail.Text);
             if (fa != 0)
             {
-                MessageBox.Show("Empleado editado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo editar el empleado.");
             }
         }
 

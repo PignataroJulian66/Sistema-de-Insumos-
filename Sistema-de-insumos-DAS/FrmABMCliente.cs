@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mensajes1;
 
 namespace Sistema_de_insumos_DAS
 {
@@ -16,10 +17,33 @@ namespace Sistema_de_insumos_DAS
         public FrmABMCliente()
         {
             InitializeComponent();
+            GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvClientes.ReadOnly = true;
             dgvClientes.MultiSelect = false;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void MostrarMensaje(object sender, MensajeEventArgs e)
+        {
+            switch (e.Tipo)
+            {
+                case TipoMensaje.Informacion:
+                    MessageBox.Show(e.Texto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+
+                case TipoMensaje.Advertencia:
+                    MessageBox.Show(e.Texto, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
+                case TipoMensaje.Error:
+                    MessageBox.Show(e.Texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                case TipoMensaje.Exito:
+                    MessageBox.Show(e.Texto, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
         }
 
         BE.ClsCliente cliente; 
@@ -31,8 +55,44 @@ namespace Sistema_de_insumos_DAS
             dgvClientes.DataSource = gCliente.Listar(); 
         }
 
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text) || string.IsNullOrWhiteSpace(txtDNI.Text))
+            {
+                GestorMensajes.Advertencia("Todos los campos son obligatorios.");
+                return false;
+            }
+
+            if (txtNombre.Text.Any(char.IsDigit) || txtApellido.Text.Any(char.IsDigit))
+            {
+                GestorMensajes.Advertencia("El nombre y el apellido no deben contener números.");
+                return false;
+            }
+
+            if (txtTelefono.Text.Length != 10 || !txtTelefono.Text.All(char.IsDigit))
+            {
+                GestorMensajes.Advertencia("El teléfono debe tener exactamente 10 números.");
+                return false;
+            }
+
+            if (!txtDNI.Text.All(char.IsDigit) || txtDNI.Text.Length < 7 || txtDNI.Text.Length > 8)
+            {
+                GestorMensajes.Advertencia("El DNI debe tener entre 7 y 8 números.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnAlta_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos()) return;
+            if (gCliente.Listar().Any(c => c.DNI == txtDNI.Text))
+            {
+                GestorMensajes.Advertencia("Ya existe un cliente con ese DNI.");
+                return;
+            }
+
             int fa = 0;
             cliente = new BE.ClsCliente();
 
@@ -45,18 +105,20 @@ namespace Sistema_de_insumos_DAS
             fa = gCliente.Agregar(cliente);
             if (fa != 0)
             {
-                MessageBox.Show("Cliente agregado con éxito.");
                 VerGrilla();
-                LimpiarCampos(); // Método opcional para limpiar TextBoxes
-            }
-            else
-            {
-                MessageBox.Show("No se pudo agregar el cliente.");
+                LimpiarCampos();
             }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            if (dgvClientes.SelectedRows.Count == 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar un cliente para eliminar.");
+                return;
+            }
+
+
             int fa = 0;
             cliente = new BE.ClsCliente();
 
@@ -65,13 +127,8 @@ namespace Sistema_de_insumos_DAS
             fa = gCliente.Eliminar(cliente);
             if (fa != 0)
             {
-                MessageBox.Show("Cliente eliminado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar el cliente.");
             }
         }
 
@@ -79,8 +136,13 @@ namespace Sistema_de_insumos_DAS
         {
             int fa = 0;
             cliente = new BE.ClsCliente();
-
+            if (!ValidarCampos()) return;
             cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
+            if (gCliente.Listar().Any(c => c.DNI == txtDNI.Text))
+            {
+                GestorMensajes.Advertencia("Ya existe un cliente con ese DNI.");
+                return;
+            }
             cliente.Nombre = txtNombre.Text;
             cliente.Apellido = txtApellido.Text;
             cliente.Telefono = txtTelefono.Text;
@@ -89,13 +151,8 @@ namespace Sistema_de_insumos_DAS
             fa = gCliente.Editar(cliente);
             if (fa != 0)
             {
-                MessageBox.Show("Cliente editado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo editar el cliente.");
             }
         }
 
@@ -111,10 +168,8 @@ namespace Sistema_de_insumos_DAS
         {
             if (e.RowIndex >= 0) 
             {
-               
-                tmp = (BE.ClsCliente)dgvClientes.Rows[e.RowIndex].DataBoundItem;
 
-               
+                tmp = (BE.ClsCliente)dgvClientes.Rows[e.RowIndex].DataBoundItem;
                 txtNombre.Text = tmp.Nombre;
                 txtApellido.Text = tmp.Apellido;
                 txtTelefono.Text = tmp.Telefono;
@@ -133,6 +188,16 @@ namespace Sistema_de_insumos_DAS
             da.Fill(dataSet, "Clientes");
             cn.Close();
             dataSet.WriteXml("aca copiar la ruta de acceso del directorio");
+        }
+
+        private void FrmABMCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GestorMensajes.MensajeGenerado -= MostrarMensaje;
+        }
+
+        private void FrmABMCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

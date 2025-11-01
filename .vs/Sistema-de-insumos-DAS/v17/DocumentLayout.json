@@ -3,16 +3,96 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\bll\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|solutionrelative:bll\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\bll\\clscliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|solutionrelative:bll\\clscliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E91C001-046B-4227-8D02-9FA60251B7F8}|BE\\BE.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\be\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E91C001-046B-4227-8D02-9FA60251B7F8}|BE\\BE.csproj|solutionrelative:be\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\sistema-de-insumos-das\\frmabmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabminsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabminsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\sistema-de-insumos-das\\frmabmempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmabminsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmabminsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\bll\\clsproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|solutionrelative:bll\\clsproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\bll\\gestorusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|solutionrelative:bll\\gestorusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2F9B41C-F468-41BC-A960-CDD0876D9A59}|Mensajes1\\Mensajes1.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\mensajes1\\gestormensajes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2F9B41C-F468-41BC-A960-CDD0876D9A59}|Mensajes1\\Mensajes1.csproj|solutionrelative:mensajes1\\gestormensajes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2F9B41C-F468-41BC-A960-CDD0876D9A59}|Mensajes1\\Mensajes1.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\mensajes1\\gestorconfirmaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2F9B41C-F468-41BC-A960-CDD0876D9A59}|Mensajes1\\Mensajes1.csproj|solutionrelative:mensajes1\\gestorconfirmaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\bll\\clsinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|solutionrelative:bll\\clsinsumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\bll\\clsproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F86E63C-A202-40F8-82B7-6B670955A6A1}|BLL\\BLL.csproj|solutionrelative:bll\\clsproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmproveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E91C001-046B-4227-8D02-9FA60251B7F8}|BE\\BE.csproj|c:\\users\\administrator\\source\\repos\\sistema-de-insumos-\\be\\clscliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E91C001-046B-4227-8D02-9FA60251B7F8}|BE\\BE.csproj|solutionrelative:be\\clscliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,33 +110,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmABMEmpleado.cs",
+              "DocumentIndex": 2,
+              "Title": "CLSEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BE\\CLSEmpleado.cs",
+              "RelativeDocumentMoniker": "BE\\CLSEmpleado.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BE\\CLSEmpleado.cs",
+              "RelativeToolTip": "BE\\CLSEmpleado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T17:05:50.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmABMProveedor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProveedor.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMProveedor.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProveedor.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMProveedor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T15:56:45.384Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FRMInicioSesion.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMInicioSesion.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMInicioSesion.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:43:16.153Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmABMProveedor.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProveedor.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMProveedor.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProveedor.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMProveedor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:01:54.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmABMCliente.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMCliente.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMCliente.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMCliente.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMCliente.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:59:55.783Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmABMEmpleado.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
               "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
-              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwGUAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMEmpleado.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMEmpleado.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T02:18:48.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T15:17:20.235Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmABMProductos.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProductos.cs",
-              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMProductos.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProductos.cs",
-              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMProductos.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAlwGkAAAANAAAAAAAAAA==",
+              "Title": "ClsEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsEmpleado.cs",
+              "RelativeDocumentMoniker": "BLL\\ClsEmpleado.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsEmpleado.cs",
+              "RelativeToolTip": "BLL\\ClsEmpleado.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwGQAAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T01:48:31.08Z",
+              "WhenOpened": "2025-11-01T14:35:15.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "ClsCliente.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsCliente.cs",
+              "RelativeDocumentMoniker": "BLL\\ClsCliente.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsCliente.cs",
+              "RelativeToolTip": "BLL\\ClsCliente.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:35:05.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FRMGerente.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMGerente.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMGerente.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMGerente.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMGerente.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:09:57.298Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmABMCliente.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMCliente.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMCliente.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMCliente.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMCliente.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAWwMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:59:57.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "FrmABMProductos.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProductos.cs",
               "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMProductos.cs",
@@ -65,6 +244,160 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T01:43:41.18Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FrmABMInsumo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMInsumo.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMInsumo.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMInsumo.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMInsumo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T15:19:57.75Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FrmABMProductos.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProductos.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMProductos.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMProductos.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMProductos.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwF0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T01:48:31.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FrmABMEmpleado.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMEmpleado.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowEMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T02:18:48.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FrmABMInsumo.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMInsumo.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmABMInsumo.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmABMInsumo.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmABMInsumo.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwEoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T15:19:59.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ClsProveedor.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsProveedor.cs",
+              "RelativeDocumentMoniker": "BLL\\ClsProveedor.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsProveedor.cs",
+              "RelativeToolTip": "BLL\\ClsProveedor.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowBYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:35:35.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GestorUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\GestorUsuarios.cs",
+              "RelativeDocumentMoniker": "BLL\\GestorUsuarios.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\GestorUsuarios.cs",
+              "RelativeToolTip": "BLL\\GestorUsuarios.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:35:43.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GestorMensajes.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Mensajes1\\GestorMensajes.cs",
+              "RelativeDocumentMoniker": "Mensajes1\\GestorMensajes.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Mensajes1\\GestorMensajes.cs",
+              "RelativeToolTip": "Mensajes1\\GestorMensajes.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBsAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:55:16.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CLSProductos.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\CLSProductos.cs",
+              "RelativeDocumentMoniker": "BLL\\CLSProductos.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\CLSProductos.cs",
+              "RelativeToolTip": "BLL\\CLSProductos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwCwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:35:30.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FRMProveedor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMProveedor.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMProveedor.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMProveedor.cs [Design]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMProveedor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T15:56:44.658Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GestorConfirmaciones.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Mensajes1\\GestorConfirmaciones.cs",
+              "RelativeDocumentMoniker": "Mensajes1\\GestorConfirmaciones.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\Mensajes1\\GestorConfirmaciones.cs",
+              "RelativeToolTip": "Mensajes1\\GestorConfirmaciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T15:44:46.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ClsCliente.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BE\\ClsCliente.cs",
+              "RelativeDocumentMoniker": "BE\\ClsCliente.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BE\\ClsCliente.cs",
+              "RelativeToolTip": "BE\\ClsCliente.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T15:51:03.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ClsInsumo.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsInsumo.cs",
+              "RelativeDocumentMoniker": "BLL\\ClsInsumo.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\Sistema-de-Insumos-\\BLL\\ClsInsumo.cs",
+              "RelativeToolTip": "BLL\\ClsInsumo.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwEAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:35:24.177Z",
+              "EditorCaption": ""
             }
           ]
         }

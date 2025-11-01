@@ -1,0 +1,6 @@
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Mensajes1\bin\Debug\Mensajes1.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Mensajes1\bin\Debug\Mensajes1.pdb
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.pdb

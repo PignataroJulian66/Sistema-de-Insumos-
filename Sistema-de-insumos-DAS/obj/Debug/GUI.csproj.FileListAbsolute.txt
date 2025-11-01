@@ -87,3 +87,5 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\o
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema-de-insumos-DAS.exe
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema-de-insumos-DAS.pdb
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\DAL.dll.config
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\Mensajes1.dll
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\bin\Debug\Mensajes1.pdb

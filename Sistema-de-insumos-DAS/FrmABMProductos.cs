@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mensajes1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +19,30 @@ namespace Sistema_de_insumos_DAS
         public FrmABMProductos()
         {
             InitializeComponent();
+            GestorMensajes.MensajeGenerado += MostrarMensaje;
             dgvProductos.ReadOnly = true;
             dgvProductos.MultiSelect = false;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             VerGrilla();
+        }
+
+        private void MostrarMensaje(object sender, MensajeEventArgs e)
+        {
+            switch (e.Tipo)
+            {
+                case TipoMensaje.Informacion:
+                    MessageBox.Show(e.Texto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case TipoMensaje.Advertencia:
+                    MessageBox.Show(e.Texto, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case TipoMensaje.Error:
+                    MessageBox.Show(e.Texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case TipoMensaje.Exito:
+                    MessageBox.Show(e.Texto, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
         }
 
         private void VerGrilla()
@@ -43,13 +64,8 @@ namespace Sistema_de_insumos_DAS
             fa = GProductos.Agregar(producto);
             if (fa != 0)
             {
-                MessageBox.Show("Producto agregado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo agregar el Producto.");
             }
         }
 
@@ -67,30 +83,36 @@ namespace Sistema_de_insumos_DAS
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
+            if (dgvProductos.SelectedRows.Count == 0)
+            {
+                GestorMensajes.Advertencia("Selecciona un producto para Eliminar.");
+            }
             int fa = 0;
             producto = new BE.ClsProductos();
             producto = dgvProductos.SelectedRows[0].DataBoundItem as BE.ClsProductos;
+            if (!GestorConfirmaciones.Confirmar($"¿Estás seguro de eliminar \"{producto.Nombre}\"?"))
+            return;
+
             fa = GProductos.Eliminar(producto);
             if (fa != 0)
             {
-                MessageBox.Show("Producto eliminado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
             }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar el Producto.");
-            }
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvProductos.SelectedRows.Count == 0)
+            {
+                GestorMensajes.Advertencia("Selecciona un producto para modificar.");
+            }
 
             int fa = 0;
             producto = new BE.ClsProductos();
             producto = dgvProductos.SelectedRows[0].DataBoundItem as BE.ClsProductos;
-
+            if (!GestorConfirmaciones.Confirmar($"¿Estás seguro de modificar \"{producto.Nombre}\"?"))
+            return;
 
             producto.Nombre = txtnombre.Text;
             producto.Precio = numericUpDown1.Value;
@@ -100,13 +122,8 @@ namespace Sistema_de_insumos_DAS
             fa = GProductos.Editar(producto);
             if (fa != 0)
             {
-                MessageBox.Show("Producto editado con éxito.");
                 VerGrilla();
                 LimpiarCampos();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo editar el Producto.");
             }
 
         }
