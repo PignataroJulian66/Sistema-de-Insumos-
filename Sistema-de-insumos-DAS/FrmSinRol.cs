@@ -13,9 +13,43 @@ namespace Sistema_de_insumos_DAS
 {
     public partial class FrmSinRol : Form
     {
+        public Form formularioactual = null;
         public FrmSinRol(CLSEmpleado empleado)
         {
             InitializeComponent();
+        }
+        public void AbrirFormularioHijo(Form f)
+        {
+            if (formularioactual == null)
+            {
+                f.MdiParent = this;
+                f.Show();
+                f.Enabled = true;
+                formularioactual = f;
+                f.Dock = DockStyle.Fill;
+            }
+            else if (formularioactual.GetType() == f.GetType())
+            {
+                formularioactual.Close();
+                formularioactual = null;
+            }
+            else
+            {
+                formularioactual.Close();
+                formularioactual = null;
+                AbrirFormularioHijo(f);
+            }
+        }
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMInicioSesion f = new FRMInicioSesion();
+            f.Show();
+            this.Close();
         }
     }
 }

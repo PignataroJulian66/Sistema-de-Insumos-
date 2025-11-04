@@ -1,22 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\",
+  "WorkspaceRootPath": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\alejo\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\sistema-de-insumos-das\\frmsinrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmsinrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\alejo\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\pigna\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmregistraroc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmregistraroc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\alejo\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmgerente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E91C001-046B-4227-8D02-9FA60251B7F8}|BE\\BE.csproj|c:\\users\\pigna\\source\\repos\\sistema-de-insumos-\\be\\clsordencompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E91C001-046B-4227-8D02-9FA60251B7F8}|BE\\BE.csproj|solutionrelative:be\\clsordencompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\alejo\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frminiciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\pigna\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmsinrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmsinrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|c:\\users\\pigna\\source\\repos\\sistema-de-insumos-\\sistema-de-insumos-das\\frmregistraroc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{351E7F85-8A49-41D1-A119-D5EB0CEE4775}|Sistema-de-insumos-DAS\\GUI.csproj|solutionrelative:sistema-de-insumos-das\\frmregistraroc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,60 +30,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FRMGerente.cs",
-              "DocumentMoniker": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMGerente.cs",
-              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMGerente.cs",
-              "ToolTip": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMGerente.cs",
-              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMGerente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAApAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FrmSinRol.cs",
+              "DocumentMoniker": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmSinRol.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmSinRol.cs",
+              "ToolTip": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmSinRol.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmSinRol.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwDMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T19:45:08.894Z",
+              "WhenOpened": "2025-11-04T21:13:06.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClsOrdenCompra.cs",
+              "DocumentMoniker": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\BE\\ClsOrdenCompra.cs",
+              "RelativeDocumentMoniker": "BE\\ClsOrdenCompra.cs",
+              "ToolTip": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\BE\\ClsOrdenCompra.cs",
+              "RelativeToolTip": "BE\\ClsOrdenCompra.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowBUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T20:01:30.842Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FRMGerente.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMGerente.cs",
-              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMGerente.cs",
-              "ToolTip": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMGerente.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMGerente.cs [Dise\u00F1o]",
+              "Title": "FRMRegistrarOC.cs",
+              "DocumentMoniker": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMRegistrarOC.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMRegistrarOC.cs",
+              "ToolTip": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMRegistrarOC.cs",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMRegistrarOC.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwDEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T19:45:07.384Z",
+              "WhenOpened": "2025-11-04T19:53:15.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FRMRegistrarOC.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMRegistrarOC.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMRegistrarOC.cs",
+              "ToolTip": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMRegistrarOC.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMRegistrarOC.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T19:52:21.649Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FRMInicioSesion.cs",
-              "DocumentMoniker": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
-              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
-              "ToolTip": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
-              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAkwMUAAAAYAAAAAAAAAA==",
+              "Title": "FrmSinRol.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmSinRol.cs",
+              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FrmSinRol.cs",
+              "ToolTip": "C:\\Users\\pigna\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FrmSinRol.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema-de-insumos-DAS\\FrmSinRol.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T19:43:21.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FRMInicioSesion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
-              "RelativeDocumentMoniker": "Sistema-de-insumos-DAS\\FRMInicioSesion.cs",
-              "ToolTip": "C:\\Users\\alejo\\source\\repos\\Sistema-de-Insumos-\\Sistema-de-insumos-DAS\\FRMInicioSesion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema-de-insumos-DAS\\FRMInicioSesion.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T19:42:34.549Z",
+              "WhenOpened": "2025-11-02T17:12:53.329Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

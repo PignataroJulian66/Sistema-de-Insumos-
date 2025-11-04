@@ -31,7 +31,7 @@ namespace BLL
                 return 0;
             }
         }
-
+        
         public int Eliminar(BE.ClsInsumo insumo)
         {
             try

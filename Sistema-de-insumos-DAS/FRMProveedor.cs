@@ -53,5 +53,12 @@ namespace Sistema_de_insumos_DAS
             f.Show();
             this.Close();
         }
+
+        private void verOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMVerOC f = new FRMVerOC();
+            f.Show();
+            this.Close();
+        }
     }
 }

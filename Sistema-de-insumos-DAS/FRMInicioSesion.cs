@@ -92,15 +92,17 @@ namespace Sistema_de_insumos_DAS
                     switch (empleado.Rol.ToLower())
                     {
                         case "encargado de almacen":
-                            MessageBox.Show("abre form encargado de almacen");
+                            FRMEncargadoAlmacen fm = new FRMEncargadoAlmacen(empleado);
+                            fm.Show();
+                            this.Hide();
                             break;
 
                         case "encargado de produccion":
                             MessageBox.Show("abre form encargado de produccion");
                             break;
                         case "gerente":
-                            FRMGerente fm = new FRMGerente(empleado);
-                            fm.Show();
+                            FRMGerente fm1 = new FRMGerente(empleado);
+                            fm1.Show();
                             this.Hide();
                             break;
                         case "vendedor":

@@ -32,6 +32,7 @@
             this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.misDatosToolStripMenuItem,
+            this.verOrdenDeCompraToolStripMenuItem,
             this.logOutToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -67,6 +69,13 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // verOrdenDeCompraToolStripMenuItem
+            // 
+            this.verOrdenDeCompraToolStripMenuItem.Name = "verOrdenDeCompraToolStripMenuItem";
+            this.verOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
+            this.verOrdenDeCompraToolStripMenuItem.Text = "Ver Orden de Compra";
+            this.verOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.verOrdenDeCompraToolStripMenuItem_Click);
+            // 
             // FRMProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,5 +100,6 @@
         private System.Windows.Forms.ToolStripMenuItem misDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verOrdenDeCompraToolStripMenuItem;
     }
 }

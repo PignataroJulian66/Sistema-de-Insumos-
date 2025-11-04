@@ -50,6 +50,7 @@
     <Compile Include="mp_Cliente.cs" />
     <Compile Include="mp_Empleado.cs" />
     <Compile Include="mp_Insumo.cs" />
+    <Compile Include="mp_OrdenCompra.cs" />
     <Compile Include="mp_Productos.cs" />
     <Compile Include="mp_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

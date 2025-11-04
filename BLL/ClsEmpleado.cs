@@ -19,7 +19,7 @@ namespace BLL
             {
                 int filasAfectadas = mapper.Agregar(empleado, email);
 
-                if (filasAfectadas > -2)
+                if(! (filasAfectadas == 0))
                     GestorMensajes.Exito("Empleado agregado correctamente.");
                 else
                     GestorMensajes.Advertencia("No se pudo agregar el empleado.");
@@ -39,7 +39,7 @@ namespace BLL
             {
                 int filasAfectadas = mapper.Eliminar(empleado);
 
-                if (filasAfectadas > 0)
+                if (filasAfectadas != 0)
                     GestorMensajes.Exito("Empleado eliminado correctamente.");
                 else
                     GestorMensajes.Advertencia("No se encontró el empleado a eliminar.");
@@ -59,7 +59,7 @@ namespace BLL
             {
                 int filasAfectadas = mapper.Editar(empleado, email);
 
-                if (filasAfectadas > 0)
+                if (filasAfectadas != 0)
                     GestorMensajes.Exito("Empleado editado correctamente.");
                 else
                     GestorMensajes.Advertencia("No se pudo editar el empleado.");

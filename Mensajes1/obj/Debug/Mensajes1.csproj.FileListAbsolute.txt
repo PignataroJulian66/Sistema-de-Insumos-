@@ -10,3 +10,9 @@ C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.cs
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.csproj.CoreCompileInputs.cache
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.dll
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Mensajes1\bin\Debug\Mensajes1.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Mensajes1\bin\Debug\Mensajes1.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.csproj.AssemblyReference.cache
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.csproj.CoreCompileInputs.cache
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Mensajes1\obj\Debug\Mensajes1.pdb

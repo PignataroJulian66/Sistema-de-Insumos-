@@ -82,6 +82,12 @@
     <Compile Include="FrmBajaProductos.Designer.cs">
       <DependentUpon>FrmBajaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMEncargadoAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMEncargadoAlmacen.Designer.cs">
+      <DependentUpon>FRMEncargadoAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMGerente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,18 @@
     <Compile Include="FRMProveedor.Designer.cs">
       <DependentUpon>FRMProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMRealizarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMRealizarCompra.Designer.cs">
+      <DependentUpon>FRMRealizarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMRegistrarOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMRegistrarOC.Designer.cs">
+      <DependentUpon>FRMRegistrarOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMRegistrarse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +135,12 @@
     </Compile>
     <Compile Include="FrmSinRol.Designer.cs">
       <DependentUpon>FrmSinRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMVerOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMVerOC.Designer.cs">
+      <DependentUpon>FRMVerOC.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +162,9 @@
     <EmbeddedResource Include="FrmBajaProductos.resx">
       <DependentUpon>FrmBajaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMEncargadoAlmacen.resx">
+      <DependentUpon>FRMEncargadoAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMGerente.resx">
       <DependentUpon>FRMGerente.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +176,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMProveedor.resx">
       <DependentUpon>FRMProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMRealizarCompra.resx">
+      <DependentUpon>FRMRealizarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMRegistrarOC.resx">
+      <DependentUpon>FRMRegistrarOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSinRol.resx">
+      <DependentUpon>FrmSinRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMVerOC.resx">
+      <DependentUpon>FRMVerOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,6 +219,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{0f86e63c-a202-40f8-82b7-6b670955a6a1}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{85A1D622-E16B-420C-9517-35B8EB94FD5D}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mensajes1\Mensajes1.csproj">
       <Project>{e2f9b41c-f468-41bc-a960-cdd0876d9a59}</Project>

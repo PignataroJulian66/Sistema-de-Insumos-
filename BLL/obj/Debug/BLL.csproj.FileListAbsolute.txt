@@ -52,3 +52,8 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.dll
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.dll.config
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.dll
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\DAL.dll.config
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\Mensajes1.pdb
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\BLL\bin\Debug\SEGURIDAD.pdb
