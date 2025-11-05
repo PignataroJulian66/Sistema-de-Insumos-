@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsCliente.cs" />
-    <Compile Include="ClsDetalleProducto.cs" />
     <Compile Include="CLSEmpleado.cs" />
     <Compile Include="ClsInsumo.cs" />
     <Compile Include="ClsOrdenCompra.cs" />

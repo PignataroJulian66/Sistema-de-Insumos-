@@ -18,7 +18,7 @@ namespace Sistema_de_insumos_DAS
         BE.ClsProductos producto = new BE.ClsProductos();
 
         List<BE.ClsInsumo> lstinsumos = new List<BE.ClsInsumo>();
-        List<BE.ClsDetalleProducto> lstDetalles = new List<BE.ClsDetalleProducto>();
+        List<BE.ClsInsumo> lstDetalles = new List<BE.ClsInsumo>();
         public FrmAltaProductos()
         {
             InitializeComponent();
@@ -40,10 +40,10 @@ namespace Sistema_de_insumos_DAS
 
         private void btnAgregarInsumo_Click(object sender, EventArgs e)
         {
-            BE.ClsDetalleProducto detalle = new BE.ClsDetalleProducto();
+            BE.ClsInsumo detalle = new BE.ClsInsumo();
             BE.ClsInsumo insumo = lstinsumos[cmbinsumo.SelectedIndex];
-            detalle.IDinsumo = insumo.ID;
-            detalle.Insumo = insumo.ToString();
+            detalle.ID = insumo.ID;
+            detalle.Nombre = insumo.ToString();
             detalle.Unidad = insumo.Unidad;
             detalle.Cantidad = numericUpDown2.Value;
             lstDetalles.Add(detalle);

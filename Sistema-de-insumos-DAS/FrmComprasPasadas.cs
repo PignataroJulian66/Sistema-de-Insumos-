@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,24 +11,19 @@ using System.Windows.Forms;
 
 namespace Sistema_de_insumos_DAS
 {
-    public partial class FRMRealizarCompra : Form
+    public partial class FrmComprasPasadas : Form
     {
         BLL.ClsOrdenCompra gorden = new BLL.ClsOrdenCompra();
-        BE.ClsOrdenCompra OC = null;
-        public FRMRealizarCompra(BE.CLSEmpleado emp)
+        List<ClsOrdenCompra> lst = null;
+        public FrmComprasPasadas(CLSEmpleado emp)
         {
             InitializeComponent();
-            dgvOC.DataSource = gorden.Listar2(emp).Where(oc => oc.Finalizado == false).ToList();
+            lst = gorden.Listar2(emp);
+            var lstFiltrada = lst.Where(oc => oc.Finalizado == true).ToList();
+            dgvOC.DataSource = lstFiltrada;
             dgvOC.ReadOnly = true;
             dgvOC.MultiSelect = false;
             dgvOC.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
-
-        private void btnRealizarCompra_Click(object sender, EventArgs e)
-        {
-            OC = dgvOC.SelectedRows[0].DataBoundItem as BE.ClsOrdenCompra;
-            gorden.Editar2(OC);
-            MessageBox.Show("Compra realizada con exito");
         }
     }
 }

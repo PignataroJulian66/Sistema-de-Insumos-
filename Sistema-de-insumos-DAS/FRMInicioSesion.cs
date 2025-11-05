@@ -19,6 +19,7 @@ namespace Sistema_de_insumos_DAS
         public FRMInicioSesion()
         {
             InitializeComponent();
+            this.AcceptButton = btnIniciarsesion;
             txtContraseña.UseSystemPasswordChar = false;
             lblerror.Visible = false;
         }

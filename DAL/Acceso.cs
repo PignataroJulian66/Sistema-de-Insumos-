@@ -17,7 +17,7 @@ namespace DAL
         {
             //DESKTOP-1R961GN
             //JULIÁN
-            conexion.ConnectionString = @"Data Source=JULIÁN;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
+            conexion.ConnectionString = @"Data Source=DESKTOP-1R961GN;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
             try
             {
                 conexion.Open();

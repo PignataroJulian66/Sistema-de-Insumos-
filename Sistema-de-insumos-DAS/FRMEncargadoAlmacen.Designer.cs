@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verComprasPasadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarOrdenDeCompraToolStripMenuItem,
             this.realizarCompraToolStripMenuItem,
+            this.verComprasPasadasToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -48,6 +50,20 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // registrarOrdenDeCompraToolStripMenuItem
+            // 
+            this.registrarOrdenDeCompraToolStripMenuItem.Name = "registrarOrdenDeCompraToolStripMenuItem";
+            this.registrarOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
+            this.registrarOrdenDeCompraToolStripMenuItem.Text = "Registrar Orden de compra";
+            this.registrarOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.registrarOrdenDeCompraToolStripMenuItem_Click);
+            // 
+            // realizarCompraToolStripMenuItem
+            // 
+            this.realizarCompraToolStripMenuItem.Name = "realizarCompraToolStripMenuItem";
+            this.realizarCompraToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.realizarCompraToolStripMenuItem.Text = "Realizar Compra";
+            this.realizarCompraToolStripMenuItem.Click += new System.EventHandler(this.realizarCompraToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
@@ -63,19 +79,12 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // registrarOrdenDeCompraToolStripMenuItem
+            // verComprasPasadasToolStripMenuItem
             // 
-            this.registrarOrdenDeCompraToolStripMenuItem.Name = "registrarOrdenDeCompraToolStripMenuItem";
-            this.registrarOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
-            this.registrarOrdenDeCompraToolStripMenuItem.Text = "Registrar Orden de compra";
-            this.registrarOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.registrarOrdenDeCompraToolStripMenuItem_Click);
-            // 
-            // realizarCompraToolStripMenuItem
-            // 
-            this.realizarCompraToolStripMenuItem.Name = "realizarCompraToolStripMenuItem";
-            this.realizarCompraToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
-            this.realizarCompraToolStripMenuItem.Text = "Realizar Compra";
-            this.realizarCompraToolStripMenuItem.Click += new System.EventHandler(this.realizarCompraToolStripMenuItem_Click);
+            this.verComprasPasadasToolStripMenuItem.Name = "verComprasPasadasToolStripMenuItem";
+            this.verComprasPasadasToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.verComprasPasadasToolStripMenuItem.Text = "Ver compras pasadas";
+            this.verComprasPasadasToolStripMenuItem.Click += new System.EventHandler(this.verComprasPasadasToolStripMenuItem_Click);
             // 
             // FRMEncargadoAlmacen
             // 
@@ -101,5 +110,6 @@
         private System.Windows.Forms.ToolStripMenuItem realizarCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verComprasPasadasToolStripMenuItem;
     }
 }

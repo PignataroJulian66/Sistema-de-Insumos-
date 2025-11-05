@@ -28,36 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvOrdenCompra = new System.Windows.Forms.DataGridView();
-            this.lstCotizaciones = new System.Windows.Forms.ListBox();
+            this.dgvOC = new System.Windows.Forms.DataGridView();
             this.btnRealizarCompra = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOC)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvOrdenCompra
+            // dgvOC
             // 
-            this.dgvOrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrdenCompra.Location = new System.Drawing.Point(12, 16);
-            this.dgvOrdenCompra.Name = "dgvOrdenCompra";
-            this.dgvOrdenCompra.Size = new System.Drawing.Size(420, 313);
-            this.dgvOrdenCompra.TabIndex = 1;
-            // 
-            // lstCotizaciones
-            // 
-            this.lstCotizaciones.FormattingEnabled = true;
-            this.lstCotizaciones.Location = new System.Drawing.Point(447, 16);
-            this.lstCotizaciones.Name = "lstCotizaciones";
-            this.lstCotizaciones.Size = new System.Drawing.Size(151, 316);
-            this.lstCotizaciones.TabIndex = 2;
+            this.dgvOC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOC.Location = new System.Drawing.Point(12, 16);
+            this.dgvOC.Name = "dgvOC";
+            this.dgvOC.Size = new System.Drawing.Size(613, 313);
+            this.dgvOC.TabIndex = 1;
             // 
             // btnRealizarCompra
             // 
-            this.btnRealizarCompra.Location = new System.Drawing.Point(217, 354);
+            this.btnRealizarCompra.Location = new System.Drawing.Point(631, 16);
             this.btnRealizarCompra.Name = "btnRealizarCompra";
             this.btnRealizarCompra.Size = new System.Drawing.Size(157, 41);
             this.btnRealizarCompra.TabIndex = 3;
             this.btnRealizarCompra.Text = "REALIZAR COMPRA";
             this.btnRealizarCompra.UseVisualStyleBackColor = true;
+            this.btnRealizarCompra.Click += new System.EventHandler(this.btnRealizarCompra_Click);
             // 
             // FRMRealizarCompra
             // 
@@ -65,19 +57,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRealizarCompra);
-            this.Controls.Add(this.lstCotizaciones);
-            this.Controls.Add(this.dgvOrdenCompra);
+            this.Controls.Add(this.dgvOC);
             this.Name = "FRMRealizarCompra";
             this.Text = "FRMRealizarCompra";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOC)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvOrdenCompra;
-        private System.Windows.Forms.ListBox lstCotizaciones;
+        private System.Windows.Forms.DataGridView dgvOC;
         private System.Windows.Forms.Button btnRealizarCompra;
     }
 }

@@ -14,9 +14,11 @@ namespace Sistema_de_insumos_DAS
     public partial class FRMProveedor : Form
     {
         public Form formularioactual = null;
+        BE.CLSProveedor proveedor = null;
         public FRMProveedor(CLSProveedor prov)
         {
             InitializeComponent();
+            proveedor=prov;
         }
 
         public void AbrirFormularioHijo(Form f)
@@ -56,9 +58,8 @@ namespace Sistema_de_insumos_DAS
 
         private void verOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRMVerOC f = new FRMVerOC();
-            f.Show();
-            this.Close();
+            FRMVerOC f = new FRMVerOC(proveedor);
+            AbrirFormularioHijo(f);
         }
     }
 }

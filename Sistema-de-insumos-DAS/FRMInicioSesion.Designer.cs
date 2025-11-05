@@ -54,7 +54,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 450);
-            this.panel1.TabIndex = 15;
+            this.panel1.TabIndex = 2;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // pictureBox3
@@ -76,7 +76,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(372, 170);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(371, 20);
-            this.txtContraseña.TabIndex = 14;
+            this.txtContraseña.TabIndex = 1;
             this.txtContraseña.Text = "Contraseña";
             this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
             this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
@@ -91,7 +91,7 @@
             this.txtEmail.MaxLength = 255;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(371, 20);
-            this.txtEmail.TabIndex = 13;
+            this.txtEmail.TabIndex = 0;
             this.txtEmail.Text = "Email";
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
@@ -109,7 +109,7 @@
             this.btnIniciarsesion.Location = new System.Drawing.Point(300, 258);
             this.btnIniciarsesion.Name = "btnIniciarsesion";
             this.btnIniciarsesion.Size = new System.Drawing.Size(408, 40);
-            this.btnIniciarsesion.TabIndex = 12;
+            this.btnIniciarsesion.TabIndex = 2;
             this.btnIniciarsesion.Text = "Acceder";
             this.btnIniciarsesion.UseVisualStyleBackColor = false;
             this.btnIniciarsesion.Click += new System.EventHandler(this.btnIniciarsesion_Click_1);
@@ -139,7 +139,7 @@
             this.btnRegistrarse.Location = new System.Drawing.Point(457, 327);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(161, 27);
-            this.btnRegistrarse.TabIndex = 20;
+            this.btnRegistrarse.TabIndex = 3;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click_1);
@@ -191,7 +191,7 @@
             this.label3.Location = new System.Drawing.Point(460, -1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 33);
-            this.label3.TabIndex = 16;
+            this.label3.TabIndex = 3;
             this.label3.Text = "LOGIN ";
             // 
             // FRMInicioSesion

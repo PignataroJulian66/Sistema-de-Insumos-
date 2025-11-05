@@ -26,10 +26,10 @@ namespace DAL
 
                 fa = acceso.escribir("sp_InsertarProducto", parametros);
 
-                foreach (ClsDetalleProducto det in producto.ListaInsumos)
+                foreach (BE.ClsInsumo det in producto.ListaInsumos)
                 {
                     SqlParameter[] parametros2 = new SqlParameter[3];
-                    parametros2[0] = new SqlParameter("@ID_Insumo",det.IDinsumo);
+                    parametros2[0] = new SqlParameter("@ID_Insumo",det.ID);
                     parametros2[1] = new SqlParameter("@Cantidad", det.Cantidad);
                     parametros2[2] = new SqlParameter("@Unidad", det.Unidad);
                     fa += acceso.escribir("sp_InsertarDetalleProducto", parametros2);
@@ -99,15 +99,15 @@ namespace DAL
                     producto.Existencias = int.Parse(dr["Existencias"].ToString());
 
 
-                    List<BE.ClsDetalleProducto> listaDetalles = new List<BE.ClsDetalleProducto>();
+                    List<BE.ClsInsumo> listaDetalles = new List<BE.ClsInsumo>();
                     SqlParameter[] parametros = new SqlParameter[1];
                     parametros[0] = new SqlParameter("@ID_Prod", producto.Id_Producto);
 
                     DataTable tabla2 = acceso.leer("sp_DetallarProductos", parametros);
                     foreach (DataRow dr2 in tabla2.Rows)
                     {
-                        BE.ClsDetalleProducto detalle = new ClsDetalleProducto();
-                        detalle.Insumo = dr2["Insumo"].ToString();
+                        BE.ClsInsumo detalle = new ClsInsumo();
+                        detalle.Nombre = dr2["Insumo"].ToString();
                         detalle.Cantidad = decimal.Parse(dr2["Cantidad"].ToString());
                         detalle.Unidad = dr2["Unidad"].ToString();
                         listaDetalles.Add(detalle);

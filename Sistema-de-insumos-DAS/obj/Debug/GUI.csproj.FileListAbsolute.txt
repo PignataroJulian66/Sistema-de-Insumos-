@@ -112,3 +112,9 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRealizarCompra.resources
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRegistrarOC.resources
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMVerOC.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMEncargadoAlmacen.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRealizarCompra.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRegistrarOC.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmSinRol.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMVerOC.resources
+C:\Users\alejo\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmComprasPasadas.resources

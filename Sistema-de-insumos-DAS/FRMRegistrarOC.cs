@@ -36,10 +36,7 @@ namespace Sistema_de_insumos_DAS
         {        
             if (e.RowIndex >= 0)
             {
-                
-                tmp = (BE.ClsInsumo)dgvInsumos.Rows[e.RowIndex].DataBoundItem;
-
-                          
+                tmp = (BE.ClsInsumo)dgvInsumos.Rows[e.RowIndex].DataBoundItem;         
             }
         }
 
@@ -47,8 +44,10 @@ namespace Sistema_de_insumos_DAS
         {
             BE.ClsOrdenCompra orden = new BE.ClsOrdenCompra();
             orden.ID_Emp = emp.ID_emp.ToString();
-            tmp.Cantidad = numericUpDown2.Value;
-            orden.Insumo = tmp;
+
+            orden.NInsumo = tmp.ID.ToString();
+            orden.Unidad = tmp.Unidad;
+            orden.Cantidad = numericUpDown2.Value;
             orden.FechaEntrega = dateTimePicker1.Value;
             orden.Finalizado = false;
             orden.ID_prov = proveedores[cmbProveedor.SelectedIndex].ID_prov.ToString(); 

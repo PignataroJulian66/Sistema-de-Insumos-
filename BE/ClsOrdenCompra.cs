@@ -8,6 +8,14 @@ namespace BE
 {
     public class ClsOrdenCompra
     {
+		private int _id;
+
+		public int ID
+		{
+			get { return _id; }
+			set { _id = value; }
+		}
+
 		private string _idEmp;
 
 		public string ID_Emp
@@ -16,13 +24,31 @@ namespace BE
 			set { _idEmp = value; }
 		}
 
-		private BE.ClsInsumo _insumo;
+		private string _ninsumo;
 
-		public BE.ClsInsumo Insumo
+		public string NInsumo
 		{
-			get { return _insumo; }
-			set { _insumo = value; }
+			get { return _ninsumo; }
+			set { _ninsumo = value; }
 		}
+
+		private decimal _cantidad;
+
+		public decimal Cantidad
+		{
+			get { return _cantidad; }
+			set { _cantidad = value; }
+		}
+
+		private string _unidad;
+
+		public string Unidad
+		{
+			get { return _unidad; }
+			set { _unidad = value; }
+		}
+
+
 
 		private DateTime _fechaEntrega;
 
@@ -47,5 +73,14 @@ namespace BE
             set { _idprov = value; }
         }
 
-    }
+		private decimal _cotizacion;
+
+		public decimal Cotizacion
+		{
+			get { return _cotizacion; }
+			set { _cotizacion = value; }
+		}
+
+
+	}
 }

@@ -63,7 +63,13 @@ namespace Sistema_de_insumos_DAS
 
         private void realizarCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRMRealizarCompra fm = new FRMRealizarCompra();
+            FRMRealizarCompra fm = new FRMRealizarCompra(emp);
+            AbrirFormularioHijo(fm);
+        }
+
+        private void verComprasPasadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmComprasPasadas fm = new FrmComprasPasadas(emp);
             AbrirFormularioHijo(fm);
         }
     }
