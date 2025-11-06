@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class CLSEmpleado
+    public class CLSEmpleado : CLSPersona
     {
         private int id_emp;
 

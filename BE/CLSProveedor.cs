@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class CLSProveedor
+    public class CLSProveedor : CLSPersona
     {
 		private int id_prov;
 

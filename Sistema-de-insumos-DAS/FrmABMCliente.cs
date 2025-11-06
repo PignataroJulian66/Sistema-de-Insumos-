@@ -121,15 +121,20 @@ namespace Sistema_de_insumos_DAS
 
             int fa = 0;
             cliente = new BE.ClsCliente();
-
             cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
-
-            fa = gCliente.Eliminar(cliente);
-            if (fa != 0)
+            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de eliminar este cliente?");
+            if (resultado)
             {
-                VerGrilla();
-                LimpiarCampos();
+                fa = gCliente.Eliminar(cliente);
+                if (fa != 0)
+                {
+                    GestorMensajes.Exito("Proceso exitoso");
+                    VerGrilla();
+                    LimpiarCampos();
+                }
             }
+            else { return; }
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -138,22 +143,32 @@ namespace Sistema_de_insumos_DAS
             cliente = new BE.ClsCliente();
             if (!ValidarCampos()) return;
             cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
-            if (gCliente.Listar().Any(c => c.DNI == txtDNI.Text))
+            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de modificar este cliente?");
+            if (resultado)
             {
-                GestorMensajes.Advertencia("Ya existe un cliente con ese DNI.");
-                return;
-            }
-            cliente.Nombre = txtNombre.Text;
-            cliente.Apellido = txtApellido.Text;
-            cliente.Telefono = txtTelefono.Text;
-            cliente.DNI = txtDNI.Text;
+                if (gCliente.Listar().Any(c => c.DNI == txtDNI.Text))
+                {
+                    GestorMensajes.Advertencia("Ya existe un cliente con ese DNI.");
+                    return;
+                }
+                cliente.Nombre = txtNombre.Text;
+                cliente.Apellido = txtApellido.Text;
+                cliente.Telefono = txtTelefono.Text;
+                cliente.DNI = txtDNI.Text;
 
-            fa = gCliente.Editar(cliente);
-            if (fa != 0)
-            {
-                VerGrilla();
-                LimpiarCampos();
+                fa = gCliente.Editar(cliente);
+                if (fa != 0)
+                {
+                    GestorMensajes.Exito("Proceso exitoso");
+                    VerGrilla();
+                    LimpiarCampos();
+                }
             }
+            else 
+            {
+            return;
+            }
+            
         }
 
         private void LimpiarCampos()

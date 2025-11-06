@@ -107,6 +107,46 @@ namespace BLL
                 return string.Empty;
             }
         }
+
+        public int CambiarContrasenia(CLSEmpleado empleado, string nuevaContra)
+        {
+            try
+            {
+                int filas = mapper.CambiarContrasenia(empleado.ID_emp, nuevaContra);
+
+                if (!(filas == 0))
+                    GestorMensajes.Exito("Contraseña modificada correctamente.");
+                else
+                    GestorMensajes.Advertencia("No se pudo cambiar la contraseña.");
+
+                return filas;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al modificar contraseña: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public int CambiarCorreo(CLSEmpleado empleado, string nuevoCorreo)
+        {
+            try
+            {
+                int filas = mapper.CambiarCorreo(empleado.ID_emp, nuevoCorreo);
+
+                if (!(filas == 0))
+                    GestorMensajes.Exito("Contraseña modificada correctamente.");
+                else
+                    GestorMensajes.Advertencia("No se pudo cambiar la contraseña.");
+
+                return filas;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al modificar contraseña: " + ex.Message);
+                return 0;
+            }
+        }
     }
 }
 

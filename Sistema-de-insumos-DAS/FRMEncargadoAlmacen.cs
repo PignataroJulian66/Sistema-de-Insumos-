@@ -72,5 +72,11 @@ namespace Sistema_de_insumos_DAS
             FrmComprasPasadas fm = new FrmComprasPasadas(emp);
             AbrirFormularioHijo(fm);
         }
+
+        private void verPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMVerPerfil fRMVerPerfil = new FRMVerPerfil(emp);
+            AbrirFormularioHijo(fRMVerPerfil);
+        }
     }
 }

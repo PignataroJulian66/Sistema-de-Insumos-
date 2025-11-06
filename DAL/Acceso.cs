@@ -17,7 +17,7 @@ namespace DAL
         {
             //DESKTOP-1R961GN
             //JULIÁN
-            conexion.ConnectionString = @"Data Source=DESKTOP-1R961GN;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
+            conexion.ConnectionString = @"Data Source=.;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
             try
             {
                 conexion.Open();
@@ -105,7 +105,7 @@ namespace DAL
                 }
                 filasAfectadas = comando.ExecuteNonQuery();
                 ConfirmarTransaccion(tx);
-                return filasAfectadas;
+                return 1;
             }
             catch (Exception ex)
             {

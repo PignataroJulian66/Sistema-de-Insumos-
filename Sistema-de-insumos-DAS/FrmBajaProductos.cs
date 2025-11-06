@@ -23,12 +23,35 @@ namespace Sistema_de_insumos_DAS
             dgvProductos.MultiSelect = false;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             VerGrilla();
+            GestorMensajes.MensajeGenerado += MostrarMensaje;
         }
 
         private void VerGrilla()
         {
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = GProductos.Listar();
+        }
+
+        private void MostrarMensaje(object sender, MensajeEventArgs e)
+        {
+            switch (e.Tipo)
+            {
+                case TipoMensaje.Informacion:
+                    MessageBox.Show(e.Texto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+
+                case TipoMensaje.Advertencia:
+                    MessageBox.Show(e.Texto, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
+                case TipoMensaje.Error:
+                    MessageBox.Show(e.Texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                case TipoMensaje.Exito:
+                    MessageBox.Show(e.Texto, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -49,12 +72,16 @@ namespace Sistema_de_insumos_DAS
             }
             BE.ClsProductos producto = (BE.ClsProductos)dgvProductos.SelectedRows[0].DataBoundItem;
             int fa = 0;
-
+            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de eliminar este producto?");
+            if (resultado) 
+            {
             fa = GProductos.Eliminar(producto);
             if (fa != 0)
             {
                 VerGrilla();
             }
+            }
+            
         }
     }
 }

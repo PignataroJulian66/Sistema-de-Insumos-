@@ -95,5 +95,39 @@ namespace DAL
             }
             return email;
         }
+
+        public int CambiarContrasenia(int idEmp, string nuevaContra)
+        {
+            try
+            {
+                SqlParameter[] parametros = new SqlParameter[2];
+                parametros[0] = new SqlParameter("@ID_emp", idEmp);
+                parametros[1] = new SqlParameter("@NuevaContrasenia", nuevaContra);
+                int fa = acceso.escribir("sp_CambiarContraseniaEmpleado", parametros);
+                return fa;
+            }
+            catch (Exception ex) 
+            {
+                return 0;
+            }
+            
+        }
+
+        public int CambiarCorreo(int idEmp, string nuevoCorreo)
+        {
+            try
+            {
+                SqlParameter[] parametros = new SqlParameter[2];
+                parametros[0] = new SqlParameter("@ID_emp", idEmp);
+                parametros[1] = new SqlParameter("@NuevoCorreo", nuevoCorreo);
+                int fa = acceso.escribir("sp_CambiarCorreoEmpleado", parametros);
+                return fa;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+
+        }
     }
 }

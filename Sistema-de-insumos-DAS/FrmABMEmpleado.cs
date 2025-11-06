@@ -102,6 +102,7 @@ namespace Sistema_de_insumos_DAS
                 GestorMensajes.Advertencia("Ya existe un empleado con ese DNI.");
                 return;
             }
+
             int fa = 0;
             empleado = new BE.CLSEmpleado();
 
@@ -128,16 +129,26 @@ namespace Sistema_de_insumos_DAS
                 GestorMensajes.Advertencia("Debe seleccionar un empleado para eliminar.");
                 return;
             }
+
             int fa = 0;
             empleado = new BE.CLSEmpleado();
             empleado = dgvEmpleados.SelectedRows[0].DataBoundItem as BE.CLSEmpleado;
-
-            fa = gEmpleado.Eliminar(empleado);
-            if (fa != 0)
+            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de quiere eliminar este empleado?");
+            if (resultado)
             {
-                VerGrilla();
-                LimpiarCampos();
+                fa = gEmpleado.Eliminar(empleado);
+                if (fa != 0)
+                {
+                    VerGrilla();
+                    LimpiarCampos();
+                }
             }
+            else 
+            {
+                return;
+            
+            }
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -153,19 +164,30 @@ namespace Sistema_de_insumos_DAS
                 return;
             }
 
-            empleado.Nombre = txtNombre.Text;
-            empleado.Apellido = txtApellido.Text;
-            empleado.Telefono = txtTelefono.Text;
-            empleado.Direccion = txtDireccion.Text;
-            empleado.Rol = (comboBox1.SelectedIndex + 1).ToString();
-            empleado.DNI = txtDNI.Text;
-
-            fa = gEmpleado.Editar(empleado, txtEmail.Text);
-            if (fa != 0)
+            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de modificar este empleado?");
+            if (resultado)
             {
-                VerGrilla();
-                LimpiarCampos();
+                empleado.Nombre = txtNombre.Text;
+                empleado.Apellido = txtApellido.Text;
+                empleado.Telefono = txtTelefono.Text;
+                empleado.Direccion = txtDireccion.Text;
+                empleado.Rol = (comboBox1.SelectedIndex + 1).ToString();
+                empleado.DNI = txtDNI.Text;
+
+                fa = gEmpleado.Editar(empleado, txtEmail.Text);
+                if (fa != 0)
+                {
+                    
+                    VerGrilla();
+                    LimpiarCampos();
+                }
             }
+            else 
+            {
+            return;
+            }
+
+           
         }
 
         private void button1_Click(object sender, EventArgs e)

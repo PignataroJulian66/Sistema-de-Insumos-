@@ -14,9 +14,11 @@ namespace Sistema_de_insumos_DAS
     public partial class FRMGerente : Form
     {
         public Form formularioactual = null;
+        CLSEmpleado emp = new CLSEmpleado();
         public FRMGerente(CLSEmpleado empleado) //recibe un clsgerente gerente
         {
             InitializeComponent();
+            emp = empleado;
         }
 
         public void AbrirFormularioHijo(Form f)
@@ -97,6 +99,12 @@ namespace Sistema_de_insumos_DAS
         private void modificacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmModificarProducto fm = new FrmModificarProducto();
+            AbrirFormularioHijo(fm);
+        }
+
+        private void verPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMVerPerfil fm = new FRMVerPerfil(emp);
             AbrirFormularioHijo(fm);
         }
     }

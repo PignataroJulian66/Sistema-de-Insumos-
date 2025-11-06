@@ -61,5 +61,11 @@ namespace Sistema_de_insumos_DAS
             FRMVerOC f = new FRMVerOC(proveedor);
             AbrirFormularioHijo(f);
         }
+
+        private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerPerfilProveedor f = new FrmVerPerfilProveedor(proveedor);
+            AbrirFormularioHijo(f);
+        }
     }
 }

@@ -114,6 +114,7 @@ namespace Sistema_de_insumos_DAS
                 fa = gInsumo.Agregar(insumo);
                 if (fa != 0)
                 {
+                  
                     VerGrilla();
                     LimpiarCampos();
                 }
@@ -128,7 +129,7 @@ namespace Sistema_de_insumos_DAS
         {
             if (dgvInsumos.SelectedRows.Count == 0)
             {
-                GestorMensajes.Advertencia("Debe seleccionar un cliente para eliminar.");
+                GestorMensajes.Advertencia("Debe seleccionar un insumo para eliminar.");
                 return;
             }
             int fa = 0;
@@ -137,12 +138,18 @@ namespace Sistema_de_insumos_DAS
             try
             {
                 insumo = dgvInsumos.SelectedRows[0].DataBoundItem as BE.ClsInsumo;
-                fa = gInsumo.Eliminar(insumo);
-                if (fa != 0)
+                bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de modificar este insumo?");
+                if (resultado)
                 {
-                    VerGrilla();
-                    LimpiarCampos();
+                    fa = gInsumo.Eliminar(insumo);
+                    if (fa != 0)
+                    {
+                        VerGrilla();
+                        LimpiarCampos();
+                    }
                 }
+                else { return; }
+                
             }
             catch (Exception ex)
             {

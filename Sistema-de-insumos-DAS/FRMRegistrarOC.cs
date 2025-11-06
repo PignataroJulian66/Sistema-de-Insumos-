@@ -30,6 +30,29 @@ namespace Sistema_de_insumos_DAS
             proveedores = gprov.Listar();
             cmbProveedor.DataSource = proveedores;
             emp = empleado;
+            GestorMensajes.MensajeGenerado += MostrarMensaje;
+        }
+
+        private void MostrarMensaje(object sender, MensajeEventArgs e)
+        {
+            switch (e.Tipo)
+            {
+                case TipoMensaje.Informacion:
+                    MessageBox.Show(e.Texto, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+
+                case TipoMensaje.Advertencia:
+                    MessageBox.Show(e.Texto, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
+                case TipoMensaje.Error:
+                    MessageBox.Show(e.Texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                case TipoMensaje.Exito:
+                    MessageBox.Show(e.Texto, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    break;
+            }
         }
 
         private void dgvInsumos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -42,17 +65,29 @@ namespace Sistema_de_insumos_DAS
 
         private void btnGenerarOrden_Click(object sender, EventArgs e)
         {
-            BE.ClsOrdenCompra orden = new BE.ClsOrdenCompra();
-            orden.ID_Emp = emp.ID_emp.ToString();
+            if (dgvInsumos.SelectedRows.Count == 0)
+            {
+                GestorMensajes.Advertencia("Debe seleccionar un insumo.");
+                return;
+            }
 
-            orden.NInsumo = tmp.ID.ToString();
-            orden.Unidad = tmp.Unidad;
-            orden.Cantidad = numericUpDown2.Value;
-            orden.FechaEntrega = dateTimePicker1.Value;
-            orden.Finalizado = false;
-            orden.ID_prov = proveedores[cmbProveedor.SelectedIndex].ID_prov.ToString(); 
-            gorden.Agregar(orden);
-            GestorMensajes.Exito("OC generada Exitosamente");
+            if (!(numericUpDown2.Value == 0 || cmbProveedor.Text == string.Empty))
+            {
+                BE.ClsOrdenCompra orden = new BE.ClsOrdenCompra();
+                orden.ID_Emp = emp.ID_emp.ToString();
+
+                orden.NInsumo = tmp.ID.ToString();
+                orden.Unidad = tmp.Unidad;
+                orden.Cantidad = numericUpDown2.Value;
+                orden.FechaEntrega = dateTimePicker1.Value;
+                orden.Finalizado = false;
+                orden.ID_prov = proveedores[cmbProveedor.SelectedIndex].ID_prov.ToString();
+                gorden.Agregar(orden);
+                GestorMensajes.Exito("OC generada Exitosamente");
+                numericUpDown2.Value = 0;
+                cmbProveedor.Text = string.Empty;
+            }
+            else { GestorMensajes.Error("Complete todos los campos"); }
         }
     }
 }

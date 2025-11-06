@@ -75,7 +75,6 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\o
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmABMCliente.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmABMEmpleado.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmABMInsumo.resources
-C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmABMProductos.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmABMProveedor.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMGerente.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMInicioSesion.resources
@@ -118,3 +117,16 @@ C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmSinRol.resources
 C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMVerOC.resources
 C:\Users\alejo\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmComprasPasadas.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmAltaProductos.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmBajaProductos.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmComprasPasadas.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMEncargadoAlmacen.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmModificarProducto.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRealizarCompra.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRegistrarOC.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmSinRol.resources
+C:\Users\Administrator\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMVerOC.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMVerPerfil.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmVerPerfilProveedor.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmCambiarContraseñaEmpleado.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmCambiarCorreoEmpleado.resources

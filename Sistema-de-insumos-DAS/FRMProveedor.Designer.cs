@@ -30,9 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,14 @@
             this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
             this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.misDatosToolStripMenuItem.Text = "Mis datos";
+            this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
+            // 
+            // verOrdenDeCompraToolStripMenuItem
+            // 
+            this.verOrdenDeCompraToolStripMenuItem.Name = "verOrdenDeCompraToolStripMenuItem";
+            this.verOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
+            this.verOrdenDeCompraToolStripMenuItem.Text = "Ver Orden de Compra";
+            this.verOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.verOrdenDeCompraToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -68,13 +76,6 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // verOrdenDeCompraToolStripMenuItem
-            // 
-            this.verOrdenDeCompraToolStripMenuItem.Name = "verOrdenDeCompraToolStripMenuItem";
-            this.verOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
-            this.verOrdenDeCompraToolStripMenuItem.Text = "Ver Orden de Compra";
-            this.verOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.verOrdenDeCompraToolStripMenuItem_Click);
             // 
             // FRMProveedor
             // 

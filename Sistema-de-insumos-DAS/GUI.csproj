@@ -82,6 +82,18 @@
     <Compile Include="FrmBajaProductos.Designer.cs">
       <DependentUpon>FrmBajaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCambiarContraseñaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCambiarContraseñaEmpleado.Designer.cs">
+      <DependentUpon>FrmCambiarContraseñaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCambiarCorreoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCambiarCorreoEmpleado.Designer.cs">
+      <DependentUpon>FrmCambiarCorreoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmComprasPasadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,8 +160,20 @@
     <Compile Include="FRMVerOC.Designer.cs">
       <DependentUpon>FRMVerOC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMVerPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMVerPerfil.Designer.cs">
+      <DependentUpon>FRMVerPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmVerPerfilProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerPerfilProveedor.Designer.cs">
+      <DependentUpon>FrmVerPerfilProveedor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmABMCliente.resx">
       <DependentUpon>FrmABMCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBajaProductos.resx">
       <DependentUpon>FrmBajaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCambiarContraseñaEmpleado.resx">
+      <DependentUpon>FrmCambiarContraseñaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCambiarCorreoEmpleado.resx">
+      <DependentUpon>FrmCambiarCorreoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmComprasPasadas.resx">
       <DependentUpon>FrmComprasPasadas.cs</DependentUpon>
@@ -197,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMVerOC.resx">
       <DependentUpon>FRMVerOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMVerPerfil.resx">
+      <DependentUpon>FRMVerPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerPerfilProveedor.resx">
+      <DependentUpon>FrmVerPerfilProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
