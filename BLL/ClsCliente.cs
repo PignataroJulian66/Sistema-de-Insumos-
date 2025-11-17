@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mensajes1;
+using BE;
 
 namespace BLL
 {
-    public class ClsCliente
+    public class ClsCliente : IABM<BE.ClsCliente>
     {
         private mp_Cliente mapper = new mp_Cliente();
 
@@ -84,6 +85,11 @@ namespace BLL
                 GestorMensajes.Error("Error al listar clientes: " + ex.Message);
                 return new List<BE.ClsCliente>();
             }
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            mapper.GenerarXML(rutaSegura);
         }
     }
 }

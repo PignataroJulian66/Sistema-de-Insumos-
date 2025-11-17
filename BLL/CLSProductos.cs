@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BE;
+using DAL;
 using Mensajes1;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class CLSProductos
+    public class CLSProductos : IABM<BE.ClsProductos>
     {
         private mp_Productos mapper = new mp_Productos();
         private BLL.ClsInsumo gestorInsumos = new BLL.ClsInsumo();
@@ -93,6 +94,11 @@ namespace BLL
                 GestorMensajes.Error("Error al listar productos: " + ex.Message);
                 return new List<BE.ClsProductos>();
             }
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            mapper.GenerarXML(rutaSegura);
         }
     }
 }

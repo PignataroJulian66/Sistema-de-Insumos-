@@ -107,5 +107,10 @@ namespace BLL
                 return string.Empty;
             }
         }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            mapper.GenerarXML(rutaSegura);
+        }
     }
 }

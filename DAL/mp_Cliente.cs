@@ -10,8 +10,6 @@ namespace DAL
 {
     public class mp_Cliente
     {
-        Acceso acceso = new Acceso();
-
         public int Agregar(BE.ClsCliente cliente)
         {
             int fa = 0;
@@ -22,7 +20,7 @@ namespace DAL
             parametros[3] = new SqlParameter("@DNI_Cliente", cliente.DNI);
 
             
-            fa = acceso.escribir("sp_InsertarCliente", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_InsertarCliente", parametros);
             return fa;
         }
 
@@ -33,7 +31,7 @@ namespace DAL
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("@ID_Cliente", cliente.ID);
 
-            fa = acceso.escribir("sp_EliminarCliente", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EliminarCliente", parametros);
             return fa;
         }
 
@@ -49,7 +47,7 @@ namespace DAL
             parametros[4] = new SqlParameter("@DNI_Cliente", cliente.DNI);
 
             
-            fa = acceso.escribir("sp_EditarCliente", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EditarCliente", parametros);
             return fa;
         }
 
@@ -58,7 +56,7 @@ namespace DAL
             List<BE.ClsCliente> lista = new List<BE.ClsCliente>();
 
            
-            DataTable tabla = acceso.leer("sp_ListarClientes", null);
+            DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarClientes", null);
 
             foreach (DataRow dr in tabla.Rows)
             {
@@ -71,6 +69,14 @@ namespace DAL
                 lista.Add(cliente);
             }
             return lista;
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            DataTable DT = DAL.Acceso.Instancia.leer("SP_ListarClientes", null);
+            DataSet ds = new DataSet("Clientes");
+            ds.Tables.Add(DT);
+            ds.WriteXml(rutaSegura);
         }
     }
 }

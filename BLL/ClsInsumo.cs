@@ -52,6 +52,11 @@ namespace BLL
             }
         }
 
+        public void GenerarXML(string rutaSegura)
+        {
+            mapper.GenerarXML(rutaSegura);
+        }
+
         public List<BE.ClsInsumo> Listar()
         {
             try

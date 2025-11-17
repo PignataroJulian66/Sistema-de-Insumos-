@@ -194,15 +194,27 @@ namespace Sistema_de_insumos_DAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataSet dataSet = new DataSet();
-            SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = @"";
+            SaveFileDialog saveDialog = new SaveFileDialog();
 
-            cn.Open();
-            SqlDataAdapter da = new SqlDataAdapter("Select * from Clientes", cn);
-            da.Fill(dataSet, "Clientes");
-            cn.Close();
-            dataSet.WriteXml("aca copiar la ruta de acceso del directorio");
+            saveDialog.Filter = "Archivos XML (*.xml)|*.xml"; // Filtra para que solo se vean archivos XML
+            saveDialog.Title = "Guardar listado de clientes";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string rutaSegura = saveDialog.FileName;
+
+                    BLL.ClsCliente gestor = new BLL.ClsCliente();
+                    gestor.GenerarXML(rutaSegura);
+
+                    MessageBox.Show("Archivo XML generado con éxito en:\n" + rutaSegura, "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error");
+                }
+            }
         }
 
         private void FrmABMCliente_FormClosed(object sender, FormClosedEventArgs e)

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DAL
 {
     public class mp_Insumo
     {
-        Acceso acceso = new Acceso();
-
         public int Agregar(BE.ClsInsumo insumo)
         {
             int fa = 0;
@@ -23,7 +23,7 @@ namespace DAL
             parametros[3] = new SqlParameter("@Calidad", insumo.Calidad);
 
           
-            fa = acceso.escribir("sp_InsertarInsumo", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_InsertarInsumo", parametros);
             return fa;
         }
 
@@ -35,8 +35,18 @@ namespace DAL
             parametros[0] = new SqlParameter("@ID_Insumo", insumo.ID);
 
            
-            fa = acceso.escribir("sp_EliminarInsumo", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EliminarInsumo", parametros);
             return fa;
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<BE.ClsInsumo>));
+
+            using (FileStream fs = new FileStream(rutaSegura, FileMode.Create))
+            {
+                serializer.Serialize(fs, Listar());
+            }
         }
 
         /*public int Editar(BE.ClsInsumo insumo)
@@ -62,7 +72,7 @@ namespace DAL
             List<BE.ClsInsumo> lista = new List<BE.ClsInsumo>();
 
            
-            DataTable tabla = acceso.leer("sp_ListarInsumos", null);
+            DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarInsumos", null);
 
             foreach (DataRow dr in tabla.Rows)
             {

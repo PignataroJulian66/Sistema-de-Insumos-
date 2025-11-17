@@ -1,31 +1,33 @@
-﻿using System;
+﻿using BE;
+using SEGURIDAD;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BE;
+using System.Xml.Serialization;
 
 namespace DAL
 {
     public class mp_Proveedor
     {
-        Acceso acceso = new Acceso();
-
         public int Agregar(BE.CLSProveedor proveedor, string email)
         {
             int fa = 0;
            
-            SqlParameter[] parametros = new SqlParameter[5];
+            SqlParameter[] parametros = new SqlParameter[6];
             parametros[0] = new SqlParameter("@Nombre", proveedor.Nombre);
             parametros[1] = new SqlParameter("@Cuit", proveedor.Cuit);
             parametros[2] = new SqlParameter("@Telefono", proveedor.Telefono);
             parametros[3] = new SqlParameter("@Direccion", proveedor.Direccion);
             parametros[4] = new SqlParameter("@Email", email);
+            parametros[5] = new SqlParameter("@Contraseña", Encriptación.Instancia.Encriptar(proveedor.Cuit));
 
 
-            fa = acceso.escribir("sp_InsertarProveedor", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_InsertarProveedor", parametros);
             return fa;
         }
 
@@ -36,7 +38,7 @@ namespace DAL
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("@ID_prov", proveedor.ID_prov);
 
-            fa = acceso.escribir("sp_EliminarProveedor", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EliminarProveedor", parametros);
             return fa;
         }
 
@@ -54,7 +56,7 @@ namespace DAL
 
 
 
-            fa = acceso.escribir("sp_EditarProveedor", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EditarProveedor", parametros);
             return fa;
         }
 
@@ -63,7 +65,7 @@ namespace DAL
             List<BE.CLSProveedor> lista = new List<BE.CLSProveedor>();
 
            
-            DataTable tabla = acceso.leer("sp_ListarProveedores", null);
+            DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarProveedores", null);
 
             foreach (DataRow dr in tabla.Rows)
             {
@@ -82,7 +84,7 @@ namespace DAL
         {
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("@Id_prov", prov.ID_prov);
-            DataTable tabla = acceso.leer("sp_ObtenerMailProveedor", parametros);
+            DataTable tabla = DAL.Acceso.Instancia.leer("sp_ObtenerMailProveedor", parametros);
 
             string email = string.Empty;
             foreach (DataRow dr in tabla.Rows)
@@ -90,6 +92,16 @@ namespace DAL
                 email = dr["Email"].ToString();
             }
             return email;
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<BE.CLSProveedor>));
+
+            using (FileStream fs = new FileStream(rutaSegura, FileMode.Create))
+            {
+                serializer.Serialize(fs, Listar());
+            }
         }
     }
 }

@@ -3,15 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DAL
 {
     public class mp_Productos
     {
-        Acceso acceso = new Acceso();
         public int Agregar(ClsProductos producto)
         {
             try
@@ -24,7 +25,7 @@ namespace DAL
                 parametros[2] = new SqlParameter("@Precio_Produc", producto.Precio);
                 parametros[3] = new SqlParameter("@Existencias", producto.Existencias);
 
-                fa = acceso.escribir("sp_InsertarProducto", parametros);
+                fa = DAL.Acceso.Instancia.escribir("sp_InsertarProducto", parametros);
 
                 foreach (BE.ClsInsumo det in producto.ListaInsumos)
                 {
@@ -32,7 +33,7 @@ namespace DAL
                     parametros2[0] = new SqlParameter("@ID_Insumo",det.ID);
                     parametros2[1] = new SqlParameter("@Cantidad", det.Cantidad);
                     parametros2[2] = new SqlParameter("@Unidad", det.Unidad);
-                    fa += acceso.escribir("sp_InsertarDetalleProducto", parametros2);
+                    fa += DAL.Acceso.Instancia.escribir("sp_InsertarDetalleProducto", parametros2);
                 }
                 return fa;
             }
@@ -53,7 +54,7 @@ namespace DAL
                 parametros[1] = new SqlParameter("@Nombre_Produc", producto.Nombre);
                 parametros[2] = new SqlParameter("@Precio_Prod", producto.Precio);
 
-                fa = acceso.escribir("sp_EditarProducto", parametros);
+                fa = DAL.Acceso.Instancia.escribir("sp_EditarProducto", parametros);
                 return fa;
             }
             catch (Exception ex)
@@ -71,12 +72,22 @@ namespace DAL
                 SqlParameter[] parametros = new SqlParameter[1];
                 parametros[0] = new SqlParameter("@ID_Prod", producto.Id_Producto);
 
-                fa = acceso.escribir("sp_EliminarProducto", parametros);
+                fa = DAL.Acceso.Instancia.escribir("sp_EliminarProducto", parametros);
                 return fa;
             }
             catch (Exception ex)
             {
                 throw new NotImplementedException(ex.Message);
+            }
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<BE.ClsProductos>));
+
+            using (FileStream fs = new FileStream(rutaSegura, FileMode.Create))
+            {
+                serializer.Serialize(fs, Listar());
             }
         }
 
@@ -87,7 +98,7 @@ namespace DAL
                 List<BE.ClsProductos> listaProductos = new List<BE.ClsProductos>();
 
 
-                DataTable tabla = acceso.leer("sp_ListarProductos", null);
+                DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarProductos", null);
 
                 foreach (DataRow dr in tabla.Rows)
                 {
@@ -103,7 +114,7 @@ namespace DAL
                     SqlParameter[] parametros = new SqlParameter[1];
                     parametros[0] = new SqlParameter("@ID_Prod", producto.Id_Producto);
 
-                    DataTable tabla2 = acceso.leer("sp_DetallarProductos", parametros);
+                    DataTable tabla2 = DAL.Acceso.Instancia.leer("sp_DetallarProductos", parametros);
                     foreach (DataRow dr2 in tabla2.Rows)
                     {
                         BE.ClsInsumo detalle = new ClsInsumo();

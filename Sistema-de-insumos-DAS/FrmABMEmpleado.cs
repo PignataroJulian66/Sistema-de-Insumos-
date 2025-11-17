@@ -158,11 +158,11 @@ namespace Sistema_de_insumos_DAS
             if (!ValidarCampos())
             return;
             empleado = dgvEmpleados.SelectedRows[0].DataBoundItem as BE.CLSEmpleado;
-            if (gEmpleado.Listar().Any(c => c.DNI == txtDNI.Text))
-            {
-                GestorMensajes.Advertencia("Ya existe un empleado con ese DNI.");
-                return;
-            }
+            //if (gEmpleado.Listar().Any(c => c.DNI == txtDNI.Text))
+            //{
+            //    GestorMensajes.Advertencia("Ya existe un empleado con ese DNI.");
+            //    return;
+            //}
 
             bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de modificar este empleado?");
             if (resultado)
@@ -192,39 +192,27 @@ namespace Sistema_de_insumos_DAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*// 1. Creamos el diálogo para "Guardar como..."
             SaveFileDialog saveDialog = new SaveFileDialog();
 
-            // 2. Configuramos el diálogo
             saveDialog.Filter = "Archivos XML (*.xml)|*.xml"; // Filtra para que solo se vean archivos XML
-            saveDialog.Title = "Guardar Listado de Vehículos";
-            saveDialog.FileName = "Vehiculos.xml"; // Le damos un nombre por defecto
+            saveDialog.Title = "Guardar Listado de empleados";
 
-            // 3. Mostramos la ventana. Si el usuario presiona "Guardar"...
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    // 4. Obtenemos la ruta segura que el usuario eligió
                     string rutaSegura = saveDialog.FileName;
 
-                    // --- Tu lógica original va aquí ---
-                    DataSet DS = new DataSet();
-                    SqlConnection CN = new SqlConnection(@"Data Source=JULIÁN;Initial Catalog=Ejercicio2_das;Integrated Security=True");
-                    SqlDataAdapter DA = new SqlDataAdapter("Select * from Vehiculos", CN);
-                    DA.Fill(DS, "Vehiculos");
-                    CN.Close();
+                    BLL.ClsEmpleado gestor = new BLL.ClsEmpleado();
+                    gestor.GenerarXML(rutaSegura);
 
-                    // 5. Guardamos el archivo en la ruta segura
-                    DS.WriteXml(rutaSegura);
-
-                    MessageBox.Show("Archivo Vehiculos.xml generado con éxito en:\n" + rutaSegura, "Éxito");
+                    MessageBox.Show("Archivo XML generado con éxito en:\n" + rutaSegura, "Éxito");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error");
                 }
-            }*/
+            }
         }
 
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -162,5 +162,30 @@ namespace Sistema_de_insumos_DAS
             comboBox1.Text = "";
             cmbCalidad.Text = "";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+
+            saveDialog.Filter = "Archivos XML (*.xml)|*.xml"; // Filtra para que solo se vean archivos XML
+            saveDialog.Title = "Guardar listado de insumos";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string rutaSegura = saveDialog.FileName;
+
+                    BLL.ClsInsumo gestor = new BLL.ClsInsumo();
+                    gestor.GenerarXML(rutaSegura);
+
+                    MessageBox.Show("Archivo XML generado con éxito en:\n" + rutaSegura, "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error");
+                }
+            }
+        }
     }
 }

@@ -97,5 +97,30 @@ namespace Sistema_de_insumos_DAS
             txtUnidadInsumo.Text = string.Empty;
             numericUpDown2.Value = 0;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+
+            saveDialog.Filter = "Archivos XML (*.xml)|*.xml"; // Filtra para que solo se vean archivos XML
+            saveDialog.Title = "Guardar listado de productos";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string rutaSegura = saveDialog.FileName;
+
+                    BLL.CLSProductos gestor = new BLL.CLSProductos();
+                    gestor.GenerarXML(rutaSegura);
+
+                    MessageBox.Show("Archivo XML generado con éxito en:\n" + rutaSegura, "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error");
+                }
+            }
+        }
     }
 }

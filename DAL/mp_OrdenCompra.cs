@@ -11,7 +11,6 @@ namespace DAL
 {
     public class mp_OrdenCompra
     {
-        Acceso acceso = new Acceso();
         public int Agregar(BE.ClsOrdenCompra OC)
         {
             try
@@ -27,7 +26,7 @@ namespace DAL
                 parametros[5] = new SqlParameter("@Finalizado", OC.Finalizado.ToString());
                 parametros[6] = new SqlParameter("@ID_prov", OC.ID_prov);
 
-                fa = acceso.escribir("sp_AgregarOrdenCompra", parametros);
+                fa = DAL.Acceso.Instancia.escribir("sp_AgregarOrdenCompra", parametros);
 
                 return fa;
             }
@@ -47,7 +46,7 @@ namespace DAL
                 parametros[0] = new SqlParameter("@ID_OC", OC.ID);
                 parametros[1] = new SqlParameter("@Cotizacion", OC.Cotizacion);
 
-                fa = acceso.escribir("sp_EditarOrdenCompra", parametros);
+                fa = DAL.Acceso.Instancia.escribir("sp_EditarOrdenCompra", parametros);
 
                 return fa;
             }
@@ -67,7 +66,7 @@ namespace DAL
                 parametros[0] = new SqlParameter("@ID_OC", OC.ID);
                 parametros[1] = new SqlParameter("@Cantidad", OC.Cantidad);
 
-                fa = acceso.escribir("sp_EditarOrdenCompra2", parametros);
+                fa = DAL.Acceso.Instancia.escribir("sp_EditarOrdenCompra2", parametros);
 
                 return fa;
             }
@@ -86,7 +85,7 @@ namespace DAL
                 SqlParameter[] parametros = new SqlParameter[1];
                 parametros[0] = new SqlParameter("@Id_prov", prov.ID_prov);
 
-                DataTable tabla = acceso.leer("sp_ListarOrdenCompra", parametros);
+                DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarOrdenCompra", parametros);
 
                 foreach (DataRow dr in tabla.Rows)
                 {
@@ -128,7 +127,7 @@ namespace DAL
                 SqlParameter[] parametros = new SqlParameter[1];
                 parametros[0] = new SqlParameter("@Id_emp", emp.ID_emp);
 
-                DataTable tabla = acceso.leer("sp_ListarOrdenCompra2", parametros);
+                DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarOrdenCompra2", parametros);
 
                 foreach (DataRow dr in tabla.Rows)
                 {

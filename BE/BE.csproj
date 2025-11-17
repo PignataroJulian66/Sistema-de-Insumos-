@@ -48,6 +48,7 @@
     <Compile Include="CLSPersona.cs" />
     <Compile Include="ClsProductos.cs" />
     <Compile Include="CLSProveedor.cs" />
+    <Compile Include="IABM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

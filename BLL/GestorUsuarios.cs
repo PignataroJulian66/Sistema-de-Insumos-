@@ -1,5 +1,6 @@
 ﻿using BE;
 using DAL;
+using SEGURIDAD;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,13 +14,12 @@ namespace BLL
 {
     public class GestorUsuarios
     {
-        Acceso acceso = new Acceso();
 
         public bool EsEmpleado(int usuario)
         {
             SqlParameter[] parametros = new SqlParameter[1];          
             parametros[0] = new SqlParameter("@ID_Usuario", usuario);
-            bool Esempleado = bool.Parse(acceso.leerEscalar("sp_EsEmpleado", parametros).ToString());
+            bool Esempleado = bool.Parse(DAL.Acceso.Instancia.leerEscalar("sp_EsEmpleado", parametros).ToString());
             return Esempleado;
         }
 
@@ -27,7 +27,7 @@ namespace BLL
         {
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("@ID_Usuario", usuario);
-            bool esproveedor = bool.Parse(acceso.leerEscalar("sp_EsProveedor", parametros).ToString());
+            bool esproveedor = bool.Parse(DAL.Acceso.Instancia.leerEscalar("sp_EsProveedor", parametros).ToString());
             return esproveedor;
         }
 
@@ -38,10 +38,10 @@ namespace BLL
                 SqlParameter[] parametros = new SqlParameter[2];
                 int Id_usuario = -1;
                 parametros[0] = new SqlParameter("@Email", email);
-                parametros[1] = new SqlParameter("@Contraseña", contraseña);
-                if(acceso.leerEscalar("sp_InicioSesion", parametros) != null)
+                parametros[1] = new SqlParameter("@Contraseña", Encriptación.Instancia.Encriptar(contraseña));
+                if(DAL.Acceso.Instancia.leerEscalar("sp_InicioSesion", parametros) != null)
                 {
-                    Id_usuario = int.Parse(acceso.leerEscalar("sp_InicioSesion", parametros).ToString());          
+                    Id_usuario = int.Parse(DAL.Acceso.Instancia.leerEscalar("sp_InicioSesion", parametros).ToString());          
                 }
                 return Id_usuario;
             }
@@ -60,7 +60,7 @@ namespace BLL
                 CLSProveedor proveedor = new CLSProveedor();
                 SqlParameter[] parametros = new SqlParameter[1];
                 parametros[0] = new SqlParameter("@ID_Usuario", id_usuario);
-                DataTable dt = acceso.leer("SP_BuscarProveedor", parametros);
+                DataTable dt = DAL.Acceso.Instancia.leer("SP_BuscarProveedor", parametros);
                 foreach(DataRow dr in dt.Rows)
                 {
                     proveedor.ID_prov = int.Parse(dr["ID_prov"].ToString());
@@ -80,7 +80,7 @@ namespace BLL
                 CLSEmpleado empleado = new CLSEmpleado();
                 SqlParameter[] parametros = new SqlParameter[1];
                 parametros[0] = new SqlParameter("@ID_Usuario", id_usuario);
-                DataTable dt = acceso.leer("SP_BuscarEmpleado", parametros);
+                DataTable dt = DAL.Acceso.Instancia.leer("SP_BuscarEmpleado", parametros);
                 foreach (DataRow dr in dt.Rows)
                 {
                     empleado.ID_emp = int.Parse(dr["Id_emp"].ToString());

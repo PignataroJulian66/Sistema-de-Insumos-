@@ -1,24 +1,25 @@
 ﻿using BE;
+using SEGURIDAD;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DAL
 {
     public class mp_Empleado
     {
-        Acceso acceso = new Acceso();
-
         public int Agregar(BE.CLSEmpleado empleado, string email)
         {
             int fa = 0;
 
-            SqlParameter[] parametros = new SqlParameter[7];
+            SqlParameter[] parametros = new SqlParameter[8];
             parametros[0] = new SqlParameter("@Nombre_emp", empleado.Nombre);
             parametros[1] = new SqlParameter("@Apellido_emp", empleado.Apellido);
             parametros[2] = new SqlParameter("@Telefono_emp", empleado.Telefono);
@@ -26,7 +27,8 @@ namespace DAL
             parametros[4] = new SqlParameter("@ID_rol", int.Parse(empleado.Rol));
             parametros[5] = new SqlParameter("@Dni", empleado.DNI);
             parametros[6] = new SqlParameter("@Email", email);
-            fa = acceso.escribir("sp_InsertarEmpleado", parametros);
+            parametros[7] = new SqlParameter("@Contraseña", Encriptación.Instancia.Encriptar(empleado.DNI));
+            fa = DAL.Acceso.Instancia.escribir("sp_InsertarEmpleado", parametros);
             return fa;
         }
 
@@ -37,7 +39,7 @@ namespace DAL
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("@Id_emp", empleado.ID_emp);
 
-            fa = acceso.escribir("sp_EliminarEmpleado", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EliminarEmpleado", parametros);
             return fa;
         }
 
@@ -50,13 +52,13 @@ namespace DAL
             parametros[1] = new SqlParameter("@Nombre", empleado.Nombre);
             parametros[2] = new SqlParameter("@Apellido", empleado.Apellido);
             parametros[3] = new SqlParameter("@Telefono", empleado.Telefono);
-            parametros[4] = new SqlParameter("@Direccion", empleado.Direccion);
+            parametros[4] = new SqlParameter("@Direccion", Encriptación.Instancia.Encriptar(empleado.Direccion));
             parametros[5] = new SqlParameter("@Rol", empleado.Rol);
             parametros[6] = new SqlParameter("@DNI", empleado.DNI);
             parametros[7] = new SqlParameter("@Email", email);
 
 
-            fa = acceso.escribir("sp_EditarEmpleado", parametros);
+            fa = DAL.Acceso.Instancia.escribir("sp_EditarEmpleado", parametros);
             return fa;
         }
 
@@ -65,7 +67,7 @@ namespace DAL
             List<BE.CLSEmpleado> lista = new List<BE.CLSEmpleado>();
 
             
-            DataTable tabla = acceso.leer("sp_ListarEmpleados", null);
+            DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarEmpleados", null);
 
             foreach (DataRow dr in tabla.Rows)
             {
@@ -86,7 +88,7 @@ namespace DAL
         {
             SqlParameter[] parametros = new SqlParameter[1];
             parametros[0] = new SqlParameter("@Id_emp", empleado.ID_emp);
-            DataTable tabla = acceso.leer("sp_ObtenerMail", parametros);
+            DataTable tabla = DAL.Acceso.Instancia.leer("sp_ObtenerMail", parametros);
 
             string email = string.Empty;
             foreach (DataRow dr in tabla.Rows)
@@ -102,11 +104,11 @@ namespace DAL
             {
                 SqlParameter[] parametros = new SqlParameter[2];
                 parametros[0] = new SqlParameter("@ID_emp", idEmp);
-                parametros[1] = new SqlParameter("@NuevaContrasenia", nuevaContra);
-                int fa = acceso.escribir("sp_CambiarContraseniaEmpleado", parametros);
+                parametros[1] = new SqlParameter("@NuevaContrasenia", Encriptación.Instancia.Encriptar(nuevaContra));
+                int fa = DAL.Acceso.Instancia.escribir("sp_CambiarContraseniaEmpleado", parametros);
                 return fa;
             }
-            catch (Exception ex) 
+            catch
             {
                 return 0;
             }
@@ -120,14 +122,24 @@ namespace DAL
                 SqlParameter[] parametros = new SqlParameter[2];
                 parametros[0] = new SqlParameter("@ID_emp", idEmp);
                 parametros[1] = new SqlParameter("@NuevoCorreo", nuevoCorreo);
-                int fa = acceso.escribir("sp_CambiarCorreoEmpleado", parametros);
+                int fa = DAL.Acceso.Instancia.escribir("sp_CambiarCorreoEmpleado", parametros);
                 return fa;
             }
-            catch (Exception ex)
+            catch
             {
                 return 0;
             }
 
+        }
+
+        public void GenerarXML(string rutaSegura)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<BE.CLSEmpleado>));
+
+            using (FileStream fs = new FileStream(rutaSegura, FileMode.Create))
+            {
+                serializer.Serialize(fs, Listar());
+            }
         }
     }
 }

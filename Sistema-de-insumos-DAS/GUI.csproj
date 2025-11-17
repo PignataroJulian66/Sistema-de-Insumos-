@@ -166,6 +166,36 @@
     <Compile Include="FRMVerPerfil.Designer.cs">
       <DependentUpon>FRMVerPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiControlContraseña.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiControlContraseña.Designer.cs">
+      <DependentUpon>MiControlContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicontrolDNI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MicontrolDNI.Designer.cs">
+      <DependentUpon>MicontrolDNI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiControlEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiControlEmail.Designer.cs">
+      <DependentUpon>MiControlEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiControlTelefono.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiControlTelefono.Designer.cs">
+      <DependentUpon>MiControlTelefono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiControlTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MiControlTexto.Designer.cs">
+      <DependentUpon>MiControlTexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmVerPerfilProveedor.cs">
@@ -174,6 +204,7 @@
     <Compile Include="FrmVerPerfilProveedor.Designer.cs">
       <DependentUpon>FrmVerPerfilProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextBoxExtension.cs" />
     <EmbeddedResource Include="FrmABMCliente.resx">
       <DependentUpon>FrmABMCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +253,9 @@
     <EmbeddedResource Include="FRMRegistrarOC.resx">
       <DependentUpon>FRMRegistrarOC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMRegistrarse.resx">
+      <DependentUpon>FRMRegistrarse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSinRol.resx">
       <DependentUpon>FrmSinRol.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +267,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerPerfilProveedor.resx">
       <DependentUpon>FrmVerPerfilProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiControlContraseña.resx">
+      <DependentUpon>MiControlContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicontrolDNI.resx">
+      <DependentUpon>MicontrolDNI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiControlEmail.resx">
+      <DependentUpon>MiControlEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiControlTelefono.resx">
+      <DependentUpon>MiControlTelefono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiControlTexto.resx">
+      <DependentUpon>MiControlTexto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -181,5 +181,30 @@ namespace Sistema_de_insumos_DAS
             txtDireccion.Text = "";
             txtEmail.Text = "";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+
+            saveDialog.Filter = "Archivos XML (*.xml)|*.xml"; // Filtra para que solo se vean archivos XML
+            saveDialog.Title = "Guardar listado de proveedores";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string rutaSegura = saveDialog.FileName;
+
+                    BLL.ClsProveedor gestor = new BLL.ClsProveedor();
+                    gestor.GenerarXML(rutaSegura);
+
+                    MessageBox.Show("Archivo XML generado con éxito en:\n" + rutaSegura, "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al guardar el archivo: " + ex.Message, "Error");
+                }
+            }
+        }
     }
 }

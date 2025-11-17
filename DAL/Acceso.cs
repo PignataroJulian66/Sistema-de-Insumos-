@@ -10,16 +10,35 @@ namespace DAL
 {
     public class Acceso
     {
-        SqlConnection conexion = new SqlConnection();
+        private static Acceso _instancia;
+        protected SqlConnection conexion = null;
         SqlCommand comando = new SqlCommand();
+
+        private Acceso()
+        {
+            conexion = new SqlConnection();
+            
+        }
+
+        public static Acceso Instancia
+        {
+            get
+            {
+                if (_instancia == null)
+                {
+                    _instancia = new Acceso();
+                }
+                return _instancia;
+            }
+        }
 
         public void conectar()
         {
             //DESKTOP-1R961GN
             //JULIÁN
-            conexion.ConnectionString = @"Data Source=.;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
             try
             {
+                conexion.ConnectionString = @"Data Source=.;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
                 conexion.Open();
                 Console.WriteLine("Conexión exitosa");
             }
