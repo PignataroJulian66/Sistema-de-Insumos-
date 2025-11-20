@@ -32,7 +32,7 @@ namespace DAL
             int fa = 0;
            
             SqlParameter[] parametros = new SqlParameter[1];
-            parametros[0] = new SqlParameter("@ID_Insumo", insumo.ID);
+            parametros[0] = new SqlParameter("@ID_Insumo", insumo.Id);
 
            
             fa = DAL.Acceso.Instancia.escribir("sp_EliminarInsumo", parametros);
@@ -77,7 +77,7 @@ namespace DAL
             foreach (DataRow dr in tabla.Rows)
             {
                 BE.ClsInsumo insumo = new BE.ClsInsumo();
-                insumo.ID = int.Parse(dr["ID_Insumo"].ToString());
+                insumo.Id = int.Parse(dr["ID_Insumo"].ToString());
                 insumo.Nombre = dr["Nombre_insumo"].ToString();
                 insumo.Unidad = dr["Unidad"].ToString();
                 insumo.Cantidad = decimal.Parse(dr["Cantidad"].ToString());

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ClsProductos
+    public class ClsProductos : IComponenteInventario
     {
 
 		private int _Id_Producto;
 
-		public int Id_Producto
+		public int Id
 		{
 			get { return _Id_Producto; }
 			set { _Id_Producto = value; }
@@ -57,15 +57,72 @@ namespace BE
 			set { _ListaInsumos = value; }
 		}
 
+        private List<IComponenteInventario> _Componentes;
 
-		public ClsProductos()
+        public List<IComponenteInventario> Componentes
         {
-            
+            get { return _Componentes; }
+            set { _Componentes = value; }
         }
 
 
+        public ClsProductos()
+        {
+            _Componentes = new List<IComponenteInventario>();
+        }
+
+        public void AgregarComponente(IComponenteInventario componente)
+        {
+            _Componentes.Add(componente);
+        }
+
+        public void EliminarComponente(IComponenteInventario componente)
+        {
+            _Componentes.Remove(componente);
+        }
 
 
+      
+        public decimal ObtenerPrecio()
+        {
+            
+            decimal precioTotalComponentes = _Componentes.Sum(c => c.ObtenerPrecio());
+            return this.Precio + precioTotalComponentes;
+        }
 
+        public int CalcularExistencias()
+        {
+          
+
+            if (!_Componentes.Any())
+            {
+                return this.Existencias;
+            }
+
+            
+            int minComponenteStock = _Componentes.Min(c => c.CalcularExistencias());
+
+            
+            return Math.Min(this.Existencias, minComponenteStock);
+        }
+
+        public string MostrarDetalles(int nivel)
+        {
+            StringBuilder sb = new StringBuilder();
+            string indent = new string(' ', nivel * 4);
+
+            sb.AppendLine($"{indent} Producto Compuesto: {Nombre} (Precio Final: {ObtenerPrecio():C})");
+            sb.AppendLine($"{indent}  Componentes:");
+
+            foreach (var componente in _Componentes)
+            {
+               
+                sb.AppendLine(componente.MostrarDetalles(nivel + 1));
+            }
+
+            return sb.ToString();
+        }
     }
+   
+    
 }

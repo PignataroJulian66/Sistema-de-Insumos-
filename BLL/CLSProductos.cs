@@ -18,10 +18,11 @@ namespace BLL
         {
             try
             {
-                
-                if (producto.ListaInsumos == null)
+
+                if (producto.Componentes == null || producto.Componentes.Count == 0)
                 {
-                    GestorMensajes.Advertencia("No se puede agregar un producto sin insumos registrados.");
+                   
+                    GestorMensajes.Advertencia("No se puede agregar un producto sin componentes registrados.");
                     return 0;
                 }
 

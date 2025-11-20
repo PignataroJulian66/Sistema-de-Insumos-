@@ -42,7 +42,7 @@ namespace Sistema_de_insumos_DAS
         {
             BE.ClsInsumo detalle = new BE.ClsInsumo();
             BE.ClsInsumo insumo = lstinsumos[cmbinsumo.SelectedIndex];
-            detalle.ID = insumo.ID;
+            detalle.Id = insumo.Id;
             detalle.Nombre = insumo.ToString();
             detalle.Unidad = insumo.Unidad;
             detalle.Cantidad = numericUpDown2.Value;
@@ -70,8 +70,8 @@ namespace Sistema_de_insumos_DAS
             producto.Nombre = txtnombre.Text;
             producto.Precio = numericUpDown1.Value;
             producto.Rubro = txtRubro.Text;
-            producto.Existencias = 0;
-            producto.ListaInsumos = lstDetalles;
+            producto.Componentes = lstDetalles.Cast<BE.IComponenteInventario>().ToList();
+            producto.Existencias = producto.CalcularExistencias(); 
 
             fa = GProductos.Agregar(producto);
             if (fa != 0)

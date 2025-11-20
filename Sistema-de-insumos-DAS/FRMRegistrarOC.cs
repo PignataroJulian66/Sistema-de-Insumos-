@@ -76,7 +76,7 @@ namespace Sistema_de_insumos_DAS
                 BE.ClsOrdenCompra orden = new BE.ClsOrdenCompra();
                 orden.ID_Emp = emp.ID_emp.ToString();
 
-                orden.NInsumo = tmp.ID.ToString();
+                orden.NInsumo = tmp.Id.ToString();
                 orden.Unidad = tmp.Unidad;
                 orden.Cantidad = numericUpDown2.Value;
                 orden.FechaEntrega = dateTimePicker1.Value;

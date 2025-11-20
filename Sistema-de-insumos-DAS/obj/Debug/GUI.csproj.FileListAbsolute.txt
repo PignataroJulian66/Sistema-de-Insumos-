@@ -140,3 +140,9 @@ C:\Users\alejo\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug
 C:\Users\alejo\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlEmail.resources
 C:\Users\alejo\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTelefono.resources
 C:\Users\alejo\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlContraseña.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRegistrarse.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlContraseña.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MicontrolDNI.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlEmail.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTelefono.resources
+C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTexto.resources

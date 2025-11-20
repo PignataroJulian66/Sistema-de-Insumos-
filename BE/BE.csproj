@@ -49,6 +49,7 @@
     <Compile Include="ClsProductos.cs" />
     <Compile Include="CLSProveedor.cs" />
     <Compile Include="IABM.cs" />
+    <Compile Include="IComponenteInventario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

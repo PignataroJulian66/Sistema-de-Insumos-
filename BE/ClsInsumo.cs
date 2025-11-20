@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ClsInsumo
+    public class ClsInsumo : IComponenteInventario
     {
 		private int _id;
 
-		public int ID
+		public int Id
 		{
 			get { return _id; }
 			set { _id = value; }
@@ -48,9 +48,28 @@ namespace BE
 			set { _calidad = value; }
 		}
 
+        public decimal PrecioUnitario { get; set; }
+        public int StockActual { get; set; }
+
+
         public override string ToString()
         {
             return Nombre;
         }
-	}
+
+        public decimal ObtenerPrecio()
+        {
+            return PrecioUnitario;
+        }
+
+        public int CalcularExistencias()
+        {
+            return StockActual;
+        }
+
+        public string MostrarDetalles(int nivel)
+        {
+            return new string('-', nivel * 2) + $" Insumo: {Nombre} ({Unidad}), Precio Unitario: {PrecioUnitario:C}";
+        }
+    }
 }
