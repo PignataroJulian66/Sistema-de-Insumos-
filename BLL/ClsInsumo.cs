@@ -11,7 +11,7 @@ namespace BLL
     public class ClsInsumo
     {
         private mp_Insumo mapper = new mp_Insumo();
-
+        public event EventHandler InsumoChanged;
         public int Agregar(BE.ClsInsumo insumo)
         {
             try
@@ -19,7 +19,12 @@ namespace BLL
                 int filasAfectadas = mapper.Agregar(insumo);
 
                 if (filasAfectadas > 0)
+                {
                     GestorMensajes.Exito("Insumo agregado correctamente.");
+                    InsumoChanged?.Invoke(this,EventArgs.Empty);
+                }
+
+                    
                 else
                     GestorMensajes.Advertencia("No se pudo agregar el insumo.");
 
@@ -39,7 +44,12 @@ namespace BLL
                 int filasAfectadas = mapper.Eliminar(insumo);
 
                 if (filasAfectadas > 0)
-                    GestorMensajes.Exito("Insumo eliminado correctamente.");
+                {
+               GestorMensajes.Exito("Insumo eliminado correctamente.");
+                    InsumoChanged?.Invoke(this, EventArgs.Empty);
+                }
+
+                    
                 else
                     GestorMensajes.Advertencia("No se encontró el insumo a eliminar.");
 

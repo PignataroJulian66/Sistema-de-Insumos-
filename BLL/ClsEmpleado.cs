@@ -12,15 +12,20 @@ namespace BLL
     public class ClsEmpleado
     {
         private mp_Empleado mapper = new mp_Empleado();
-
+        public event EventHandler EmpleadoChanged;
         public int Agregar(BE.CLSEmpleado empleado, string email)
         {
             try
             {
                 int filasAfectadas = mapper.Agregar(empleado, email);
 
-                if(! (filasAfectadas == 0))
-                    GestorMensajes.Exito("Empleado agregado correctamente.");
+                if (!(filasAfectadas == 0))
+                {
+                 GestorMensajes.Exito("Empleado agregado correctamente.");
+                    EmpleadoChanged?.Invoke(this, EventArgs.Empty);
+                
+                }
+                   
                 else
                     GestorMensajes.Advertencia("No se pudo agregar el empleado.");
 
@@ -40,7 +45,11 @@ namespace BLL
                 int filasAfectadas = mapper.Eliminar(empleado);
 
                 if (filasAfectadas != 0)
-                    GestorMensajes.Exito("Empleado eliminado correctamente.");
+                {
+                 GestorMensajes.Exito("Empleado eliminado correctamente.");
+                    EmpleadoChanged?.Invoke(this, EventArgs.Empty);
+                }
+                   
                 else
                     GestorMensajes.Advertencia("No se encontró el empleado a eliminar.");
 
@@ -60,7 +69,11 @@ namespace BLL
                 int filasAfectadas = mapper.Editar(empleado, email);
 
                 if (filasAfectadas != 0)
+                {
                     GestorMensajes.Exito("Empleado editado correctamente.");
+                    EmpleadoChanged?.Invoke(this, EventArgs.Empty);
+                }
+
                 else
                     GestorMensajes.Advertencia("No se pudo editar el empleado.");
 

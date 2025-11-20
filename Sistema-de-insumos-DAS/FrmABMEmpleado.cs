@@ -17,11 +17,19 @@ namespace Sistema_de_insumos_DAS
         public FrmABMEmpleado()
         {
             InitializeComponent();
+            gEmpleado.EmpleadoChanged += Empleado_Cambio;
+            GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvEmpleados.ReadOnly = true;
             dgvEmpleados.MultiSelect = false;
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void Empleado_Cambio(object sender, EventArgs e)
+        {
+            VerGrilla();
         }
 
         private void MostrarMensaje(object sender, MensajeEventArgs e)

@@ -16,11 +16,20 @@ namespace Sistema_de_insumos_DAS
         public FrmABMInsumo()
         {
             InitializeComponent();
+            gInsumo.InsumoChanged += insumo_cambio;
+            GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvInsumos.ReadOnly = true;
             dgvInsumos.MultiSelect = false;
             dgvInsumos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCalidad.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void insumo_cambio(object sender, EventArgs e)
+        {
+            VerGrilla();
         }
 
         private void MostrarMensaje(object sender, MensajeEventArgs e)
