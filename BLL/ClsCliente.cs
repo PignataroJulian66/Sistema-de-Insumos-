@@ -12,7 +12,7 @@ namespace BLL
     public class ClsCliente : IABM<BE.ClsCliente>
     {
         private mp_Cliente mapper = new mp_Cliente();
-
+        string usuarioActual = "Sistema";
         public int Agregar(BE.ClsCliente cliente)
         {
             try
@@ -20,9 +20,15 @@ namespace BLL
                 int filasAfectadas = mapper.Agregar(cliente);
 
                 if (filasAfectadas > 0)
-                GestorMensajes.Exito("Cliente agregado correctamente.");
-                else
-                GestorMensajes.Advertencia("No se pudo agregar el cliente.");
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Cliente agregado: {cliente.Nombre}", "ALTA_CLIENTE");
+                    GestorMensajes.Exito("Cliente agregado correctamente.");
+                }
+                else 
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de agregar cliente: {cliente.Nombre}", "ALTA_CLIENTE");
+                    GestorMensajes.Advertencia("No se pudo agregar el cliente.");
+                }
                 return filasAfectadas;
             }
             catch (Exception ex)
@@ -39,9 +45,15 @@ namespace BLL
                 int filasAfectadas = mapper.Eliminar(cliente);
 
                 if (filasAfectadas > 0)
-                GestorMensajes.Exito("Cliente eliminado correctamente.");
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Cliente Eliminado: {cliente.Nombre}", "BAJA_CLIENTE");
+                    GestorMensajes.Exito("Cliente eliminado correctamente.");
+                }
                 else
-                GestorMensajes.Advertencia("No se encontró el cliente a eliminar.");
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de eliminar cliente: {cliente.Nombre}", "BAJA_CLIENTE");
+                    GestorMensajes.Advertencia("No se encontró el cliente a eliminar.");
+                }
                 return filasAfectadas;
             }
             catch (Exception ex)

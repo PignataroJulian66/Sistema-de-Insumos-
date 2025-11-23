@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseCompletaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="mp_Bitacora.cs" />
     <Compile Include="mp_Cliente.cs" />
     <Compile Include="mp_Empleado.cs" />
     <Compile Include="mp_Insumo.cs" />

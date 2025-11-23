@@ -13,7 +13,7 @@ namespace BLL
     {
         private mp_Productos mapper = new mp_Productos();
         private BLL.ClsInsumo gestorInsumos = new BLL.ClsInsumo();
-
+        string usuarioActual = "Sistema";
         public int Agregar(BE.ClsProductos producto)
         {
             try
@@ -28,9 +28,16 @@ namespace BLL
 
                 int filasAfectadas = mapper.Agregar(producto);
                 if (filasAfectadas > 0)
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Producto agregado: {producto.Nombre}", "ALTA_PRODUCTO");
                     GestorMensajes.Exito("Producto agregado correctamente.");
+                }
+
                 else
-                    GestorMensajes.Advertencia("No se pudo agregar el producto.");
+                {
+                GestorBitacora.Instancia.RegistrarEvento(usuarioActual,"ADVERTENCIA",$"Intento fallido de agregar producto: {producto.Nombre}","ALTA_PRODUCTO");
+                GestorMensajes.Advertencia("No se pudo agregar el producto.");
+                }
 
                 return filasAfectadas;
             }
@@ -48,9 +55,16 @@ namespace BLL
                 int filasAfectadas = mapper.Eliminar(producto);
 
                 if (filasAfectadas > 0)
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Producto Eliminado: {producto.Nombre}", "BAJA_PRODUCTO");
                     GestorMensajes.Exito("Producto eliminado correctamente.");
+                }
                 else
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de eliminar producto: {producto.Nombre}", "BAJA_PRODUCTO");
                     GestorMensajes.Advertencia("No se encontró el producto a eliminar.");
+                }
+                    
 
                 return filasAfectadas;
             }

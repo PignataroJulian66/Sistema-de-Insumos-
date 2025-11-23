@@ -12,6 +12,7 @@ namespace BLL
     {
         private mp_Insumo mapper = new mp_Insumo();
         public event EventHandler InsumoChanged;
+        string usuarioActual = "Sistema";
         public int Agregar(BE.ClsInsumo insumo)
         {
             try
@@ -20,13 +21,16 @@ namespace BLL
 
                 if (filasAfectadas > 0)
                 {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Insumo agregado: {insumo.Nombre}", "ALTA_INSUMO");
+                    InsumoChanged?.Invoke(this, EventArgs.Empty);
                     GestorMensajes.Exito("Insumo agregado correctamente.");
-                    InsumoChanged?.Invoke(this,EventArgs.Empty);
                 }
-
-                    
                 else
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de agregar insumo: {insumo.Nombre}", "ALTA_INSUMO");
                     GestorMensajes.Advertencia("No se pudo agregar el insumo.");
+                }
+                   
 
                 return filasAfectadas;
             }
@@ -45,13 +49,16 @@ namespace BLL
 
                 if (filasAfectadas > 0)
                 {
-               GestorMensajes.Exito("Insumo eliminado correctamente.");
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Insumo eliminado: {insumo.Nombre}", "BAJA_INSUMO");
                     InsumoChanged?.Invoke(this, EventArgs.Empty);
+                    GestorMensajes.Exito("Insumo eliminado correctamente.");
                 }
-
-                    
                 else
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de eliminar insumo: {insumo.Nombre}", "BAJA_INSUMO");
                     GestorMensajes.Advertencia("No se encontró el insumo a eliminar.");
+                }
+                    
 
                 return filasAfectadas;
             }

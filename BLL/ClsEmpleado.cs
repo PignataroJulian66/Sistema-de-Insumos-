@@ -13,6 +13,7 @@ namespace BLL
     {
         private mp_Empleado mapper = new mp_Empleado();
         public event EventHandler EmpleadoChanged;
+        string usuarioActual = "Sistema";
         public int Agregar(BE.CLSEmpleado empleado, string email)
         {
             try
@@ -21,13 +22,15 @@ namespace BLL
 
                 if (!(filasAfectadas == 0))
                 {
-                 GestorMensajes.Exito("Empleado agregado correctamente.");
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Empleado agregado: {empleado.Nombre}", "ALTA_EMPLEADO");
                     EmpleadoChanged?.Invoke(this, EventArgs.Empty);
-                
+                    GestorMensajes.Exito("Empleado agregado correctamente.");
                 }
-                   
                 else
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de agregar empleado: {empleado.Nombre}", "ALTA_EMPLEADO");
                     GestorMensajes.Advertencia("No se pudo agregar el empleado.");
+                }
 
                 return filasAfectadas;
             }
@@ -46,12 +49,16 @@ namespace BLL
 
                 if (filasAfectadas != 0)
                 {
-                 GestorMensajes.Exito("Empleado eliminado correctamente.");
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Empleado Eliminado: {empleado.Nombre}", "BAJA_EMPLEADO");
+                    GestorMensajes.Exito("Empleado eliminado correctamente.");
                     EmpleadoChanged?.Invoke(this, EventArgs.Empty);
                 }
-                   
                 else
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de eliminar empleado: {empleado.Nombre}", "BAJA_EMPLEADO");
                     GestorMensajes.Advertencia("No se encontró el empleado a eliminar.");
+                }
+                    
 
                 return filasAfectadas;
             }
