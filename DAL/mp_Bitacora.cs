@@ -30,19 +30,7 @@ namespace DAL
 
         public List<ClsRegistroBitacora> Listar()
         {
-            DataTable tabla = Acceso.Instancia.leer("sp_ListarBitacora", null);
-            List<ClsRegistroBitacora> lista = new List<ClsRegistroBitacora>();
-            foreach(DataRow dr in tabla.Rows)
-            {
-                BE.ClsRegistroBitacora bitacora = new BE.ClsRegistroBitacora();
-                bitacora.Id = Convert.ToInt32(dr["Id_Registro"]);
-                bitacora.Fecha = Convert.ToDateTime(dr["FechaHora"]);
-                bitacora.Usuario = dr["Usuario"].ToString();
-                bitacora.TipoEvento = dr["TipoEvento"].ToString();
-                bitacora.Criticidad = dr["Criticidad"].ToString();
-                bitacora.Mensaje = dr["Mensaje"].ToString();
-                lista.Add(bitacora);
-            }
+            List<ClsRegistroBitacora> lista = Acceso.Instancia.LeerQuery("SELECT * FROM Bitacora");
             return lista;
         }
     }

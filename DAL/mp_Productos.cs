@@ -97,7 +97,7 @@ namespace DAL
             }
         }
 
-        public List<ClsProductos> Listar()
+        public List<BE.ClsProductos> Listar()
         {
             try
             {
@@ -130,7 +130,7 @@ namespace DAL
                         listaDetalles.Add(detalle);
                     }
 
-                    producto.Componentes = listaDetalles.Cast<IComponenteInventario>().ToList(); 
+                    producto.Componentes = listaDetalles.Cast<IComponenteInventario>().ToList();
                     listaProductos.Add(producto);
                 }
                 return listaProductos;

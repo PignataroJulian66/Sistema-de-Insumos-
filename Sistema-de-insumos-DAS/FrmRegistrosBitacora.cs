@@ -16,6 +16,7 @@ namespace Sistema_de_insumos_DAS
         public FrmRegistrosBitacora()
         {
             InitializeComponent();
+            dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = gestor.listar();
         }

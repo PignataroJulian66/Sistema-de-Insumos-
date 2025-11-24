@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace DAL
             //JULIÁN
             try
             {
-                conexion.ConnectionString = @"Data Source=.;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
+                conexion.ConnectionString = @"Data Source=DESKTOP-1R961GN;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
                 conexion.Open();
                 Console.WriteLine("Conexión exitosa");
             }
@@ -183,5 +184,44 @@ namespace DAL
             }
             return resultado;
         }
+
+        public List<BE.ClsRegistroBitacora> LeerQuery(string query)
+        {
+            List < BE.ClsRegistroBitacora> lst = new List<BE.ClsRegistroBitacora> ();
+            conectar();
+            using (SqlCommand comando = new SqlCommand(query, conexion))
+            using (SqlDataReader dr = comando.ExecuteReader())
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                try
+                {
+                    while (dr.Read())  //mientras haya registros me crea una persona y le agrega los valores del reaedr a los atributos. La agrega a la lista
+                    {
+                        BE.ClsRegistroBitacora bitacora = new BE.ClsRegistroBitacora();
+                        {
+                            bitacora.Id = Convert.ToInt32(dr["Id_Registro"]);
+                            bitacora.Fecha = Convert.ToDateTime(dr["FechaHora"]);
+                            bitacora.Usuario = dr["Usuario"].ToString();
+                            bitacora.TipoEvento = dr["TipoEvento"].ToString();
+                            bitacora.Criticidad = dr["Criticidad"].ToString();
+                            bitacora.Mensaje = dr["Mensaje"].ToString();
+                        }
+                        ;
+                        lst.Add(bitacora);
+                    }
+                    return lst;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al listar de la base de datos", ex);
+                }
+                finally
+                {
+                    desconectar();
+                }
+            }      
+        }
     }
 }
+    
+

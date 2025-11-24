@@ -16,14 +16,6 @@ namespace BE
 			set { id_prov = value; }
 		}
 
-		private string _nombre;
-
-		public string Nombre
-		{
-			get { return _nombre; }
-			set { _nombre = value; }
-		}
-
 		private string _cuit;
 
 		public string Cuit
@@ -31,16 +23,6 @@ namespace BE
 			get { return _cuit; }
 			set { _cuit = value; }
 		}
-
-
-		private string _telefono;
-
-		public string Telefono
-		{
-			get { return _telefono; }
-			set { _telefono = value; }
-		}
-
 
 		private string _direccion;
 

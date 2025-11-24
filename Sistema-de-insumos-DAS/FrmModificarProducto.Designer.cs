@@ -77,7 +77,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(538, 150);
             this.dgvProductos.TabIndex = 4;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick_1);
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // btnModificar
             // 

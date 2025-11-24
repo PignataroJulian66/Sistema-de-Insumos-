@@ -323,18 +323,13 @@
       <Project>{0f86e63c-a202-40f8-82b7-6b670955a6a1}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{85A1D622-E16B-420C-9517-35B8EB94FD5D}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mensajes1\Mensajes1.csproj">
       <Project>{e2f9b41c-f468-41bc-a960-cdd0876d9a59}</Project>
       <Name>Mensajes1</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SEGURIDAD\SEGURIDAD.csproj">
-      <Project>{65e10994-385c-4ff8-b879-3604054c661e}</Project>
-      <Name>SEGURIDAD</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

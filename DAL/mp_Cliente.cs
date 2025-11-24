@@ -55,7 +55,7 @@ namespace DAL
         {
             List<BE.ClsCliente> lista = new List<BE.ClsCliente>();
 
-           
+
             DataTable tabla = DAL.Acceso.Instancia.leer("sp_ListarClientes", null);
 
             foreach (DataRow dr in tabla.Rows)

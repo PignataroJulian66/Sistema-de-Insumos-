@@ -53,16 +53,6 @@ namespace Sistema_de_insumos_DAS
             }
         }
 
-        private void dgvProductos_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                tmp = dgvProductos.SelectedRows[0].DataBoundItem as BE.ClsProductos;
-                txtNombre.Text = tmp.Nombre;
-                numericUpDown1.Value = tmp.Precio;
-            }
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (dgvProductos.SelectedRows.Count == 0)
@@ -87,6 +77,23 @@ namespace Sistema_de_insumos_DAS
             else { return; }
             
             
+        }
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    tmp = dgvProductos.SelectedRows[0].DataBoundItem as BE.ClsProductos;
+                    txtNombre.Text = tmp.Nombre;
+                    numericUpDown1.Value = tmp.Precio;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
         }
     }
 }

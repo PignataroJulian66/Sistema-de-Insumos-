@@ -3,13 +3,14 @@ using DAL;
 using Mensajes1;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class CLSProductos : IABM<BE.ClsProductos>
+    public class CLSProductos
     {
         private mp_Productos mapper = new mp_Productos();
         private BLL.ClsInsumo gestorInsumos = new BLL.ClsInsumo();
@@ -100,14 +101,14 @@ namespace BLL
             try
             {
                 var lista = mapper.Listar();
-                if (lista == null || lista.Count == 0)
+                if (lista == null)
                     GestorMensajes.Advertencia("No se encontraron productos registrados.");
                 return lista;
             }
             catch (Exception ex)
             {
                 GestorMensajes.Error("Error al listar productos: " + ex.Message);
-                return new List<BE.ClsProductos>();
+                return null;
             }
         }
 

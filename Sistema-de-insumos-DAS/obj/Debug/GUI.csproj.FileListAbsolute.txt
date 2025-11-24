@@ -159,3 +159,4 @@ C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlEmail.resources
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTelefono.resources
 C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTexto.resources
+C:\Users\alejo\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmRegistrosBitacora.resources
