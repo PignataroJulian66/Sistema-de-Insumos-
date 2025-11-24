@@ -148,6 +148,12 @@
     <Compile Include="FRMRegistrarse.Designer.cs">
       <DependentUpon>FRMRegistrarse.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegistrosBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrosBitacora.Designer.cs">
+      <DependentUpon>FrmRegistrosBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSinRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMRegistrarse.resx">
       <DependentUpon>FRMRegistrarse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrosBitacora.resx">
+      <DependentUpon>FrmRegistrosBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSinRol.resx">
       <DependentUpon>FrmSinRol.cs</DependentUpon>

@@ -16,6 +16,7 @@ namespace Sistema_de_insumos_DAS
         public FrmABMInsumo()
         {
             InitializeComponent();
+            gInsumo.InsumoChanged -= insumo_cambio;
             gInsumo.InsumoChanged += insumo_cambio;
             GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;

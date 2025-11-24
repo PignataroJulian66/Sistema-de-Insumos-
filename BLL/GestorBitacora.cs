@@ -44,5 +44,11 @@ namespace BLL
 
             _mapper.Guardar(registro);
         }
+
+        public List<BE.ClsRegistroBitacora> listar()
+        {
+            List<BE.ClsRegistroBitacora> lista = _mapper.Listar();
+            return lista; ;
+        }
     }
 }

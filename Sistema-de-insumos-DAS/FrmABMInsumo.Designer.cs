@@ -137,13 +137,9 @@
             // 
             this.cmbCalidad.FormattingEnabled = true;
             this.cmbCalidad.Items.AddRange(new object[] {
-            "PACK",
-            "GRAMOS",
-            "KILOGRAMOS",
-            "MILILITROS",
-            "LITROS",
-            "CENTIMETROS",
-            "METROS"});
+            "ALTA",
+            "MEDIA",
+            "BAJA"});
             this.cmbCalidad.Location = new System.Drawing.Point(105, 104);
             this.cmbCalidad.Name = "cmbCalidad";
             this.cmbCalidad.Size = new System.Drawing.Size(121, 21);

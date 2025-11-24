@@ -146,3 +146,16 @@ C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\o
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlEmail.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTelefono.resources
 C:\Users\Administrator\source\repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTexto.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmCambiarContraseñaEmpleado.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmCambiarCorreoEmpleado.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmComprasPasadas.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMRegistrarse.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmRegistrosBitacora.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmSinRol.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FRMVerPerfil.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.FrmVerPerfilProveedor.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlContraseña.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MicontrolDNI.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlEmail.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTelefono.resources
+C:\Users\pigna\Source\Repos\Sistema-de-Insumos-\Sistema-de-insumos-DAS\obj\Debug\Sistema_de_insumos_DAS.MiControlTexto.resources

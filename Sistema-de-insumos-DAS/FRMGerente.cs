@@ -107,5 +107,11 @@ namespace Sistema_de_insumos_DAS
             FRMVerPerfil fm = new FRMVerPerfil(emp);
             AbrirFormularioHijo(fm);
         }
+
+        private void verRegistrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegistrosBitacora fm = new FrmRegistrosBitacora();
+            AbrirFormularioHijo(fm);
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace Sistema_de_insumos_DAS
         public FrmABMProveedor()
         {
             InitializeComponent();
+            GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvProveedores.ReadOnly = true;

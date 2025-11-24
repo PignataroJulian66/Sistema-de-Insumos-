@@ -17,6 +17,7 @@ namespace Sistema_de_insumos_DAS
         public FrmABMCliente()
         {
             InitializeComponent();
+            GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
             dgvClientes.ReadOnly = true;
