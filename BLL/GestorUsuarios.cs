@@ -95,5 +95,10 @@ namespace BLL
             }
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
+
+        public void Desconectar()
+        {
+            DAL.Acceso.Instancia.Dispose();
+        }
     }
 }

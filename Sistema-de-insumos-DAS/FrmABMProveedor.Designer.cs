@@ -86,6 +86,7 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(104, 77);
+            this.txtCuit.MaxLength = 11;
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 64;
@@ -93,6 +94,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(104, 103);
+            this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 63;

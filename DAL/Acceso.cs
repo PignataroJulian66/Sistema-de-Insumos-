@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Acceso
+    public class Acceso : IDisposable
     {
         private static Acceso _instancia;
         protected SqlConnection conexion = null;
         SqlCommand comando = new SqlCommand();
+        private bool disposed = false;
 
         private Acceso()
         {
@@ -39,7 +40,7 @@ namespace DAL
             //JULIÁN
             try
             {
-                conexion.ConnectionString = @"Data Source=DESKTOP-1R961GN;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
+                conexion.ConnectionString = @"Data Source=.;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
                 conexion.Open();
                 Console.WriteLine("Conexión exitosa");
             }
@@ -54,7 +55,6 @@ namespace DAL
             try
             {
                 conexion.Close();
-                conexion.Dispose();
                 Console.WriteLine("Desconexión exitosa.");
             }
             catch (SqlException ex)
@@ -205,10 +205,10 @@ namespace DAL
                             bitacora.TipoEvento = dr["TipoEvento"].ToString();
                             bitacora.Criticidad = dr["Criticidad"].ToString();
                             bitacora.Mensaje = dr["Mensaje"].ToString();
-                        }
-                        ;
+                        };
                         lst.Add(bitacora);
                     }
+
                     return lst;
                 }
                 catch (Exception ex)
@@ -219,9 +219,45 @@ namespace DAL
                 {
                     desconectar();
                 }
-            }      
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+
+            if (!disposed) 
+            {
+             if (disposing)
+                {
+                    // Liberar recursos administrados (SqlConnection y SqlCommand)
+                    if (conexion != null)
+                    {
+                        // Asegurarse de que la conexión esté cerrada
+                        if (conexion.State != ConnectionState.Closed)
+                        {
+                            conexion.Close();
+                        }
+                        conexion.Dispose();
+                        conexion = null;
+                    }
+                    if (comando != null)
+                    {
+                        comando.Dispose();
+                        comando = null;
+                    }
+                }
+            }
+
         }
     }
 }
+
+
     
 

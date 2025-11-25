@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ClsInsumo : IComponenteInventario
+    public class ClsInsumo : IComponenteInventario, ICloneable
     {
 		private int _id;
 
@@ -70,6 +70,11 @@ namespace BE
         public string MostrarDetalles(int nivel)
         {
             return new string('-', nivel * 2) + $" Insumo: {Nombre} ({Unidad}), Precio Unitario: {PrecioUnitario:C}";
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

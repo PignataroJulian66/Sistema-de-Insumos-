@@ -17,6 +17,7 @@ namespace Sistema_de_insumos_DAS
         public FrmABMEmpleado()
         {
             InitializeComponent();
+            gEmpleado.EmpleadoChanged -= Empleado_Cambio;
             gEmpleado.EmpleadoChanged += Empleado_Cambio;
             GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;

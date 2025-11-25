@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ClsProductos : IComponenteInventario
+    public class ClsProductos : IComponenteInventario,ICloneable
     {
 
 		private int _Id_Producto;
@@ -122,7 +122,26 @@ namespace BE
 
             return sb.ToString();
         }
+
+        public object Clone()
+        {
+            ClsProductos copia = (ClsProductos)this.MemberwiseClone();
+
+            copia.Componentes = new List<IComponenteInventario>();
+
+            foreach (var componenteOriginal in this._Componentes)
+            {
+                if (componenteOriginal is ICloneable cloneableComponente)
+                {
+                    copia.Componentes.Add((IComponenteInventario)cloneableComponente.Clone());
+                }
+                else
+                {
+                    throw new InvalidOperationException($"El componente '{componenteOriginal.Nombre}' no implementa ICloneable.");
+                }
+            }
+
+            return copia;
+        }
     }
-   
-    
 }

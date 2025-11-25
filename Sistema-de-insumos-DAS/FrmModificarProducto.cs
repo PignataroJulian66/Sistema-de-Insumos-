@@ -22,6 +22,7 @@ namespace Sistema_de_insumos_DAS
             dgvProductos.MultiSelect = false;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             VerGrilla();
+            GestorMensajes.MensajeGenerado -= MostrarMensaje;
             GestorMensajes.MensajeGenerado += MostrarMensaje;
         }
 
@@ -60,15 +61,13 @@ namespace Sistema_de_insumos_DAS
                 GestorMensajes.Advertencia("Debe seleccionar un producto para eliminar.");
                 return;
             }
-            BE.ClsProductos producto = (BE.ClsProductos)dgvProductos.SelectedRows[0].DataBoundItem;
             int fa = 0;
             bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de modificar este producto?");
             if (resultado)
             {
-                producto.Nombre = txtNombre.Text;
-                producto.Precio = numericUpDown1.Value;
-
-                fa = GProductos.Editar(producto);
+                tmp.Nombre = txtNombre.Text;
+                tmp.Precio = numericUpDown1.Value;
+                fa = GProductos.Editar(tmp);
                 if (fa != 0)
                 {
                     VerGrilla();
@@ -85,7 +84,8 @@ namespace Sistema_de_insumos_DAS
             {
                 if (e.RowIndex >= 0)
                 {
-                    tmp = dgvProductos.SelectedRows[0].DataBoundItem as BE.ClsProductos;
+                    BE.ClsProductos productoOriginal = dgvProductos.SelectedRows[0].DataBoundItem as BE.ClsProductos;
+                    tmp = (BE.ClsProductos)productoOriginal.Clone();
                     txtNombre.Text = tmp.Nombre;
                     numericUpDown1.Value = tmp.Precio;
                 }
