@@ -68,6 +68,7 @@
             this.Controls.Add(this.btnCotizar);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dgvOC);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRMVerOC";
             this.Text = "FRMVerOC";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOC)).EndInit();

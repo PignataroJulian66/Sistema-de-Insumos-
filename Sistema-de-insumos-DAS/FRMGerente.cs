@@ -114,19 +114,5 @@ namespace Sistema_de_insumos_DAS
             FrmRegistrosBitacora fm = new FrmRegistrosBitacora();
             AbrirFormularioHijo(fm);
         }
-
-        private void FRMGerente_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            try
-            {
-                Gusuarios.Desconectar();
-                Console.WriteLine("Singleton de Acceso desechado correctamente.");
-            }
-            catch (Exception ex)
-            {
-                // Esto es crucial: si falla el cierre, al menos registramos el problema.
-                MessageBox.Show($"Error al cerrar la conexión de la base de datos: {ex.Message}","Error Crítico de Aplicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }

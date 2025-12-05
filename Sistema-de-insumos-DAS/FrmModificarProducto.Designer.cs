@@ -100,6 +100,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmModificarProducto";
             this.Text = "FrmModificarProducto";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

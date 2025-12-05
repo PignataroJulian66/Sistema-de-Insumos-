@@ -137,7 +137,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(15, 449);
+            this.button2.Location = new System.Drawing.Point(228, 392);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 40);
             this.button2.TabIndex = 11;
@@ -161,6 +161,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRMVerPerfil";
             this.Text = "FRMVerPerfil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

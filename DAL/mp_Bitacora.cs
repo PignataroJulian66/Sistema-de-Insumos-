@@ -11,6 +11,12 @@ namespace DAL
 {
     public class mp_Bitacora
     {
+
+        public DataTable Graficar()
+        {
+            return Acceso.Instancia.leer("sp_Grafico", null);
+        }
+
         public void Guardar(ClsRegistroBitacora registro)
         {
             try

@@ -73,15 +73,15 @@ namespace Sistema_de_insumos_DAS
             BE.ClsProductos producto = (BE.ClsProductos)dgvProductos.SelectedRows[0].DataBoundItem;
             int fa = 0;
             bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de eliminar este producto?");
-            if (resultado) 
+            if (resultado)
             {
-            fa = GProductos.Eliminar(producto);
-            if (fa != 0)
-            {
-                VerGrilla();
+                fa = GProductos.Eliminar(producto);
+                if (fa != 0)
+                {
+                    VerGrilla();
+                    listBox1.DataSource = null;
+                }
             }
-            }
-            
         }
     }
 }

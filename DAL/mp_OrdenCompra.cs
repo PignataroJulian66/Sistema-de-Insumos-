@@ -22,7 +22,7 @@ namespace DAL
                 parametros[1] = new SqlParameter("@ID_Insumo", OC.NInsumo);
                 parametros[2] = new SqlParameter("@Cantidad", OC.Cantidad);
                 parametros[3] = new SqlParameter("@Unidad", OC.Unidad);
-                parametros[4] = new SqlParameter("@Fecha", OC.FechaEntrega.ToString());
+                parametros[4] = new SqlParameter("@Fecha", OC.FechaEntrega);
                 parametros[5] = new SqlParameter("@Finalizado", OC.Finalizado.ToString());
                 parametros[6] = new SqlParameter("@ID_prov", OC.ID_prov);
 

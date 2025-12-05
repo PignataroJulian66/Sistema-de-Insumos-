@@ -43,7 +43,7 @@ namespace Sistema_de_insumos_DAS
                     empleado.DNI = micontrolDNI1.Texto;
 
                     BLL.ClsEmpleado gEmpleado = new BLL.ClsEmpleado();
-                    fa = gEmpleado.Agregar(empleado, miControlEmail1.Texto);
+                    fa = gEmpleado.AutoAgregar(empleado, miControlEmail1.Texto,miControlContraseña1.Texto);
                     MessageBox.Show("Registro exitoso");
                     this.Close();
                     FRMInicioSesion f = new FRMInicioSesion();

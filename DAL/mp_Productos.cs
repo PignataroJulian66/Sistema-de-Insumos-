@@ -130,7 +130,7 @@ namespace DAL
                         listaDetalles.Add(detalle);
                     }
 
-                    producto.Componentes = listaDetalles.Cast<IComponenteInventario>().ToList();
+                    producto.ListaInsumos = listaDetalles;
                     listaProductos.Add(producto);
                 }
                 return listaProductos;

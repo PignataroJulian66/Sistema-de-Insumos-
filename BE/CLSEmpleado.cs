@@ -48,8 +48,15 @@ namespace BE
             set { _dni = value; }
         }
 
-
-        public CLSEmpleado()
+        public CLSEmpleado(int id, string a, string d, string r, string dni, string n, string t) : base(n, t)
+        {
+            ID_emp = id;
+            Apellido = a;
+            Direccion = d;
+            Rol = r;
+            DNI = dni;
+        }
+        public CLSEmpleado() : base()
         {
             
         }

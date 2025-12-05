@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRealizarCompra);
             this.Controls.Add(this.dgvOC);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRMRealizarCompra";
             this.Text = "FRMRealizarCompra";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOC)).EndInit();

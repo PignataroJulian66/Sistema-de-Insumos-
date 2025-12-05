@@ -46,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvOC);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmComprasPasadas";
             this.Text = "FrmComprasPasadas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOC)).EndInit();

@@ -31,9 +31,16 @@ namespace BE
 			get { return _direccion; }
 			set { _direccion = value; }
 		}
-        public CLSProveedor()
+        public CLSProveedor() : base() 
         {
             	
+        }
+
+        public CLSProveedor(int id, string c, string d, string n, string t) : base(n, t)
+        {
+            ID_prov = id;
+			Cuit = c;
+			Direccion = d;
         }
         public override string ToString()
         {

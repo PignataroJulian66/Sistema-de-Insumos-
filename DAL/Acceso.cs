@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -103,7 +104,7 @@ namespace DAL
             }
             finally
             {
-                desconectar();
+                //desconectar();
             }
         }
 
@@ -222,6 +223,44 @@ namespace DAL
             }
         }
 
+        DataTable dataTable;
+        SqlDataAdapter dataAdapter;
+        public DataTable ObtenerClientes()
+        {
+            conectar();
+            try
+            {
+                // 1. Inicializa el dataAdapter con el comando SELECT
+                string selectQuery = "SELECT * FROM Cliente";
+                dataAdapter = new SqlDataAdapter(selectQuery, conexion);
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                DataColumn idColumn = dataTable.Columns["ID_Cliente"];
+
+                DataColumn[] keyColumns = new DataColumn[1];
+                keyColumns[0] = idColumn;
+                dataTable.PrimaryKey = keyColumns;
+
+                idColumn.AutoIncrement = true; 
+                idColumn.AutoIncrementSeed = -1; 
+                idColumn.AutoIncrementStep = -1;
+
+                return dataTable;
+            }
+            catch(Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                desconectar() ;
+            }
+        }
+
         public void Dispose()
         {
             Dispose(true);
@@ -254,6 +293,32 @@ namespace DAL
                 }
             }
 
+        }
+
+        internal int GuardarCambios()
+        {
+            if (dataAdapter != null && dataTable != null)
+            {
+                // Retorna el número de filas afectadas en la base de datos.
+                return dataAdapter.Update(dataTable);
+            }
+            return 0;
+        }
+
+        public void Backup(string v)
+        {
+            try
+            {
+                comando.Connection = conexion;
+                conectar();
+                comando.Parameters.Clear();
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error", ex.Message);
+            }
         }
     }
 }

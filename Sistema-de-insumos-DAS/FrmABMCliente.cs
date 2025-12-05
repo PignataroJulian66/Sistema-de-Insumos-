@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Mensajes1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Mensajes1;
 
 namespace Sistema_de_insumos_DAS
 {
@@ -19,7 +20,6 @@ namespace Sistema_de_insumos_DAS
             InitializeComponent();
             GestorMensajes.MensajeGenerado += MostrarMensaje;
             VerGrilla();
-            dgvClientes.ReadOnly = true;
             dgvClientes.MultiSelect = false;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
@@ -46,151 +46,24 @@ namespace Sistema_de_insumos_DAS
             }
         }
 
-        BE.ClsCliente cliente; 
         BLL.ClsCliente gCliente = new BLL.ClsCliente(); 
-        BE.ClsCliente tmp; 
         private void VerGrilla()
         {
-            dgvClientes.DataSource = null; 
-            dgvClientes.DataSource = gCliente.Listar(); 
-        }
 
-        private bool ValidarCampos()
-        {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text) || string.IsNullOrWhiteSpace(txtDNI.Text))
+            try
             {
-                GestorMensajes.Advertencia("Todos los campos son obligatorios.");
-                return false;
+                dgvClientes.DataSource = null;
+                dgvClientes.DataSource = gCliente.Listar();
+                dgvClientes.Columns["ID_Cliente"].ReadOnly = true;
+                dgvClientes.AllowUserToDeleteRows = true;
             }
-
-            if (txtNombre.Text.Any(char.IsDigit) || txtApellido.Text.Any(char.IsDigit))
+            catch (Exception ex)
             {
-                GestorMensajes.Advertencia("El nombre y el apellido no deben contener números.");
-                return false;
-            }
-
-            if (txtTelefono.Text.Length != 10 || !txtTelefono.Text.All(char.IsDigit))
-            {
-                GestorMensajes.Advertencia("El teléfono debe tener exactamente 10 números.");
-                return false;
-            }
-
-            if (!txtDNI.Text.All(char.IsDigit) || txtDNI.Text.Length < 7 || txtDNI.Text.Length > 8)
-            {
-                GestorMensajes.Advertencia("El DNI debe tener entre 7 y 8 números.");
-                return false;
-            }
-
-            return true;
-        }
-
-        private void btnAlta_Click(object sender, EventArgs e)
-        {
-            if (!ValidarCampos()) return;
-            if (gCliente.Listar().Any(c => c.DNI == txtDNI.Text))
-            {
-                GestorMensajes.Advertencia("Ya existe un cliente con ese DNI.");
-                return;
-            }
-
-            int fa = 0;
-            cliente = new BE.ClsCliente();
-
-           
-            cliente.Nombre = txtNombre.Text;
-            cliente.Apellido = txtApellido.Text;
-            cliente.Telefono = txtTelefono.Text;
-            cliente.DNI = txtDNI.Text;
-
-            fa = gCliente.Agregar(cliente);
-            if (fa != 0)
-            {
-                VerGrilla();
-                LimpiarCampos();
+                MessageBox.Show("Error al cargar datos: " + ex.Message);
             }
         }
 
-        private void btnBaja_Click(object sender, EventArgs e)
-        {
-            if (dgvClientes.SelectedRows.Count == 0)
-            {
-                GestorMensajes.Advertencia("Debe seleccionar un cliente para eliminar.");
-                return;
-            }
-
-
-            int fa = 0;
-            cliente = new BE.ClsCliente();
-            cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
-            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de eliminar este cliente?");
-            if (resultado)
-            {
-                fa = gCliente.Eliminar(cliente);
-                if (fa != 0)
-                {
-                    GestorMensajes.Exito("Proceso exitoso");
-                    VerGrilla();
-                    LimpiarCampos();
-                }
-            }
-            else { return; }
-            
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            int fa = 0;
-            cliente = new BE.ClsCliente();
-            if (!ValidarCampos()) return;
-            cliente = dgvClientes.SelectedRows[0].DataBoundItem as BE.ClsCliente;
-            bool resultado = GestorConfirmaciones.Confirmar("¿Estas seguro de modificar este cliente?");
-            if (resultado)
-            {
-                if (gCliente.Listar().Any(c => c.DNI == txtDNI.Text))
-                {
-                    GestorMensajes.Advertencia("Ya existe un cliente con ese DNI.");
-                    return;
-                }
-                cliente.Nombre = txtNombre.Text;
-                cliente.Apellido = txtApellido.Text;
-                cliente.Telefono = txtTelefono.Text;
-                cliente.DNI = txtDNI.Text;
-
-                fa = gCliente.Editar(cliente);
-                if (fa != 0)
-                {
-                    GestorMensajes.Exito("Proceso exitoso");
-                    VerGrilla();
-                    LimpiarCampos();
-                }
-            }
-            else 
-            {
-            return;
-            }
-            
-        }
-
-        private void LimpiarCampos()
-        {
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtTelefono.Text = "";
-            txtDNI.Text = "";
-        }
-
-        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) 
-            {
-
-                tmp = (BE.ClsCliente)dgvClientes.Rows[e.RowIndex].DataBoundItem;
-                txtNombre.Text = tmp.Nombre;
-                txtApellido.Text = tmp.Apellido;
-                txtTelefono.Text = tmp.Telefono;
-                txtDNI.Text = tmp.DNI;
-            }
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -225,6 +98,23 @@ namespace Sistema_de_insumos_DAS
         private void FrmABMCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int filasAfectadas = gCliente.GuardarDatosClientes();
+                MessageBox.Show($"Cambios guardados exitosamente. Filas afectadas: {filasAfectadas}");
+                VerGrilla();
+                GestorBitacora.Instancia.RegistrarEvento("Sistema", "INFO", "Se ejecuto correctamente SqlCommandBuilder", "CLIENTE");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message);
+                GestorBitacora.Instancia.RegistrarEvento("Sistema", "INFO", "Se ejecuto incorrectamente SqlCommandBuilder", "CLIENTE");
+            }
         }
     }
 }

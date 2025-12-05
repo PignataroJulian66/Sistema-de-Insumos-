@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,10 +46,14 @@ namespace BLL
             _mapper.Guardar(registro);
         }
 
-        public List<BE.ClsRegistroBitacora> listar()
+        public List<ClsRegistroBitacora> listar()
+        { 
+            return _mapper.Listar();
+        }
+
+        public DataTable Graficar()
         {
-            List<BE.ClsRegistroBitacora> lista = _mapper.Listar();
-            return lista; ;
+            return _mapper.Graficar();
         }
     }
 }

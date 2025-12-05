@@ -102,11 +102,6 @@ namespace Sistema_de_insumos_DAS
             if (!ValidarCampos()) return;
             if (!GestorConfirmaciones.Confirmar($"¿Estás seguro de modificar \"{proveedor.Nombre}\"?"))
             return;
-           if (gProveedor.Listar().Any(p => p.Cuit == txtCuit.Text))
-            {
-                GestorMensajes.Advertencia("Ya existe un proveedor con ese CUIT.");
-                return;
-            }
 
             proveedor.Nombre = txtNombre.Text;
             proveedor.Cuit = txtCuit.Text;

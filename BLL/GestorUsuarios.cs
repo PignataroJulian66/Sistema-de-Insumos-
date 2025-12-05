@@ -14,7 +14,7 @@ namespace BLL
 {
     public class GestorUsuarios
     {
-
+        mp_Usuarios mp = new mp_Usuarios();
         public bool EsEmpleado(int usuario)
         {
             SqlParameter[] parametros = new SqlParameter[1];          
@@ -31,14 +31,13 @@ namespace BLL
             return esproveedor;
         }
 
-        public int InicioSesion(string email, string contraseña)
+        public int InicioSesion(string email)
         {
             try
             {
-                SqlParameter[] parametros = new SqlParameter[2];
+                SqlParameter[] parametros = new SqlParameter[1];
                 int Id_usuario = -1;
                 parametros[0] = new SqlParameter("@Email", email);
-                parametros[1] = new SqlParameter("@Contraseña", Encriptación.Instancia.Encriptar(contraseña));
                 if(DAL.Acceso.Instancia.leerEscalar("sp_InicioSesion", parametros) != null)
                 {
                     Id_usuario = int.Parse(DAL.Acceso.Instancia.leerEscalar("sp_InicioSesion", parametros).ToString());          
@@ -99,6 +98,16 @@ namespace BLL
         public void Desconectar()
         {
             DAL.Acceso.Instancia.Dispose();
+        }
+
+        public byte[] ObtenerHashAlmacenado(string email)
+        {
+            return mp.ObtenerHashAlmacenado(email);
+        }
+
+        public bool VerifyPassword(string passwordIngresada, byte[] hashAlmacenado)
+        {
+            return Encriptación.Instancia.VerifyPassword(passwordIngresada, hashAlmacenado);
         }
     }
 }

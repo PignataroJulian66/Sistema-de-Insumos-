@@ -87,6 +87,7 @@
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuardar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCambiarCorreoEmpleado";
             this.Text = "FrmCambiarCorreoEmpleado";
             this.ResumeLayout(false);

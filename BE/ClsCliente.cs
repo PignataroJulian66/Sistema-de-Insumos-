@@ -31,6 +31,16 @@ namespace BE
 			get { return _dni; }
 			set { _dni = value; }
 		}
+        public ClsCliente(int id, string a, string dni,string n, string t) : base(n,t)
+        {
+            ID = id;
+			Apellido = a;
+			DNI = dni;
+        }
 
-	}
+        public ClsCliente() : base()
+        {
+            
+        }
+    }
 }

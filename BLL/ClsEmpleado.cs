@@ -172,6 +172,33 @@ namespace BLL
         {
             mapper.GenerarXML(rutaSegura);
         }
+
+        public int AutoAgregar(CLSEmpleado empleado, string email, string contra)
+        {
+            try
+            {
+                int filasAfectadas = mapper.AutoAgregar(empleado, email, contra);
+
+                if (!(filasAfectadas == 0))
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "INFO", $"Empleado agregado: {empleado.Nombre}", "ALTA_EMPLEADO");
+                    EmpleadoChanged?.Invoke(this, EventArgs.Empty);
+                    GestorMensajes.Exito("Empleado agregado correctamente.");
+                }
+                else
+                {
+                    GestorBitacora.Instancia.RegistrarEvento(usuarioActual, "ADVERTENCIA", $"Intento fallido de agregar empleado: {empleado.Nombre}", "ALTA_EMPLEADO");
+                    GestorMensajes.Advertencia("No se pudo agregar el empleado.");
+                }
+
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                GestorMensajes.Error("Error al agregar empleado: " + ex.Message);
+                return 0;
+            }
+        }
     }
 }
 

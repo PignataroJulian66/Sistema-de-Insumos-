@@ -126,6 +126,7 @@
             this.Controls.Add(this.btnGenerarOrden);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.numericUpDown2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRMRegistrarOC";
             this.Text = "FRMRegistrarOC";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();

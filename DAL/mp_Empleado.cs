@@ -52,7 +52,7 @@ namespace DAL
             parametros[1] = new SqlParameter("@Nombre", empleado.Nombre);
             parametros[2] = new SqlParameter("@Apellido", empleado.Apellido);
             parametros[3] = new SqlParameter("@Telefono", empleado.Telefono);
-            parametros[4] = new SqlParameter("@Direccion", Encriptación.Instancia.Encriptar(empleado.Direccion));
+            parametros[4] = new SqlParameter("@Direccion", empleado.Direccion);
             parametros[5] = new SqlParameter("@Rol", empleado.Rol);
             parametros[6] = new SqlParameter("@DNI", empleado.DNI);
             parametros[7] = new SqlParameter("@Email", email);
@@ -140,6 +140,23 @@ namespace DAL
             {
                 serializer.Serialize(fs, Listar());
             }
+        }
+
+        public int AutoAgregar(CLSEmpleado empleado, string email, string contra)
+        {
+            int fa = 0;
+
+            SqlParameter[] parametros = new SqlParameter[8];
+            parametros[0] = new SqlParameter("@Nombre_emp", empleado.Nombre);
+            parametros[1] = new SqlParameter("@Apellido_emp", empleado.Apellido);
+            parametros[2] = new SqlParameter("@Telefono_emp", empleado.Telefono);
+            parametros[3] = new SqlParameter("@Direccion_emp", empleado.Direccion);
+            parametros[4] = new SqlParameter("@ID_rol", int.Parse(empleado.Rol));
+            parametros[5] = new SqlParameter("@Dni", empleado.DNI);
+            parametros[6] = new SqlParameter("@Email", email);
+            parametros[7] = new SqlParameter("@Contraseña", Encriptación.Instancia.Encriptar(contra));
+            fa = DAL.Acceso.Instancia.escribir("sp_InsertarEmpleado", parametros);
+            return fa;
         }
     }
 }

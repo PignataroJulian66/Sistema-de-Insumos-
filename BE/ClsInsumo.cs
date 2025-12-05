@@ -47,6 +47,18 @@ namespace BE
 			get { return _calidad; }
 			set { _calidad = value; }
 		}
+        public ClsInsumo(string n, string u, decimal can, string cal)
+        {
+            Nombre = n;
+            Unidad = u;
+            Cantidad = 0;
+            Calidad = cal;
+        }
+
+        public ClsInsumo()
+        {
+            
+        }
 
         public decimal PrecioUnitario { get; set; }
         public int StockActual { get; set; }
@@ -54,7 +66,7 @@ namespace BE
 
         public override string ToString()
         {
-            return Nombre;
+            return Nombre + " " + Cantidad + " " + Unidad;
         }
 
         public decimal ObtenerPrecio()

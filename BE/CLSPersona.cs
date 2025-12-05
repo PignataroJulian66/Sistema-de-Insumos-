@@ -23,5 +23,16 @@ namespace BE
             get { return _telefono; }
             set { _telefono = value; }
         }
+
+        protected CLSPersona(string n, string t)
+        {
+            Nombre = n;
+            Telefono = t;
+        }
+
+        protected CLSPersona()
+        {
+            
+        }
     }
 }

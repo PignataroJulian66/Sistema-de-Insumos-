@@ -87,6 +87,7 @@
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuardar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCambiarContraseñaEmpleado";
             this.Text = "FrmCambiarContraseñaEmpleado";
             this.ResumeLayout(false);

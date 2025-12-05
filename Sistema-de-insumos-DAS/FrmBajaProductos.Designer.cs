@@ -69,6 +69,7 @@
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dgvProductos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBajaProductos";
             this.Text = "FrmBajaProductos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

@@ -160,7 +160,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FRMGerente";
             this.Text = "FRMGerente";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMGerente_FormClosing);
+//            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMGerente_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

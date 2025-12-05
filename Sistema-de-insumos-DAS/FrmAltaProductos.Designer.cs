@@ -240,6 +240,7 @@
             this.Controls.Add(this.cmbinsumo);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.txtnombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAltaProductos";
             this.Text = "FrmAltaProductos";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();

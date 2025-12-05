@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace Sistema_de_insumos_DAS
 {
     public partial class FRMInicioSesion : Form
     {
+        BLL.GestorUsuarios gu = new BLL.GestorUsuarios();
+        
         public FRMInicioSesion()
         {
             InitializeComponent();
@@ -34,53 +37,28 @@ namespace Sistema_de_insumos_DAS
             lblerror.Visible = true;
         }
 
-        private void btnIniciarsesion_Click_1(object sender, EventArgs e)
+        public bool IntentarLogin(string email, string passwordIngresada)
         {
-            try
+            // 1. Obtener el Hash almacenado de la DB
+            byte[] hashAlmacenado = gu.ObtenerHashAlmacenado(email);
+
+            // Si el usuario no existe o el hash es nulo, denegar el acceso.
+            if (hashAlmacenado == null)
             {
-                BLL.GestorUsuarios gu = new BLL.GestorUsuarios();
-                int usuario = gu.InicioSesion(txtEmail.Text, txtContraseña.Text); //me devuelve el ID_USUARIO o null
+                msgerror("Usuario no encontrado");
+                return false;
+            }
+
+            // 2. Verificar la contraseña
+            // Esto es el corazón del proceso. El método VerifyPassword hace todo el trabajo seguro.
+            bool esValido = gu.VerifyPassword(passwordIngresada, hashAlmacenado);
+
+            if (esValido)
+            {
+                int usuario = gu.InicioSesion(txtEmail.Text);
                 bool EsEmpleado = gu.EsEmpleado(usuario);
                 bool EsProveedor = gu.EsProveedor(usuario);
-                //if (EsProveedor && EsEmpleado)
-                //{
-                //    this.Controls.Remove(txtEmail);
-                //    this.Controls.Remove(txtContraseña);
-                //    this.Controls.Remove(btnRegistrarse);
-                //    this.Controls.Remove(btnIniciarsesion);
-                //    this.Controls.Remove(lblerror);
-                //    this.Controls.Remove(label4);
 
-                //    Button nuevoBoton = new Button();
-
-                //    nuevoBoton.Text = "Ingresar como empleado";
-                //    nuevoBoton.Name = "btnEmpleado";
-                //    nuevoBoton.Location = new System.Drawing.Point(326, 74);
-                //    nuevoBoton.Size = new System.Drawing.Size(417, 68);
-                //    nuevoBoton.BackColor = Color.FromArgb(40, 40, 40);
-                //    nuevoBoton.ForeColor = Color.White;
-                //    nuevoBoton.Click += (s, ev) =>
-                //    {
-                //        MessageBox.Show("arbir form de empleado:");
-                //    };
-                //    this.Controls.Add(nuevoBoton);
-
-
-                //    Button nuevoBoton2 = new Button();
-                //    nuevoBoton2.Text = "Ingresar como proveedor";
-                //    nuevoBoton2.Name = "btnProveedor";
-                //    nuevoBoton2.Location = new System.Drawing.Point(326, 199);
-                //    nuevoBoton2.Size = new System.Drawing.Size(417, 68);
-                //    nuevoBoton2.BackColor = Color.FromArgb(40, 40, 40);
-                //    nuevoBoton2.ForeColor = Color.White;
-                //    nuevoBoton2.Click += (s, ev) =>
-                //    {
-                //        FRMProveedor f = new FRMProveedor(gu.BuscarProveedor(usuario));
-                //        f.Show();
-                //        this.Hide();
-                //    };
-                //    this.Controls.Add(nuevoBoton2);
-                //}
                 if (EsProveedor && !EsEmpleado)
                 {
                     FRMProveedor f = new FRMProveedor(gu.BuscarProveedor(usuario));
@@ -123,9 +101,22 @@ namespace Sistema_de_insumos_DAS
                 {
                     msgerror("Usuario no encontrado.");
                 }
+                return true;
+            }
+            else
+            {
+                msgerror("Contraseña incorrecta.");
+                return false;
+            }
+        }
 
-
-            }catch(Exception ex)
+        private void btnIniciarsesion_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                IntentarLogin(txtEmail.Text, txtContraseña.Text);
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
@@ -199,6 +190,20 @@ namespace Sistema_de_insumos_DAS
             aux.Show();
             aux.Enabled = true;
             this.Hide();
+        }
+
+        private void FRMInicioSesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                gu.Desconectar();
+                Console.WriteLine("Singleton de Acceso desechado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                // Esto es crucial: si falla el cierre, al menos registramos el problema.
+                MessageBox.Show($"Error al cerrar la conexión de la base de datos: {ex.Message}", "Error Crítico de Aplicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -112,14 +112,11 @@ namespace Sistema_de_insumos_DAS
             if (!ValidarCampos())
                 return;
             int fa = 0;
-            insumo = new BE.ClsInsumo();
+            
 
             try
             {
-                insumo.Nombre = txtNombre.Text;
-                insumo.Unidad = comboBox1.Text;
-                insumo.Cantidad = 0;
-                insumo.Calidad = cmbCalidad.Text;
+                insumo = new BE.ClsInsumo(txtNombre.Text, comboBox1.Text, 0, cmbCalidad.Text);
 
                 fa = gInsumo.Agregar(insumo);
                 if (fa != 0)

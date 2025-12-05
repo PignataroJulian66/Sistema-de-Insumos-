@@ -57,6 +57,18 @@ namespace BE
 			set { _ListaInsumos = value; }
 		}
 
+        public ClsProductos(int id, string n, string r, decimal p, int e, List<BE.ClsInsumo> lst)
+        {
+            Id = id;
+            Nombre = n;
+            Rubro = r;
+            Precio = p;
+            Existencias = e;
+            ListaInsumos = lst;
+        }
+
+
+
         private List<IComponenteInventario> _Componentes;
 
         public List<IComponenteInventario> Componentes
