@@ -39,19 +39,19 @@ namespace Sistema_de_insumos_DAS
 
         public bool IntentarLogin(string email, string passwordIngresada)
         {
-            // 1. Obtener el Hash almacenado de la DB
-            byte[] hashAlmacenado = gu.ObtenerHashAlmacenado(email);
+            
+            byte[] hashAlmacenado = gu.ObtenerHashAlmacenado(email); // hash almacenado
 
-            // Si el usuario no existe o el hash es nulo, denegar el acceso.
-            if (hashAlmacenado == null)
+            
+            if (hashAlmacenado == null) // Si el usuario no existe o el hash  nulo, no le doy el acceso.
             {
                 msgerror("Usuario no encontrado");
                 return false;
             }
 
-            // 2. Verificar la contraseña
-            // Esto es el corazón del proceso. El método VerifyPassword hace todo el trabajo seguro.
-            bool esValido = gu.VerifyPassword(passwordIngresada, hashAlmacenado);
+           
+         
+            bool esValido = gu.VerifyPassword(passwordIngresada, hashAlmacenado);  //  Verifico contra
 
             if (esValido)
             {
@@ -201,7 +201,7 @@ namespace Sistema_de_insumos_DAS
             }
             catch (Exception ex)
             {
-                // Esto es crucial: si falla el cierre, al menos registramos el problema.
+              
                 MessageBox.Show($"Error al cerrar la conexión de la base de datos: {ex.Message}", "Error Crítico de Aplicación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

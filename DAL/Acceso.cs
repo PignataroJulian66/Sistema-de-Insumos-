@@ -41,7 +41,7 @@ namespace DAL
             //JULIÁN
             try
             {
-                conexion.ConnectionString = @"Data Source=.;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
+                conexion.ConnectionString = @"Data Source=JULIÁN;Initial Catalog=BaseCompleta;Integrated Security=True;TrustServerCertificate=True";
                 conexion.Open();
                 Console.WriteLine("Conexión exitosa");
             }
@@ -126,7 +126,7 @@ namespace DAL
                 }
                 filasAfectadas = comando.ExecuteNonQuery();
                 ConfirmarTransaccion(tx);
-                return 1;
+                return filasAfectadas;
             }
             catch (Exception ex)
             {

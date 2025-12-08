@@ -135,7 +135,7 @@ namespace BE
             return sb.ToString();
         }
 
-        public object Clone()
+        public object Clone() 
         {
             ClsProductos copia = (ClsProductos)this.MemberwiseClone();
 

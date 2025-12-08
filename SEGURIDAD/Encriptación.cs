@@ -22,10 +22,10 @@ namespace SEGURIDAD
             }
         }
 
-        // Configuración de Hashing
-        private const int SaltSize = 16;         // 16 bytes para el Salt
-        private const int HashSize = 32;         // 32 bytes (256 bits) para el Hash
-        private const int Iterations = 10000;    // Iteraciones para la resistencia a la fuerza bruta
+        // Config de Hash
+        private const int SaltSize = 16;         // 16 bytes de Salt
+        private const int HashSize = 32;         // 32 de Hash
+        private const int Iterations = 10000;    // iteraciones para ralentizar el proceso de hash y darle seguridad, aguanta masivos ataques
 
         public byte[] Encriptar(string password)
         {
@@ -51,27 +51,27 @@ namespace SEGURIDAD
 
         public bool VerifyPassword(string password, byte[] storedHashBytes)
         {
-            // 1. Verificar el tamaño del byte array almacenado
-            if (storedHashBytes.Length != SaltSize + HashSize)
+            
+            if (storedHashBytes.Length != SaltSize + HashSize) // Verificar el tamaño 
                 return false;
 
-            // 2. Extraer el Salt (primeros 16 bytes)
-            byte[] salt = new byte[SaltSize];
+          
+            byte[] salt = new byte[SaltSize];   // saco el Salt
             Array.Copy(storedHashBytes, 0, salt, 0, SaltSize);
 
-            // 3. Generar un nuevo Hash con la contraseña ingresada y el Salt recuperado
-            byte[] newHash;
+           
+            byte[] newHash;  //  creo un nuevo Hash con la contra y el Salt 
             using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations, HashAlgorithmName.SHA256))
             {
                 newHash = pbkdf2.GetBytes(HashSize);
             }
 
-            // 4. Extraer el Hash original almacenado (los 32 bytes siguientes al Salt)
-            byte[] storedPasswordHash = new byte[HashSize];
+            
+            byte[] storedPasswordHash = new byte[HashSize]; // traigo el Hash original guardado
             Array.Copy(storedHashBytes, SaltSize, storedPasswordHash, 0, HashSize);
 
-            // 5. Comparar los dos hashes byte por byte (comparación de tiempo constante para evitar ataques de temporización)
-            return SlowEquals(storedPasswordHash, newHash);
+            
+            return SlowEquals(storedPasswordHash, newHash); // Comparo los dos hashes byte por byte 
         }
 
         private bool SlowEquals(byte[] a, byte[] b)
@@ -81,17 +81,6 @@ namespace SEGURIDAD
                 diff |= (uint)(a[i] ^ b[i]);
             return diff == 0;
         }
-
-        //public byte[] Encriptar(string texto)
-        //{
-        //    byte[] datos = Encoding.UTF8.GetBytes(texto);
-        //    return ProtectedData.Protect(datos, null, DataProtectionScope.CurrentUser);
-        //}
-
-        //public string Desencriptar(byte[] cifrado)
-        //{
-        //    byte[] datos = ProtectedData.Unprotect(cifrado, null, DataProtectionScope.CurrentUser);
-        //    return Encoding.UTF8.GetString(datos);
-        //}
+  
     }
 }
